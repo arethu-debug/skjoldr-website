@@ -1457,6 +1457,98 @@ p { max-width: 68ch; }
   letter-spacing: 0.06em;
 }
 
+/* --- Tool cards (firemap.html) --- */
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.tool-card {
+  background: var(--grey-dark);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.tool-card:hover {
+  border-color: rgba(232,245,90,0.3);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.tool-card__screenshot {
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #111;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  position: relative;
+}
+
+.tool-card__screenshot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.tool-card:hover .tool-card__screenshot img {
+  transform: scale(1.03);
+}
+
+.tool-card__body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tool-card__body h3 {
+  color: var(--white);
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+
+.tool-card__body p {
+  color: var(--grey-mid);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+.tool-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(232,245,90,0.25);
+  border-radius: var(--radius);
+  transition: background var(--transition), border-color var(--transition);
+  align-self: flex-start;
+}
+
+.tool-card__link:hover {
+  background: rgba(232,245,90,0.1);
+  border-color: var(--yellow);
+}
+
+.tool-card__link::after {
+  content: '↗';
+  font-size: 0.9em;
+}
+
 /* --- Responsive --- */
 @media (max-width: 1024px) {
   .module-layout {
@@ -1506,6 +1598,7 @@ p { max-width: 68ch; }
 
   .usecase-grid { grid-template-columns: repeat(2, 1fr); }
   .usecase-card { aspect-ratio: 4/5; }
+  .tool-grid { grid-template-columns: 1fr; }
 
   .footer__grid {
     grid-template-columns: 1fr;

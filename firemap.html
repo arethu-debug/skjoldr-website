@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Firemap — situational awareness, deployment planning and fire simulation tools for Skjoldr operators." />
+  <title>Firemap — Situational Awareness Tools — Skjoldr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Skjoldr home">
+        <div class="nav__logo-mark">S</div>
+        <span class="nav__logo-text">Skjoldr</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="modules.html">Training</a></li>
+        <li><a href="firemap.html" class="active">Firemap</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <div class="lang-switcher" role="group" aria-label="Language selector">
+          <button class="lang-btn active" data-set-lang="en">EN</button>
+          <button class="lang-btn" data-set-lang="no">NO</button>
+          <button class="lang-btn" data-set-lang="ua">UA</button>
+        </div>
+      </div>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav__mobile" id="mobileNav" aria-hidden="true">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="modules.html">Training</a></li>
+      <li><a href="firemap.html">Firemap</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-set-lang="en">EN</button>
+      <button class="lang-btn" data-set-lang="no">NO</button>
+      <button class="lang-btn" data-set-lang="ua">UA</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- Page header -->
+    <div style="background:var(--green);padding:4rem 0 3rem;border-bottom:1px solid rgba(232,245,90,0.12);">
+      <div class="container">
+        <span class="label" data-lang="en">Operator Tools</span>
+        <span class="label" data-lang="no">Operatørverktøy</span>
+        <span class="label" data-lang="ua">Інструменти оператора</span>
+
+        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:0.75rem;" data-lang="en">
+          Firemap — Situational Awareness Tools
+        </h1>
+        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:0.75rem;" data-lang="no">
+          Firemap — Situasjonsbevissthet
+        </h1>
+        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:0.75rem;" data-lang="ua">
+          Firemap — Інструменти ситуаційної обізнаності
+        </h1>
+
+        <p style="color:rgba(232,245,255,0.75);max-width:60ch;font-size:1.05rem;" data-lang="en">
+          The following tools support situational awareness, deployment planning and fire simulation for Skjoldr operators.
+        </p>
+        <p style="color:rgba(232,245,255,0.75);max-width:60ch;font-size:1.05rem;" data-lang="no">
+          Følgende verktøy støtter situasjonsbevissthet, utsendelsesplanlegging og brannsimulasjoner for Skjoldr-operatører.
+        </p>
+        <p style="color:rgba(232,245,255,0.75);max-width:60ch;font-size:1.05rem;" data-lang="ua">
+          Наведені нижче інструменти підтримують ситуаційну обізнаність, планування розгортання та моделювання пожеж для операторів Skjoldr.
+        </p>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <section class="section section--dark">
+      <div class="container">
+        <div class="tool-grid">
+
+          <!-- Firemap Live -->
+          <div class="tool-card">
+            <div class="tool-card__screenshot">
+              <img src="images/Firemap%20Live.png" alt="Firemap Live screenshot" loading="lazy" />
+            </div>
+            <div class="tool-card__body">
+              <h3>Firemap Live</h3>
+              <p data-lang="en">Real-time global fire monitoring. Track active fires, weather conditions and risk areas worldwide.</p>
+              <p data-lang="no">Sanntids global brannmonitorering. Spor aktive branner, værforhold og risikoområder verden over.</p>
+              <p data-lang="ua">Глобальний моніторинг пожеж у реальному часі. Відстежуйте активні пожежі, погодні умови та зони ризику по всьому світу.</p>
+              <a href="https://www.firemap.live/" target="_blank" rel="noopener noreferrer" class="tool-card__link">
+                Open Firemap Live
+              </a>
+            </div>
+          </div>
+
+          <!-- Firemap Simulator -->
+          <div class="tool-card">
+            <div class="tool-card__screenshot">
+              <img src="images/Firemap%20Simulator.png" alt="Firemap Simulator screenshot" loading="lazy" />
+            </div>
+            <div class="tool-card__body">
+              <h3>Firemap Simulator</h3>
+              <p data-lang="en">Terrain-based fire simulation tool. Model fire behaviour across specific landscapes to plan response strategies.</p>
+              <p data-lang="no">Terrengbasert brannsimulatorverktøy. Modeller brannoppførsel over spesifikke landskap for å planlegge responsstrategier.</p>
+              <p data-lang="ua">Інструмент моделювання пожеж на основі рельєфу. Моделюйте поведінку вогню на конкретних ландшафтах для планування стратегій реагування.</p>
+              <a href="https://fire.beta.neoco.no/" target="_blank" rel="noopener noreferrer" class="tool-card__link">
+                Open Simulator
+              </a>
+            </div>
+          </div>
+
+          <!-- Firemap Optimizer -->
+          <div class="tool-card">
+            <div class="tool-card__screenshot">
+              <img src="images/Firemap%20Optimizer.png" alt="Firemap Optimizer screenshot" loading="lazy" />
+            </div>
+            <div class="tool-card__body">
+              <h3>Firemap Optimizer</h3>
+              <p data-lang="en">Wildfire rig placement optimizer. Calculate optimal positioning of Skjoldr rigs for maximum area coverage.</p>
+              <p data-lang="no">Optimalisering av riggerplassering ved skogbrann. Beregn optimal plassering av Skjoldr-rigger for maksimal arealdekning.</p>
+              <p data-lang="ua">Оптимізатор розміщення установок при лісових пожежах. Розраховуйте оптимальне розташування установок Skjoldr для максимального охоплення площі.</p>
+              <a href="https://firemap.beta.neoco.no/" target="_blank" rel="noopener noreferrer" class="tool-card__link">
+                Open Optimizer
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="index.html" class="nav__logo">
+              <div class="nav__logo-mark">S</div>
+              <span class="nav__logo-text">Skjoldr</span>
+            </a>
+            <p>Modular fire and readiness systems for decentralised first-line response.</p>
+          </div>
+          <div class="footer__col">
+            <h5>Training</h5>
+            <ul>
+              <li><a href="modules.html">All Modules</a></li>
+              <li><a href="module-01.html">Module 01</a></li>
+              <li><a href="glossary.html">Glossary</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="about.html">About Skjoldr</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Languages</h5>
+            <ul>
+              <li><a href="#" data-set-lang="en">English</a></li>
+              <li><a href="#" data-set-lang="no">Norsk</a></li>
+              <li><a href="#" data-set-lang="ua">Українська</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>&copy; 2026 Skjoldr AS. All rights reserved.</span>
+          <span style="color:var(--yellow);font-weight:600;letter-spacing:0.06em;">WHEN MINUTES MATTER</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const LANG_KEY = 'skjoldr_lang';
+    let currentLang = localStorage.getItem(LANG_KEY) || 'en';
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem(LANG_KEY, lang);
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        const show = el.dataset.lang === lang;
+        el.classList.toggle('lang-visible', show);
+        const tag = el.tagName;
+        if (tag === 'A' || tag === 'BUTTON') el.style.display = show ? 'inline-flex' : 'none';
+        else if (['P','H1','H2','H3','STRONG','SPAN'].includes(tag)) el.style.display = show ? '' : 'none';
+        else el.style.display = show ? '' : 'none';
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.setLang === lang);
+      });
+      document.documentElement.lang = lang === 'ua' ? 'uk' : lang;
+    }
+
+    document.querySelectorAll('[data-set-lang]').forEach(el => {
+      el.addEventListener('click', e => { e.preventDefault(); setLang(el.dataset.setLang); });
+    });
+
+    const toggle = document.querySelector('.nav__toggle');
+    const mobileNav = document.getElementById('mobileNav');
+    toggle.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      mobileNav.setAttribute('aria-hidden', !open);
+    });
+
+    setLang(currentLang);
+  </script>
+</body>
+</html>
