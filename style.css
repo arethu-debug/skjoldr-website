@@ -1182,6 +1182,281 @@ p { max-width: 68ch; }
 [data-lang] { display: none; }
 [data-lang].lang-visible { display: revert; }
 
+/* --- Hero with background image --- */
+.hero--photo {
+  background-color: var(--black);
+}
+
+.hero--photo .hero__bg-img {
+  position: absolute;
+  inset: 0;
+  background-image: url('images/hero.webp');
+  background-size: cover;
+  background-position: center 30%;
+  opacity: 0.35;
+}
+
+.hero--photo .hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10,10,10,0.85) 40%, rgba(10,10,10,0.3) 100%);
+}
+
+/* --- Product showcase --- */
+.product-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.product-img {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.product-img img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.product-img--secondary {
+  margin-top: 1rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.product-img--secondary img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.spec-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.spec-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--grey-mid);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.spec-list li:last-child { border-bottom: none; }
+
+.spec-list li strong {
+  color: var(--yellow);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+/* --- Problem section --- */
+.problem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.problem-img {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.problem-img img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.problem-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.5) 0%, transparent 50%);
+  border-radius: var(--radius-lg);
+}
+
+.problem-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+.problem-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.93rem;
+  color: var(--grey-mid);
+  line-height: 1.5;
+}
+
+.problem-points li::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  background: var(--yellow);
+  border-radius: 50%;
+  margin-top: 0.45em;
+  flex-shrink: 0;
+}
+
+/* --- Use case cards --- */
+.usecase-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.usecase-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 3/4;
+  cursor: default;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.usecase-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.usecase-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.usecase-card:hover img { transform: scale(1.04); }
+
+.usecase-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.1) 55%, transparent 100%);
+}
+
+.usecase-card__label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 1.25rem 1.25rem;
+}
+
+.usecase-card__label span {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 0.3rem;
+}
+
+.usecase-card__label strong {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+/* --- Testimonials / quotes --- */
+.quotes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.quote-card {
+  background: var(--grey-dark);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-card__img {
+  height: 240px;
+  overflow: hidden;
+}
+
+.quote-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.quote-card__body {
+  padding: 1.75rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.quote-card__text {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--grey);
+  font-style: italic;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.quote-card__text::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -0.2rem;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--yellow);
+  font-style: normal;
+  font-weight: 900;
+}
+
+.quote-card__author strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.quote-card__author span {
+  font-size: 0.8rem;
+  color: var(--grey-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
 /* --- Responsive --- */
 @media (max-width: 1024px) {
   .module-layout {
@@ -1198,6 +1473,22 @@ p { max-width: 68ch; }
   .footer__grid {
     grid-template-columns: 1fr 1fr;
   }
+  .product-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .problem-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .problem-img { order: -1; }
+  .problem-img img { height: 300px; }
+  .usecase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .quotes-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1213,6 +1504,9 @@ p { max-width: 68ch; }
 
   .values-grid { grid-template-columns: 1fr; }
 
+  .usecase-grid { grid-template-columns: repeat(2, 1fr); }
+  .usecase-card { aspect-ratio: 4/5; }
+
   .footer__grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -1222,6 +1516,8 @@ p { max-width: 68ch; }
 
   .glossary-table thead th:nth-child(3),
   .glossary-table td:nth-child(3) { display: none; }
+
+  .product-img img { height: 280px; }
 }
 
 @media (max-width: 480px) {
