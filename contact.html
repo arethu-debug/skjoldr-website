@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Skjoldr — get in touch for training enquiries, partnerships, or equipment questions." />
+  <title>Contact — Skjoldr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav" role="navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <div class="nav__logo-mark">S</div>
+        <span class="nav__logo-text">Skjoldr</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="modules.html">Training</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <div class="lang-switcher" role="group">
+          <button class="lang-btn active" data-set-lang="en">EN</button>
+          <button class="lang-btn" data-set-lang="no">NO</button>
+          <button class="lang-btn" data-set-lang="ua">UA</button>
+        </div>
+      </div>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav__mobile" id="mobileNav" aria-hidden="true">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="modules.html">Training</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-set-lang="en">EN</button>
+      <button class="lang-btn" data-set-lang="no">NO</button>
+      <button class="lang-btn" data-set-lang="ua">UA</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- Header -->
+    <div style="background:var(--green);padding:4rem 0 3rem;border-bottom:1px solid rgba(232,245,90,0.12);">
+      <div class="container">
+        <span class="label" data-lang="en">Get in Touch</span>
+        <span class="label" data-lang="no">Ta kontakt</span>
+        <span class="label" data-lang="ua">Зв'яжіться з нами</span>
+
+        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:0.75rem;" data-lang="en">Contact Skjoldr</h1>
+        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:0.75rem;" data-lang="no">Kontakt Skjoldr</h1>
+        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:0.75rem;" data-lang="ua">Зв'язатися зі Skjoldr</h1>
+
+        <p style="color:rgba(232,245,255,0.75);max-width:52ch;font-size:1.05rem;" data-lang="en">
+          Training enquiries, equipment questions, partnerships, or press requests —
+          reach us through the form or directly using the details below.
+        </p>
+        <p style="color:rgba(232,245,255,0.75);max-width:52ch;font-size:1.05rem;" data-lang="no">
+          Opplæringsspørsmål, utstyrsspørsmål, partnerskap eller presshenvendelser —
+          nå oss via skjemaet eller direkte med opplysningene nedenfor.
+        </p>
+        <p style="color:rgba(232,245,255,0.75);max-width:52ch;font-size:1.05rem;" data-lang="ua">
+          Питання щодо навчання, обладнання, партнерства або запити преси —
+          зв'яжіться з нами через форму або безпосередньо за деталями нижче.
+        </p>
+      </div>
+    </div>
+
+    <section class="section section--dark">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Form -->
+          <div class="contact-form">
+            <h2 style="color:var(--white);margin-bottom:0.5rem;font-size:1.5rem;" data-lang="en">Send a Message</h2>
+            <h2 style="color:var(--white);margin-bottom:0.5rem;font-size:1.5rem;" data-lang="no">Send en melding</h2>
+            <h2 style="color:var(--white);margin-bottom:0.5rem;font-size:1.5rem;" data-lang="ua">Надіслати повідомлення</h2>
+
+            <p style="color:var(--grey-mid);font-size:0.9rem;margin-bottom:2rem;" data-lang="en">We aim to respond within 2 business days.</p>
+            <p style="color:var(--grey-mid);font-size:0.9rem;margin-bottom:2rem;" data-lang="no">Vi sikter på å svare innen 2 virkedager.</p>
+            <p style="color:var(--grey-mid);font-size:0.9rem;margin-bottom:2rem;" data-lang="ua">Ми відповідаємо протягом 2 робочих днів.</p>
+
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName" data-lang="en">First Name</label>
+                  <label for="firstName" data-lang="no">Fornavn</label>
+                  <label for="firstName" data-lang="ua">Ім'я</label>
+                  <input type="text" id="firstName" name="firstName" placeholder="Arild" autocomplete="given-name" required />
+                </div>
+                <div class="form-group">
+                  <label for="lastName" data-lang="en">Last Name</label>
+                  <label for="lastName" data-lang="no">Etternavn</label>
+                  <label for="lastName" data-lang="ua">Прізвище</label>
+                  <input type="text" id="lastName" name="lastName" placeholder="Bergmann" autocomplete="family-name" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email" data-lang="en">Email Address</label>
+                <label for="email" data-lang="no">E-postadresse</label>
+                <label for="email" data-lang="ua">Електронна пошта</label>
+                <input type="email" id="email" name="email" placeholder="arild@unit.no" autocomplete="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="org" data-lang="en">Organisation / Unit</label>
+                <label for="org" data-lang="no">Organisasjon / Enhet</label>
+                <label for="org" data-lang="ua">Організація / Підрозділ</label>
+                <input type="text" id="org" name="organisation" placeholder="Sivilforsvaret" autocomplete="organization" />
+              </div>
+
+              <div class="form-group">
+                <label for="subject" data-lang="en">Subject</label>
+                <label for="subject" data-lang="no">Emne</label>
+                <label for="subject" data-lang="ua">Тема</label>
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected data-lang="en">Select a subject...</option>
+                  <option value="" disabled selected data-lang="no">Velg et emne...</option>
+                  <option value="" disabled selected data-lang="ua">Оберіть тему...</option>
+                  <option value="training" data-lang="en">Training enquiry</option>
+                  <option value="training" data-lang="no">Opplæringsforespørsel</option>
+                  <option value="training" data-lang="ua">Запит щодо навчання</option>
+                  <option value="equipment" data-lang="en">Equipment / Rig question</option>
+                  <option value="equipment" data-lang="no">Utstyr / Riggspørsmål</option>
+                  <option value="equipment" data-lang="ua">Питання обладнання / установки</option>
+                  <option value="partnership" data-lang="en">Partnership or procurement</option>
+                  <option value="partnership" data-lang="no">Partnerskap eller anskaffelse</option>
+                  <option value="partnership" data-lang="ua">Партнерство або закупівля</option>
+                  <option value="certification" data-lang="en">Certification / accreditation</option>
+                  <option value="certification" data-lang="no">Sertifisering / akkreditering</option>
+                  <option value="certification" data-lang="ua">Сертифікація / акредитація</option>
+                  <option value="press" data-lang="en">Press or media request</option>
+                  <option value="press" data-lang="no">Presse- eller medieforespørsel</option>
+                  <option value="press" data-lang="ua">Запит преси або ЗМІ</option>
+                  <option value="other" data-lang="en">Other</option>
+                  <option value="other" data-lang="no">Annet</option>
+                  <option value="other" data-lang="ua">Інше</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message" data-lang="en">Message</label>
+                <label for="message" data-lang="no">Melding</label>
+                <label for="message" data-lang="ua">Повідомлення</label>
+                <textarea id="message" name="message" rows="5" required
+                  placeholder="Describe your enquiry in as much detail as possible..."></textarea>
+              </div>
+
+              <div class="form-group" style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0;">
+                <input type="checkbox" id="consent" name="consent" required style="width:auto;accent-color:var(--yellow);" />
+                <label for="consent" style="font-size:0.82rem;text-transform:none;letter-spacing:0;color:var(--grey-mid);margin:0;" data-lang="en">
+                  I consent to Skjoldr processing my details to respond to this enquiry.
+                </label>
+                <label for="consent" style="font-size:0.82rem;text-transform:none;letter-spacing:0;color:var(--grey-mid);margin:0;" data-lang="no">
+                  Jeg samtykker til at Skjoldr behandler opplysningene mine for å svare på denne henvendelsen.
+                </label>
+                <label for="consent" style="font-size:0.82rem;text-transform:none;letter-spacing:0;color:var(--grey-mid);margin:0;" data-lang="ua">
+                  Я надаю згоду на обробку моїх даних компанією Skjoldr для відповіді на цей запит.
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn--primary" style="margin-top:1.5rem;width:100%;justify-content:center;" data-lang="en">
+                Send Message &rarr;
+              </button>
+              <button type="submit" class="btn btn--primary" style="margin-top:1.5rem;width:100%;justify-content:center;" data-lang="no">
+                Send melding &rarr;
+              </button>
+              <button type="submit" class="btn btn--primary" style="margin-top:1.5rem;width:100%;justify-content:center;" data-lang="ua">
+                Надіслати повідомлення &rarr;
+              </button>
+            </form>
+
+            <!-- Success message (hidden by default) -->
+            <div id="formSuccess" style="display:none;margin-top:1.5rem;" class="callout">
+              <strong data-lang="en">Message sent!</strong>
+              <strong data-lang="no">Melding sendt!</strong>
+              <strong data-lang="ua">Повідомлення надіслано!</strong>
+              <p data-lang="en" style="margin-top:0.35rem;max-width:none;">Thank you — we'll be in touch within 2 business days.</p>
+              <p data-lang="no" style="margin-top:0.35rem;max-width:none;">Takk — vi tar kontakt innen 2 virkedager.</p>
+              <p data-lang="ua" style="margin-top:0.35rem;max-width:none;">Дякуємо — ми зв'яжемося протягом 2 робочих днів.</p>
+            </div>
+          </div>
+
+          <!-- Contact info sidebar -->
+          <div>
+            <div class="contact-info-box" style="margin-bottom:1.5rem;">
+              <h3 data-lang="en">Contact Details</h3>
+              <h3 data-lang="no">Kontaktdetaljer</h3>
+              <h3 data-lang="ua">Контактні дані</h3>
+
+              <div class="contact-info-item">
+                <div class="contact-info-item__icon">&#9993;</div>
+                <div>
+                  <strong data-lang="en">Email</strong>
+                  <strong data-lang="no">E-post</strong>
+                  <strong data-lang="ua">Електронна пошта</strong>
+                  <p>training@skjoldr.no</p>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-item__icon">&#128205;</div>
+                <div>
+                  <strong data-lang="en">Address</strong>
+                  <strong data-lang="no">Adresse</strong>
+                  <strong data-lang="ua">Адреса</strong>
+                  <p>Skjoldr AS<br>Gaustadalléen 21<br>0349 Oslo, Norway</p>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-item__icon">&#128222;</div>
+                <div>
+                  <strong data-lang="en">Phone</strong>
+                  <strong data-lang="no">Telefon</strong>
+                  <strong data-lang="ua">Телефон</strong>
+                  <p>+47 22 00 00 00</p>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-item__icon">&#128336;</div>
+                <div>
+                  <strong data-lang="en">Response Time</strong>
+                  <strong data-lang="no">Responstid</strong>
+                  <strong data-lang="ua">Час відповіді</strong>
+                  <p data-lang="en">2 business days</p>
+                  <p data-lang="no">2 virkedager</p>
+                  <p data-lang="ua">2 робочі дні</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Training direct link -->
+            <div class="contact-info-box" style="background:var(--grey-dark);border:1px solid rgba(255,255,255,0.07);">
+              <h3 style="color:var(--white);" data-lang="en">Quick Links</h3>
+              <h3 style="color:var(--white);" data-lang="no">Hurtiglenker</h3>
+              <h3 style="color:var(--white);" data-lang="ua">Швидкі посилання</h3>
+              <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:0.5rem;">
+                <a href="modules.html" class="btn btn--green btn--sm" data-lang="en">View Training Modules</a>
+                <a href="modules.html" class="btn btn--green btn--sm" data-lang="no">Se opplæringsmoduler</a>
+                <a href="modules.html" class="btn btn--green btn--sm" data-lang="ua">Переглянути модулі</a>
+                <a href="glossary.html" class="btn btn--outline btn--sm" data-lang="en">Technical Glossary</a>
+                <a href="glossary.html" class="btn btn--outline btn--sm" data-lang="no">Teknisk ordliste</a>
+                <a href="glossary.html" class="btn btn--outline btn--sm" data-lang="ua">Технічний глосарій</a>
+                <a href="about.html" class="btn btn--outline btn--sm" data-lang="en">About Skjoldr</a>
+                <a href="about.html" class="btn btn--outline btn--sm" data-lang="no">Om Skjoldr</a>
+                <a href="about.html" class="btn btn--outline btn--sm" data-lang="ua">Про Skjoldr</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="index.html" class="nav__logo">
+              <div class="nav__logo-mark">S</div>
+              <span class="nav__logo-text">Skjoldr</span>
+            </a>
+            <p>Norwegian civil defence training platform for the Skjoldr Modular Rig.</p>
+          </div>
+          <div class="footer__col">
+            <h5>Training</h5>
+            <ul>
+              <li><a href="modules.html">All Modules</a></li>
+              <li><a href="module-01.html">Module 01</a></li>
+              <li><a href="glossary.html">Glossary</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="about.html">About Skjoldr</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Languages</h5>
+            <ul>
+              <li><a href="#" data-set-lang="en">English</a></li>
+              <li><a href="#" data-set-lang="no">Norsk</a></li>
+              <li><a href="#" data-set-lang="ua">Українська</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>&copy; 2026 Skjoldr AS. All rights reserved.</span>
+          <span style="color:var(--yellow);font-weight:600;letter-spacing:0.06em;">WHEN MINUTES MATTER</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const LANG_KEY = 'skjoldr_lang';
+    let currentLang = localStorage.getItem(LANG_KEY) || 'en';
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem(LANG_KEY, lang);
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        const show = el.dataset.lang === lang;
+        el.classList.toggle('lang-visible', show);
+        const tag = el.tagName;
+        if (tag === 'A' || tag === 'BUTTON') el.style.display = show ? 'inline-flex' : 'none';
+        else if (['P','H1','H2','H3','STRONG','SPAN','LABEL'].includes(tag)) el.style.display = show ? 'inline' : 'none';
+        else if (tag === 'OPTION') el.style.display = show ? '' : 'none';
+        else el.style.display = show ? '' : 'none';
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.setLang === lang);
+      });
+      document.documentElement.lang = lang === 'ua' ? 'uk' : lang;
+    }
+
+    document.querySelectorAll('[data-set-lang]').forEach(el => {
+      el.addEventListener('click', e => { e.preventDefault(); setLang(el.dataset.setLang); });
+    });
+
+    // Form submission (demo)
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (!this.checkValidity()) { this.reportValidity(); return; }
+      this.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+      // In production: POST to backend endpoint
+    });
+
+    const toggle = document.querySelector('.nav__toggle');
+    const mobileNav = document.getElementById('mobileNav');
+    toggle.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    setLang(currentLang);
+  </script>
+</body>
+</html>

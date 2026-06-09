@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Skjoldr — Norwegian civil defence company behind the Modular Rig." />
+  <title>About Skjoldr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav" role="navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <div class="nav__logo-mark">S</div>
+        <span class="nav__logo-text">Skjoldr</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="modules.html">Training</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <div class="lang-switcher" role="group">
+          <button class="lang-btn active" data-set-lang="en">EN</button>
+          <button class="lang-btn" data-set-lang="no">NO</button>
+          <button class="lang-btn" data-set-lang="ua">UA</button>
+        </div>
+      </div>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav__mobile" id="mobileNav" aria-hidden="true">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="modules.html">Training</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-set-lang="en">EN</button>
+      <button class="lang-btn" data-set-lang="no">NO</button>
+      <button class="lang-btn" data-set-lang="ua">UA</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- Hero -->
+    <div style="background:var(--green);padding:5rem 0 4rem;border-bottom:1px solid rgba(232,245,90,0.12);position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(232,245,90,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(232,245,90,0.03) 1px,transparent 1px);background-size:60px 60px;"></div>
+      <div class="container" style="position:relative;">
+        <span class="label" data-lang="en">Our Mission</span>
+        <span class="label" data-lang="no">Vårt oppdrag</span>
+        <span class="label" data-lang="ua">Наша місія</span>
+
+        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:1rem;max-width:14ch;" data-lang="en">
+          Protecting Lives<br>Through Preparation.
+        </h1>
+        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:1rem;max-width:16ch;" data-lang="no">
+          Beskytter liv<br>gjennom forberedelse.
+        </h1>
+        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:1rem;max-width:18ch;" data-lang="ua">
+          Захист життів<br>через підготовку.
+        </h1>
+
+        <p style="color:rgba(232,245,255,0.75);max-width:54ch;font-size:1.1rem;" data-lang="en">
+          Skjoldr is a Norwegian civil defence technology company. We build the equipment, write the protocols, and deliver the training that keeps operators and civilians safe when emergencies strike.
+        </p>
+        <p style="color:rgba(232,245,255,0.75);max-width:54ch;font-size:1.1rem;" data-lang="no">
+          Skjoldr er et norsk sivilforsvars-teknologiselskap. Vi bygger utstyr, skriver protokoller og leverer opplæringen som holder operatører og sivile trygge ved nødsituasjoner.
+        </p>
+        <p style="color:rgba(232,245,255,0.75);max-width:54ch;font-size:1.1rem;" data-lang="ua">
+          Skjoldr — норвезька компанія у сфері технологій цивільного захисту. Ми створюємо обладнання, розробляємо протоколи та проводимо навчання, яке захищає операторів і цивільних під час надзвичайних ситуацій.
+        </p>
+      </div>
+    </div>
+
+    <!-- Values / Stats -->
+    <section class="section section--dark">
+      <div class="container">
+        <div class="values-grid">
+          <div class="value-box">
+            <div class="num">8</div>
+            <div class="desc" data-lang="en">Core rig components</div>
+            <div class="desc" data-lang="no">Kjernekomponenter</div>
+            <div class="desc" data-lang="ua">Основних компонентів</div>
+          </div>
+          <div class="value-box">
+            <div class="num">3</div>
+            <div class="desc" data-lang="en">Languages supported</div>
+            <div class="desc" data-lang="no">Støttede språk</div>
+            <div class="desc" data-lang="ua">Підтримуваних мов</div>
+          </div>
+          <div class="value-box">
+            <div class="num">24/7</div>
+            <div class="desc" data-lang="en">Training availability</div>
+            <div class="desc" data-lang="no">Opplæringstilgjengelighet</div>
+            <div class="desc" data-lang="ua">Доступність навчання</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About body -->
+    <section class="section section--panel">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <span class="label" data-lang="en">Who We Are</span>
+            <span class="label" data-lang="no">Hvem vi er</span>
+            <span class="label" data-lang="ua">Хто ми</span>
+
+            <h2 style="color:var(--white);margin-top:0.5rem;margin-bottom:1.25rem;" data-lang="en">
+              Built for the field.<br>Trusted by operators.
+            </h2>
+            <h2 style="color:var(--white);margin-top:0.5rem;margin-bottom:1.25rem;" data-lang="no">
+              Bygget for feltet.<br>Stolt på av operatører.
+            </h2>
+            <h2 style="color:var(--white);margin-top:0.5rem;margin-bottom:1.25rem;" data-lang="ua">
+              Створено для роботи в полі.<br>Довіряють оператори.
+            </h2>
+
+            <p style="color:var(--grey-mid);font-size:0.95rem;line-height:1.7;margin-bottom:1rem;" data-lang="en">
+              Skjoldr was founded by civil defence and emergency management professionals who saw a gap between the equipment being deployed and the training available to operate it. Too many rigs sat underutilised, not because of equipment failure — but because operators lacked the confidence and knowledge to deploy them effectively.
+            </p>
+            <p style="color:var(--grey-mid);font-size:0.95rem;line-height:1.7;margin-bottom:1rem;" data-lang="no">
+              Skjoldr ble grunnlagt av sivil beredskaps- og nødledelsesprofesjonelle som så et gap mellom utstyret som ble deployert og opplæringen tilgjengelig for å betjene det. For mange rigger sto underutnyttet — ikke på grunn av utstyrsfeil, men fordi operatørene manglet selvtillit og kunnskap til effektiv bruk.
+            </p>
+            <p style="color:var(--grey-mid);font-size:0.95rem;line-height:1.7;margin-bottom:1rem;" data-lang="ua">
+              Skjoldr заснована фахівцями у сфері цивільного захисту та управління надзвичайними ситуаціями, які побачили прогалину між розгорнутим обладнанням і доступним навчанням для його використання. Занадто багато установок не використовувалися повністю — не через несправності, а через брак знань операторів.
+            </p>
+
+            <p style="color:var(--grey-mid);font-size:0.95rem;line-height:1.7;margin-bottom:1rem;" data-lang="en">
+              The Skjoldr Modular Rig was engineered with this in mind: a system that is powerful enough to handle major incidents, yet straightforward enough to master through structured training. Our tri-language training platform ensures that operators across Norway and allied nations can access the same quality of instruction.
+            </p>
+            <p style="color:var(--grey-mid);font-size:0.95rem;line-height:1.7;margin-bottom:1rem;" data-lang="no">
+              Skjoldr Modulrigg ble utviklet med dette i tankene: et system kraftig nok til å håndtere store hendelser, men enkelt nok til å mestre gjennom strukturert opplæring. Vår trespråklige plattform sikrer at operatører over hele Norge og allierte nasjoner har tilgang til samme opplæringskvalitet.
+            </p>
+            <p style="color:var(--grey-mid);font-size:0.95rem;line-height:1.7;margin-bottom:1rem;" data-lang="ua">
+              Skjoldr Modular Rig розроблена з урахуванням цього: система, достатньо потужна для великих інцидентів, але достатньо проста для освоєння через структуроване навчання. Наша трьохмовна платформа забезпечує однаковий рівень навчання для операторів по всій Норвегії та країнах-союзниках.
+            </p>
+
+            <a href="contact.html" class="btn btn--primary" style="margin-top:0.75rem;" data-lang="en">Get in Touch &rarr;</a>
+            <a href="contact.html" class="btn btn--primary" style="margin-top:0.75rem;" data-lang="no">Ta kontakt &rarr;</a>
+            <a href="contact.html" class="btn btn--primary" style="margin-top:0.75rem;" data-lang="ua">Зв'яжіться з нами &rarr;</a>
+          </div>
+
+          <div>
+            <div class="about-feature">
+              <div class="about-feature__icon">&#128737;</div>
+              <div>
+                <h3 data-lang="en">Norwegian Civil Defence Heritage</h3>
+                <h3 data-lang="no">Norsk Sivilforsvar-arv</h3>
+                <h3 data-lang="ua">Спадщина норвезького цивільного захисту</h3>
+                <p data-lang="en">Rooted in Norway's strong civil defence tradition, Skjoldr equipment meets the requirements of the Norwegian Directorate for Civil Protection (DSB) and NATO STANAG standards.</p>
+                <p data-lang="no">Forankret i Norges sterke sivilforsvarstradisjon, møter Skjoldr-utstyr kravene til Direktoratet for samfunnssikkerhet og beredskap (DSB) og NATO STANAG-standarder.</p>
+                <p data-lang="ua">Вкорінена в норвезькій традиції цивільного захисту, продукція Skjoldr відповідає вимогам DSB та стандартам NATO STANAG.</p>
+              </div>
+            </div>
+
+            <div class="about-feature">
+              <div class="about-feature__icon">&#127760;</div>
+              <div>
+                <h3 data-lang="en">Multi-Language by Design</h3>
+                <h3 data-lang="no">Flerspråklig av design</h3>
+                <h3 data-lang="ua">Багатомовність за задумом</h3>
+                <p data-lang="en">From the beginning, the Skjoldr training platform was designed to serve operators in English, Norwegian, and Ukrainian — reflecting the realities of modern civil defence cooperation across Europe.</p>
+                <p data-lang="no">Fra starten ble Skjoldr-plattformen designet for å betjene operatører på engelsk, norsk og ukrainsk — noe som gjenspeiler realitetene i moderne sivilforsvarsamarbeid i Europa.</p>
+                <p data-lang="ua">З самого початку платформа Skjoldr розроблялась для обслуговування операторів англійською, норвезькою та українською мовами — відображаючи реалії сучасної цивільної оборони в Європі.</p>
+              </div>
+            </div>
+
+            <div class="about-feature">
+              <div class="about-feature__icon">&#9889;</div>
+              <div>
+                <h3 data-lang="en">Rapid Response Engineering</h3>
+                <h3 data-lang="no">Hurtigrespons-ingeniørfag</h3>
+                <h3 data-lang="ua">Інженерія швидкого реагування</h3>
+                <p data-lang="en">Every design decision prioritises speed: speed of deployment, speed of learning, and speed of response. The Modular Rig can be operational within minutes of arrival on scene.</p>
+                <p data-lang="no">Hver designbeslutning prioriterer hastighet: hastighet for utsendelse, hastighet for læring og hastighet for respons. Modulriggen kan være operasjonell innen minutter etter ankomst.</p>
+                <p data-lang="ua">Кожне проектне рішення пріоритизує швидкість: швидкість розгортання, навчання та реагування. Модульна установка може бути готова до роботи протягом кількох хвилин після прибуття.</p>
+              </div>
+            </div>
+
+            <div class="about-feature">
+              <div class="about-feature__icon">&#128218;</div>
+              <div>
+                <h3 data-lang="en">Structured, Certifiable Training</h3>
+                <h3 data-lang="no">Strukturert, sertifiserbar opplæring</h3>
+                <h3 data-lang="ua">Структуроване, сертифіковане навчання</h3>
+                <p data-lang="en">The six-module operator curriculum is designed in line with European civil defence training standards. Completion is verified by unit commanders and recorded in official operator logs.</p>
+                <p data-lang="no">Den seks-modulers operatørkurrikulumet er designet i tråd med europeiske sivilforsvarsstandarder for opplæring.</p>
+                <p data-lang="ua">Навчальна програма з шести модулів розроблена відповідно до європейських стандартів навчання цивільного захисту.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission statement band -->
+    <div style="background:var(--yellow);padding:4rem 0;">
+      <div class="container" style="text-align:center;">
+        <span class="label" style="color:rgba(0,0,0,0.5);" data-lang="en">Our commitment</span>
+        <span class="label" style="color:rgba(0,0,0,0.5);" data-lang="no">Vår forpliktelse</span>
+        <span class="label" style="color:rgba(0,0,0,0.5);" data-lang="ua">Наше зобов'язання</span>
+        <h2 style="color:var(--black);margin-top:0.5rem;font-size:clamp(1.6rem,3vw,2.8rem);max-width:20ch;margin-left:auto;margin-right:auto;" data-lang="en">
+          "No operator should face an emergency without the training to respond."
+        </h2>
+        <h2 style="color:var(--black);margin-top:0.5rem;font-size:clamp(1.4rem,3vw,2.4rem);max-width:24ch;margin-left:auto;margin-right:auto;" data-lang="no">
+          «Ingen operatør bør stå overfor en nødsituasjon uten opplæring til å respondere.»
+        </h2>
+        <h2 style="color:var(--black);margin-top:0.5rem;font-size:clamp(1.4rem,2.5vw,2.2rem);max-width:28ch;margin-left:auto;margin-right:auto;" data-lang="ua">
+          «Жоден оператор не повинен стикатися з надзвичайною ситуацією без необхідної підготовки.»
+        </h2>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <section class="section section--dark">
+      <div class="container" style="text-align:center;">
+        <span class="label" data-lang="en">Ready to start?</span>
+        <span class="label" data-lang="no">Klar til å starte?</span>
+        <span class="label" data-lang="ua">Готові розпочати?</span>
+        <h2 style="color:var(--white);margin:0.5rem auto 1rem;max-width:18ch;" data-lang="en">Begin your operator training today.</h2>
+        <h2 style="color:var(--white);margin:0.5rem auto 1rem;max-width:20ch;" data-lang="no">Begynn operatøropplæringen i dag.</h2>
+        <h2 style="color:var(--white);margin:0.5rem auto 1rem;max-width:22ch;" data-lang="ua">Розпочніть навчання оператора сьогодні.</h2>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="modules.html" class="btn btn--primary" data-lang="en">View All Modules</a>
+          <a href="modules.html" class="btn btn--primary" data-lang="no">Se alle moduler</a>
+          <a href="modules.html" class="btn btn--primary" data-lang="ua">Переглянути всі модулі</a>
+          <a href="contact.html" class="btn btn--outline" data-lang="en">Contact Us</a>
+          <a href="contact.html" class="btn btn--outline" data-lang="no">Kontakt oss</a>
+          <a href="contact.html" class="btn btn--outline" data-lang="ua">Зв'яжіться з нами</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="index.html" class="nav__logo">
+              <div class="nav__logo-mark">S</div>
+              <span class="nav__logo-text">Skjoldr</span>
+            </a>
+            <p>Norwegian civil defence training platform for the Skjoldr Modular Rig.</p>
+          </div>
+          <div class="footer__col">
+            <h5>Training</h5>
+            <ul>
+              <li><a href="modules.html">All Modules</a></li>
+              <li><a href="module-01.html">Module 01</a></li>
+              <li><a href="glossary.html">Glossary</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="about.html">About Skjoldr</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Languages</h5>
+            <ul>
+              <li><a href="#" data-set-lang="en">English</a></li>
+              <li><a href="#" data-set-lang="no">Norsk</a></li>
+              <li><a href="#" data-set-lang="ua">Українська</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>&copy; 2026 Skjoldr AS. All rights reserved.</span>
+          <span style="color:var(--yellow);font-weight:600;letter-spacing:0.06em;">WHEN MINUTES MATTER</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const LANG_KEY = 'skjoldr_lang';
+    let currentLang = localStorage.getItem(LANG_KEY) || 'en';
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem(LANG_KEY, lang);
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        const show = el.dataset.lang === lang;
+        el.classList.toggle('lang-visible', show);
+        const tag = el.tagName;
+        if (tag === 'A' || tag === 'BUTTON') el.style.display = show ? 'inline-flex' : 'none';
+        else if (['P','H1','H2','H3','STRONG','SPAN'].includes(tag)) el.style.display = show ? 'inline' : 'none';
+        else el.style.display = show ? '' : 'none';
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.setLang === lang);
+      });
+      document.documentElement.lang = lang === 'ua' ? 'uk' : lang;
+    }
+
+    document.querySelectorAll('[data-set-lang]').forEach(el => {
+      el.addEventListener('click', e => { e.preventDefault(); setLang(el.dataset.setLang); });
+    });
+
+    const toggle = document.querySelector('.nav__toggle');
+    const mobileNav = document.getElementById('mobileNav');
+    toggle.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    setLang(currentLang);
+  </script>
+</body>
+</html>

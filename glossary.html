@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Skjoldr technical glossary — tri-language terminology in English, Norwegian, and Ukrainian." />
+  <title>Technical Glossary — Skjoldr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .glossary-table td { max-width: 300px; }
+    .row-hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <div class="nav__logo-mark">S</div>
+        <span class="nav__logo-text">Skjoldr</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="modules.html">Training</a></li>
+        <li><a href="glossary.html" class="active">Glossary</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <div class="lang-switcher" role="group">
+          <button class="lang-btn active" data-set-lang="en">EN</button>
+          <button class="lang-btn" data-set-lang="no">NO</button>
+          <button class="lang-btn" data-set-lang="ua">UA</button>
+        </div>
+      </div>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav__mobile" id="mobileNav" aria-hidden="true">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="modules.html">Training</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-set-lang="en">EN</button>
+      <button class="lang-btn" data-set-lang="no">NO</button>
+      <button class="lang-btn" data-set-lang="ua">UA</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- Page header -->
+    <div style="background:var(--green);padding:4rem 0 3rem;border-bottom:1px solid rgba(232,245,90,0.12);">
+      <div class="container">
+        <span class="label" data-lang="en">Reference Material</span>
+        <span class="label" data-lang="no">Referansemateriale</span>
+        <span class="label" data-lang="ua">Довідковий матеріал</span>
+
+        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:0.75rem;" data-lang="en">Technical Glossary</h1>
+        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:0.75rem;" data-lang="no">Teknisk Ordliste</h1>
+        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:0.75rem;" data-lang="ua">Технічний глосарій</h1>
+
+        <p style="color:rgba(232,245,255,0.75);max-width:56ch;font-size:1.05rem;" data-lang="en">
+          Tri-language reference for all technical terms used in Skjoldr operator training.
+          English · Norsk · Українська
+        </p>
+        <p style="color:rgba(232,245,255,0.75);max-width:56ch;font-size:1.05rem;" data-lang="no">
+          Tre-språklig referanse for alle tekniske begreper brukt i Skjoldr operatøropplæring.
+          Engelsk · Norsk · Ukrainsk
+        </p>
+        <p style="color:rgba(232,245,255,0.75);max-width:56ch;font-size:1.05rem;" data-lang="ua">
+          Трьохмовний довідник усіх технічних термінів, що використовуються в навчанні операторів Skjoldr.
+          Англійська · Норвезька · Українська
+        </p>
+      </div>
+    </div>
+
+    <section class="section section--dark">
+      <div class="container">
+
+        <!-- Search -->
+        <input
+          type="search"
+          class="glossary-search"
+          id="glossarySearch"
+          placeholder="Search terms... / Søk... / Пошук..."
+          aria-label="Search glossary"
+        />
+
+        <!-- Category filters -->
+        <div class="glossary-filter">
+          <button class="filter-btn active" data-cat="all">
+            <span data-lang="en">All</span><span data-lang="no">Alle</span><span data-lang="ua">Всі</span>
+          </button>
+          <button class="filter-btn" data-cat="hydraulic">
+            <span data-lang="en">Hydraulics</span><span data-lang="no">Hydraulikk</span><span data-lang="ua">Гідравліка</span>
+          </button>
+          <button class="filter-btn" data-cat="water">
+            <span data-lang="en">Water Systems</span><span data-lang="no">Vannsystemer</span><span data-lang="ua">Водяні системи</span>
+          </button>
+          <button class="filter-btn" data-cat="structure">
+            <span data-lang="en">Structure</span><span data-lang="no">Struktur</span><span data-lang="ua">Конструкція</span>
+          </button>
+          <button class="filter-btn" data-cat="ops">
+            <span data-lang="en">Operations</span><span data-lang="no">Operasjoner</span><span data-lang="ua">Операції</span>
+          </button>
+          <button class="filter-btn" data-cat="safety">
+            <span data-lang="en">Safety</span><span data-lang="no">Sikkerhet</span><span data-lang="ua">Безпека</span>
+          </button>
+        </div>
+
+        <!-- Glossary table -->
+        <div style="overflow-x:auto;border-radius:var(--radius-lg);border:1px solid rgba(255,255,255,0.06);">
+          <table class="glossary-table" id="glossaryTable">
+            <thead>
+              <tr>
+                <th data-lang="en">English Term</th>
+                <th data-lang="no">Norsk term</th>
+                <th data-lang="ua">Український термін</th>
+                <th data-lang="en">Norsk</th>
+                <th data-lang="no">Norsk</th>
+                <th data-lang="ua">Норвезькою</th>
+                <th data-lang="en">Ukrainian</th>
+                <th data-lang="no">Ukrainsk</th>
+                <th data-lang="ua">Українською</th>
+                <th data-lang="en">Definition</th>
+                <th data-lang="no">Definisjon</th>
+                <th data-lang="ua">Визначення</th>
+              </tr>
+            </thead>
+            <tbody id="glossaryBody">
+
+              <!-- HYDRAULICS -->
+              <tr data-cat="hydraulic">
+                <td>Power Take-Off (PTO)</td>
+                <td>Kraftuttak (PTO)</td>
+                <td>Відбір потужності (ВВП)</td>
+                <td>Kraftuttak</td>
+                <td>Kraftuttak</td>
+                <td>Kraftuttak</td>
+                <td>Відбір потужності (ВВП)</td>
+                <td>Відбір потужності</td>
+                <td>Відбір потужності</td>
+                <td>A mechanical gearbox accessory allowing power from the engine to drive auxiliary components.</td>
+                <td>Et mekanisk girkassetilbehør som gjør at motorkraft kan drive hjelpeutstyr.</td>
+                <td>Механічний аксесуар коробки передач, що дозволяє двигуну приводити в дію допоміжні агрегати.</td>
+              </tr>
+              <tr data-cat="hydraulic">
+                <td>Hydraulic Circuit</td>
+                <td>Hydraulisk krets</td>
+                <td>Гідравлічний контур</td>
+                <td>Hydraulisk krets</td>
+                <td>Hydraulisk krets</td>
+                <td>Hydraulisk krets</td>
+                <td>Гідравлічний контур</td>
+                <td>Гідравлічний контур</td>
+                <td>Гідравлічний контур</td>
+                <td>The closed system of pipes, valves, and actuators through which hydraulic fluid is pressurised to transmit force.</td>
+                <td>Det lukkede systemet av rør, ventiler og aktuatorer der hydraulisk væske er trykksatt for å overføre kraft.</td>
+                <td>Замкнута система трубопроводів, клапанів та виконавчих механізмів, в якій гідравлічна рідина перебуває під тиском для передачі зусилля.</td>
+              </tr>
+              <tr data-cat="hydraulic">
+                <td>Centrifugal Pump</td>
+                <td>Sentrifugalpumpe</td>
+                <td>Відцентровий насос</td>
+                <td>Sentrifugalpumpe</td>
+                <td>Sentrifugalpumpe</td>
+                <td>Sentrifugalpumpe</td>
+                <td>Відцентровий насос</td>
+                <td>Відцентровий насос</td>
+                <td>Відцентровий насос</td>
+                <td>A pump that uses a rotating impeller to move water at high flow rates. The primary pump type on the Skjoldr rig.</td>
+                <td>En pumpe som bruker en roterende impeller for å flytte vann ved høye gjennomstrømningshastigheter.</td>
+                <td>Насос, що використовує обертовий робочий колесо для переміщення води з великою витратою.</td>
+              </tr>
+              <tr data-cat="hydraulic">
+                <td>Pressure Relief Valve</td>
+                <td>Trykkavlastningsventil</td>
+                <td>Запобіжний клапан тиску</td>
+                <td>Trykkavlastningsventil</td>
+                <td>Trykkavlastningsventil</td>
+                <td>Trykkavlastningsventil</td>
+                <td>Запобіжний клапан тиску</td>
+                <td>Запобіжний клапан</td>
+                <td>Запобіжний клапан</td>
+                <td>A safety device that automatically vents excess hydraulic pressure to prevent system damage or rupture.</td>
+                <td>En sikkerhetsinnretning som automatisk slipper ut overskudd av hydraulisk trykk for å forhindre systemskade.</td>
+                <td>Запобіжний пристрій, який автоматично скидає надлишковий гідравлічний тиск для запобігання пошкодженню системи.</td>
+              </tr>
+              <tr data-cat="hydraulic">
+                <td>Bar (unit)</td>
+                <td>Bar (enhet)</td>
+                <td>Бар (одиниця)</td>
+                <td>Bar</td>
+                <td>Bar</td>
+                <td>Бар</td>
+                <td>Бар</td>
+                <td>Бар</td>
+                <td>Бар</td>
+                <td>Unit of pressure. 1 bar ≈ 14.5 PSI ≈ 100 kPa. Operational range on the Skjoldr rig: 8–16 bar.</td>
+                <td>Trykksenhet. 1 bar ≈ 14,5 PSI ≈ 100 kPa. Driftsområde på Skjoldr-riggen: 8–16 bar.</td>
+                <td>Одиниця тиску. 1 бар ≈ 14,5 PSI ≈ 100 кПа. Робочий діапазон установки Skjoldr: 8–16 бар.</td>
+              </tr>
+
+              <!-- WATER SYSTEMS -->
+              <tr data-cat="water">
+                <td>Water Cannon</td>
+                <td>Vannkanon</td>
+                <td>Водяна гармата</td>
+                <td>Vannkanon</td>
+                <td>Vannkanon</td>
+                <td>Vannkanon</td>
+                <td>Водяна гармата</td>
+                <td>Водяна гармата</td>
+                <td>Водяна гармата</td>
+                <td>A remote-controlled nozzle device capable of directing high-pressure water streams over long distances.</td>
+                <td>En fjernstyrt dyseinnretning som kan rette høytrykksvannstråler over lange avstander.</td>
+                <td>Пристрій з дистанційно керованою насадкою, здатний спрямовувати струмені води під високим тиском на великі відстані.</td>
+              </tr>
+              <tr data-cat="water">
+                <td>Storz Coupling</td>
+                <td>Storz-kobling</td>
+                <td>З'єднання Storz</td>
+                <td>Storz-kobling</td>
+                <td>Storz-kobling</td>
+                <td>Storz-kobling</td>
+                <td>З'єднання Storz</td>
+                <td>З'єднання Storz</td>
+                <td>З'єднання Storz</td>
+                <td>A symmetrical, quick-connect hose coupling standard used in firefighting. Both halves are identical.</td>
+                <td>En symmetrisk hurtigkoblingsslangekoblingstandard brukt i brannslukking. Begge halvdelene er identiske.</td>
+                <td>Симетричний стандарт швидкоз'ємного з'єднання шланга, що використовується в пожежогасінні. Обидві половини ідентичні.</td>
+              </tr>
+              <tr data-cat="water">
+                <td>Flow Rate</td>
+                <td>Gjennomstrømningshastighet</td>
+                <td>Витрата</td>
+                <td>Gjennomstrømningshastighet</td>
+                <td>Gjennomstrømning</td>
+                <td>Витрата</td>
+                <td>Витрата</td>
+                <td>Витрата</td>
+                <td>Витрата</td>
+                <td>The volume of water passing through a point per unit time. Measured in litres per minute (L/min).</td>
+                <td>Volumet av vann som passerer gjennom et punkt per tidsenhet. Målt i liter per minutt (L/min).</td>
+                <td>Об'єм води, що проходить через точку за одиницю часу. Вимірюється в літрах за хвилину (л/хв).</td>
+              </tr>
+              <tr data-cat="water">
+                <td>Isolation Valve</td>
+                <td>Isoleringsventil</td>
+                <td>Запірний клапан</td>
+                <td>Isoleringsventil</td>
+                <td>Isoleringsventil</td>
+                <td>Запірний клапан</td>
+                <td>Запірний клапан</td>
+                <td>Запірний клапан</td>
+                <td>Запірний клапан</td>
+                <td>A valve used to shut off flow to or from a specific component, enabling that component to be isolated for service or in a fault condition.</td>
+                <td>En ventil som stenger strømmen til eller fra en spesifikk komponent for service eller ved feil.</td>
+                <td>Клапан для перекриття потоку до або від певного компонента для обслуговування або у разі несправності.</td>
+              </tr>
+              <tr data-cat="water">
+                <td>External Water Inlet</td>
+                <td>Eksternt vanninntak</td>
+                <td>Зовнішній водозабір</td>
+                <td>Eksternt vanninntak</td>
+                <td>Eksternt inntak</td>
+                <td>Зовнішній водозабір</td>
+                <td>Зовнішній водозабір</td>
+                <td>Зовнішній водозабір</td>
+                <td>Зовнішній водозабір</td>
+                <td>The rig's port for receiving water from an external source (hydrant, tanker, or natural water body) to replenish tanks during operations.</td>
+                <td>Riggens port for å motta vann fra en ekstern kilde for å etterfylle tankene under operasjoner.</td>
+                <td>Порт установки для отримання води із зовнішнього джерела для поповнення баків під час операцій.</td>
+              </tr>
+              <tr data-cat="water">
+                <td>Hose Reel</td>
+                <td>Slangekasse / Slangetrommel</td>
+                <td>Котушка для шланга</td>
+                <td>Slangetrommel</td>
+                <td>Slangekasse</td>
+                <td>Котушка для шланга</td>
+                <td>Котушка для шланга</td>
+                <td>Котушка</td>
+                <td>Котушка</td>
+                <td>A drum-mounted system for storing and deploying flexible hose. The Skjoldr rig uses a hydraulic-powered motorised reel.</td>
+                <td>Et trommelbasert system for lagring og utrulling av fleksibel slange. Skjoldr-riggen bruker en hydraulisk drevet motorisert trommel.</td>
+                <td>Барабанна система для зберігання та розгортання гнучкого шланга. Установка Skjoldr використовує моторизовану котушку з гідравлічним приводом.</td>
+              </tr>
+
+              <!-- STRUCTURE -->
+              <tr data-cat="structure">
+                <td>Modular Platform</td>
+                <td>Modulær Plattform</td>
+                <td>Модульна платформа</td>
+                <td>Modulær plattform</td>
+                <td>Modulær plattform</td>
+                <td>Модульна платформа</td>
+                <td>Модульна платформа</td>
+                <td>Модульна платформа</td>
+                <td>Модульна платформа</td>
+                <td>The steel frame chassis that the Skjoldr rig components mount to. Designed for compatibility with NATO utility vehicle hitches.</td>
+                <td>Stålrammechassiset som Skjoldr-riggkomponentene er montert på. Designet for kompatibilitet med NATO nyttekjøretøyhengerfester.</td>
+                <td>Сталева рамна платформа, на якій монтуються компоненти установки Skjoldr. Розроблена для сумісності з причіпними пристроями NATO.</td>
+              </tr>
+              <tr data-cat="structure">
+                <td>Mother Vehicle / Host Vehicle</td>
+                <td>Moderkjøretøy</td>
+                <td>Базовий транспортний засіб</td>
+                <td>Moderkjøretøy</td>
+                <td>Moderkjøretøy</td>
+                <td>Базовий ТЗ</td>
+                <td>Базовий транспортний засіб</td>
+                <td>Базовий ТЗ</td>
+                <td>Базовий ТЗ</td>
+                <td>The primary vehicle to which the Skjoldr Modular Rig is attached and from which it draws hydraulic power.</td>
+                <td>Primærkjøretøyet som Skjoldr Modulrigg er festet til og som den henter hydraulisk kraft fra.</td>
+                <td>Основний транспортний засіб, до якого прикріплена установка Skjoldr, від якого вона отримує гідравлічну потужність.</td>
+              </tr>
+              <tr data-cat="structure">
+                <td>Hitchpoint</td>
+                <td>Festepunkt</td>
+                <td>Точка зчеплення</td>
+                <td>Festepunkt</td>
+                <td>Festepunkt</td>
+                <td>Точка зчеплення</td>
+                <td>Точка зчеплення</td>
+                <td>Точка зчеплення</td>
+                <td>Точка зчеплення</td>
+                <td>The standardised connection point on the rear of a host vehicle used to attach trailers or modular equipment.</td>
+                <td>Det standardiserte tilkoblingspunktet bak på et moderkjøretøy for tilkobling av tilhengere eller modulutstyr.</td>
+                <td>Стандартизована точка з'єднання на задній частині базового транспортного засобу для приєднання причепів або модульного обладнання.</td>
+              </tr>
+
+              <!-- OPERATIONS -->
+              <tr data-cat="ops">
+                <td>Deployment</td>
+                <td>Utsendelse</td>
+                <td>Розгортання</td>
+                <td>Utsendelse</td>
+                <td>Utsendelse</td>
+                <td>Розгортання</td>
+                <td>Розгортання</td>
+                <td>Розгортання</td>
+                <td>Розгортання</td>
+                <td>The act of bringing equipment and personnel to an operational state at an incident site.</td>
+                <td>Handlingen med å bringe utstyr og personell til en operasjonell tilstand på et hendelsessted.</td>
+                <td>Дія з приведення обладнання та персоналу в оперативний стан на місці інциденту.</td>
+              </tr>
+              <tr data-cat="ops">
+                <td>Suppression</td>
+                <td>Slukking</td>
+                <td>Придушення / Гасіння</td>
+                <td>Slukking</td>
+                <td>Slukking</td>
+                <td>Гасіння</td>
+                <td>Придушення / Гасіння</td>
+                <td>Гасіння</td>
+                <td>Гасіння</td>
+                <td>The application of water or other agents to control or extinguish a fire or hazard.</td>
+                <td>Påføring av vann eller andre midler for å kontrollere eller slukke en brann eller fare.</td>
+                <td>Застосування води або інших засобів для контролю або гасіння пожежі чи небезпеки.</td>
+              </tr>
+              <tr data-cat="ops">
+                <td>Incident Commander</td>
+                <td>Innsatsleder</td>
+                <td>Керівник операцій</td>
+                <td>Innsatsleder</td>
+                <td>Innsatsleder</td>
+                <td>Керівник операцій</td>
+                <td>Керівник операцій</td>
+                <td>Керівник операцій</td>
+                <td>Керівник операцій</td>
+                <td>The person responsible for all decisions at an emergency incident. Operator must communicate rig status directly to IC.</td>
+                <td>Personen ansvarlig for alle beslutninger på et nødsted. Operatøren må kommunisere riggstatus direkte til innsatsleder.</td>
+                <td>Особа, відповідальна за всі рішення на місці надзвичайної ситуації. Оператор повинен повідомляти стан установки безпосередньо керівнику.</td>
+              </tr>
+              <tr data-cat="ops">
+                <td>Jet Mode</td>
+                <td>Jetmodus</td>
+                <td>Режим струменя</td>
+                <td>Jetmodus</td>
+                <td>Jetmodus</td>
+                <td>Режим струменя</td>
+                <td>Режим струменя</td>
+                <td>Режим струменя</td>
+                <td>Режим струменя</td>
+                <td>Water cannon setting producing a concentrated, long-range stream. Used for structural fire suppression and long-distance reach.</td>
+                <td>Vannkanoninnstilling som produserer en konsentrert, langdistansestrøm for strukturbrannslukning.</td>
+                <td>Налаштування водяної гармати, що створює концентрований струмінь далекої дії. Використовується для гасіння пожеж у будівлях.</td>
+              </tr>
+              <tr data-cat="ops">
+                <td>Fog / Spray Mode</td>
+                <td>Tåke-/Spraymodus</td>
+                <td>Режим туману/розпилення</td>
+                <td>Tåkemodus</td>
+                <td>Spraymodus</td>
+                <td>Режим туману</td>
+                <td>Режим розпилення</td>
+                <td>Режим туману</td>
+                <td>Режим розпилення</td>
+                <td>Water cannon setting producing a fine mist. Used for cooling, exposure protection, and chemical hazard dilution.</td>
+                <td>Vannkanoninnstilling som produserer en fin tåke for kjøling, eksponeringsbeskyttelse og fortynning av kjemikalier.</td>
+                <td>Налаштування водяної гармати, що створює дрібний туман. Використовується для охолодження, захисту та розведення хімічних речовин.</td>
+              </tr>
+
+              <!-- SAFETY -->
+              <tr data-cat="safety">
+                <td>Exclusion Zone</td>
+                <td>Ekskluderingssone</td>
+                <td>Заборонена зона</td>
+                <td>Ekskluderingssone</td>
+                <td>Sikkerhetssone</td>
+                <td>Заборонена зона</td>
+                <td>Заборонена зона</td>
+                <td>Заборонена зона</td>
+                <td>Заборонена зона</td>
+                <td>The area immediately around a hazard from which unauthorised personnel must be kept. Rig operators define and enforce this zone.</td>
+                <td>Området umiddelbart rundt en fare der uautorisert personell må holdes borte. Riggoperatører definerer og håndhever denne sonen.</td>
+                <td>Зона безпосередньо навколо небезпеки, від якої повинен бути відсторонений неавторизований персонал.</td>
+              </tr>
+              <tr data-cat="safety">
+                <td>Manual Override</td>
+                <td>Manuell overstyring</td>
+                <td>Ручне дублювання</td>
+                <td>Manuell overstyring</td>
+                <td>Manuell overstyring</td>
+                <td>Ручне дублювання</td>
+                <td>Ручне дублювання</td>
+                <td>Ручне керування</td>
+                <td>Ручне керування</td>
+                <td>The ability to control a normally-remote or automatic function directly by hand. All critical rig systems have manual overrides.</td>
+                <td>Muligheten til å kontrollere en vanligvis fjern- eller automatisk funksjon direkte for hånd.</td>
+                <td>Можливість безпосередньо вручну керувати зазвичай дистанційною або автоматичною функцією.</td>
+              </tr>
+              <tr data-cat="safety">
+                <td>Emergency Stop (E-Stop)</td>
+                <td>Nødstopp</td>
+                <td>Аварійна зупинка</td>
+                <td>Nødstopp</td>
+                <td>Nødstopp</td>
+                <td>Аварійна зупинка</td>
+                <td>Аварійна зупинка</td>
+                <td>Аварійна зупинка</td>
+                <td>Аварійна зупинка</td>
+                <td>A physical button that immediately halts all powered rig systems. Located on both the operator control panel and the rig itself.</td>
+                <td>En fysisk knapp som umiddelbart stopper alle drevne riggsystemer. Plassert på operatørkontrollpanelet og riggen.</td>
+                <td>Фізична кнопка, яка негайно зупиняє всі системи установки. Розташована на пульті оператора та на самій установці.</td>
+              </tr>
+              <tr data-cat="safety">
+                <td>PPE (Personal Protective Equipment)</td>
+                <td>Personlig verneutstyr (PVU)</td>
+                <td>Засоби індивідуального захисту (ЗІЗ)</td>
+                <td>Verneutstyr</td>
+                <td>Verneutstyr</td>
+                <td>ЗІЗ</td>
+                <td>Засоби індивідуального захисту</td>
+                <td>ЗІЗ</td>
+                <td>ЗІЗ</td>
+                <td>Equipment worn by operators to protect against hazards. Minimum required: helmet, fire-resistant suit, gloves, and eye protection.</td>
+                <td>Utstyr som operatører bærer for å beskytte mot farer. Minimum påkrevd: hjelm, brannsikkert drakt, hansker og øyevern.</td>
+                <td>Спорядження, що носять оператори для захисту від небезпек. Мінімум: шолом, вогнезахисний костюм, рукавиці та захист очей.</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <p style="margin-top:1.5rem;font-size:0.8rem;color:var(--grey-mid);" data-lang="en">
+          Showing all terms. Use the search bar or category filters above to narrow results.
+          All terms are displayed as: <strong style="color:var(--white);">English</strong> · Norwegian · Ukrainian.
+        </p>
+        <p style="margin-top:1.5rem;font-size:0.8rem;color:var(--grey-mid);" data-lang="no">
+          Viser alle termer. Bruk søkefeltet eller kategorifiltre ovenfor for å begrense resultatene.
+        </p>
+        <p style="margin-top:1.5rem;font-size:0.8rem;color:var(--grey-mid);" data-lang="ua">
+          Показано всі терміни. Використовуйте рядок пошуку або фільтри категорій вище.
+        </p>
+
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="index.html" class="nav__logo">
+              <div class="nav__logo-mark">S</div>
+              <span class="nav__logo-text">Skjoldr</span>
+            </a>
+            <p>Norwegian civil defence training platform for the Skjoldr Modular Rig.</p>
+          </div>
+          <div class="footer__col">
+            <h5>Training</h5>
+            <ul>
+              <li><a href="modules.html">All Modules</a></li>
+              <li><a href="module-01.html">Module 01</a></li>
+              <li><a href="glossary.html">Glossary</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="about.html">About Skjoldr</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Languages</h5>
+            <ul>
+              <li><a href="#" data-set-lang="en">English</a></li>
+              <li><a href="#" data-set-lang="no">Norsk</a></li>
+              <li><a href="#" data-set-lang="ua">Українська</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>&copy; 2026 Skjoldr AS. All rights reserved.</span>
+          <span style="color:var(--yellow);font-weight:600;letter-spacing:0.06em;">WHEN MINUTES MATTER</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const LANG_KEY = 'skjoldr_lang';
+    let currentLang = localStorage.getItem(LANG_KEY) || 'en';
+    let currentCat = 'all';
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem(LANG_KEY, lang);
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        const show = el.dataset.lang === lang;
+        el.classList.toggle('lang-visible', show);
+        const tag = el.tagName;
+        if (tag === 'A' || tag === 'BUTTON') el.style.display = show ? 'inline-flex' : 'none';
+        else if (['P','H1','H2','H3','STRONG','SPAN'].includes(tag)) el.style.display = show ? 'inline' : 'none';
+        else if (tag === 'TH' || tag === 'TD') {
+          // handled by column visibility below
+        } else el.style.display = show ? '' : 'none';
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.setLang === lang);
+      });
+      document.documentElement.lang = lang === 'ua' ? 'uk' : lang;
+      updateTableColumns();
+    }
+
+    // Show/hide table columns based on language
+    // Col 1=EN term, 2=NO term, 3=UA term, 4=NO translation, 5=NO, 6=UA, 7=UA def, 8=no def, 9=ua def, 10=EN def, 11=NO def, 12=UA def
+    function updateTableColumns() {
+      // We display: term col for current lang, other lang translation cols, definition col for current lang
+      const table = document.getElementById('glossaryTable');
+      const rows = table.querySelectorAll('tr');
+      rows.forEach(row => {
+        const cells = row.querySelectorAll('th, td');
+        cells.forEach((cell, i) => {
+          // Simplified: show cols 0(EN), 3(NO), 6(UA), and definition based on lang
+          let show = false;
+          if (currentLang === 'en') show = [0, 3, 6, 9].includes(i);
+          if (currentLang === 'no') show = [1, 3, 6, 10].includes(i);
+          if (currentLang === 'ua') show = [2, 3, 6, 11].includes(i);
+          cell.style.display = show ? '' : 'none';
+        });
+      });
+    }
+
+    function filterTable() {
+      const query = document.getElementById('glossarySearch').value.toLowerCase();
+      const rows = document.querySelectorAll('#glossaryBody tr');
+      rows.forEach(row => {
+        const catMatch = currentCat === 'all' || row.dataset.cat === currentCat;
+        const textMatch = !query || row.textContent.toLowerCase().includes(query);
+        row.classList.toggle('row-hidden', !(catMatch && textMatch));
+      });
+    }
+
+    document.querySelectorAll('[data-set-lang]').forEach(el => {
+      el.addEventListener('click', e => { e.preventDefault(); setLang(el.dataset.setLang); filterTable(); });
+    });
+
+    document.querySelectorAll('.filter-btn[data-cat]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn[data-cat]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentCat = btn.dataset.cat;
+        filterTable();
+      });
+    });
+
+    document.getElementById('glossarySearch').addEventListener('input', filterTable);
+
+    const toggle = document.querySelector('.nav__toggle');
+    const mobileNav = document.getElementById('mobileNav');
+    toggle.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    setLang(currentLang);
+    filterTable();
+  </script>
+</body>
+</html>

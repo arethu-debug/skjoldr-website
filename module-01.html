@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Module 01: Rig Overview &amp; Components — Skjoldr operator training." />
+  <title>Module 01: Rig Overview &amp; Components — Skjoldr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav" role="navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <div class="nav__logo-mark">S</div>
+        <span class="nav__logo-text">Skjoldr</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="modules.html" class="active">Training</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <div class="lang-switcher" role="group">
+          <button class="lang-btn active" data-set-lang="en">EN</button>
+          <button class="lang-btn" data-set-lang="no">NO</button>
+          <button class="lang-btn" data-set-lang="ua">UA</button>
+        </div>
+      </div>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav__mobile" id="mobileNav" aria-hidden="true">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="modules.html">Training</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-set-lang="en">EN</button>
+      <button class="lang-btn" data-set-lang="no">NO</button>
+      <button class="lang-btn" data-set-lang="ua">UA</button>
+    </div>
+  </div>
+
+  <div class="page-content module-page">
+
+    <!-- Module hero -->
+    <div class="module-hero">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="sep">/</span>
+          <a href="modules.html">Training</a>
+          <span class="sep">/</span>
+          <span>Module 01</span>
+        </div>
+
+        <div style="display:inline-flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+          <span class="module-card__status module-card__status--available" data-lang="en">Available</span>
+          <span class="module-card__status module-card__status--available" data-lang="no">Tilgjengelig</span>
+          <span class="module-card__status module-card__status--available" data-lang="ua">Доступний</span>
+          <span style="font-size:0.75rem;color:rgba(232,245,90,0.5);text-transform:uppercase;letter-spacing:0.1em;font-weight:700;">Module 01 of 06</span>
+        </div>
+
+        <h1 data-lang="en">Rig Overview &amp; Components</h1>
+        <h1 data-lang="no">Riggoversikt og Komponenter</h1>
+        <h1 data-lang="ua">Огляд установки та компоненти</h1>
+
+        <p data-lang="en">Learn to identify, locate, and describe every major component of the Skjoldr Modular Rig. This module is the foundation for all subsequent operator training.</p>
+        <p data-lang="no">Lær å identifisere, lokalisere og beskrive hvert hovedelement i Skjoldr Modulriggen. Denne modulen er grunnlaget for all etterfølgende operatøropplæring.</p>
+        <p data-lang="ua">Навчіться ідентифікувати, знаходити та описувати кожен основний компонент модульної установки Skjoldr. Цей модуль є основою для всього подальшого навчання операторів.</p>
+
+        <div class="module-meta-bar">
+          <div class="meta-item">
+            <strong>45 min</strong>
+            <span data-lang="en">Estimated Time</span>
+            <span data-lang="no">Estimert tid</span>
+            <span data-lang="ua">Приблизний час</span>
+          </div>
+          <div class="meta-item">
+            <strong>3</strong>
+            <span data-lang="en">Sections</span>
+            <span data-lang="no">Seksjoner</span>
+            <span data-lang="ua">Розділи</span>
+          </div>
+          <div class="meta-item">
+            <strong data-lang="en">Foundational</strong>
+            <strong data-lang="no">Grunnleggende</strong>
+            <strong data-lang="ua">Базовий</strong>
+            <span data-lang="en">Level</span>
+            <span data-lang="no">Nivå</span>
+            <span data-lang="ua">Рівень</span>
+          </div>
+          <div class="meta-item">
+            <strong data-lang="en">Norwegian Civil Defence</strong>
+            <strong data-lang="no">Norsk Sivilforsvar</strong>
+            <strong data-lang="ua">Норвезька цивільна оборона</strong>
+            <span data-lang="en">Issuing Authority</span>
+            <span data-lang="no">Utstedende myndighet</span>
+            <span data-lang="ua">Уповноважений орган</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Module body -->
+    <section class="section section--dark">
+      <div class="container">
+        <div class="module-layout">
+
+          <!-- Main content -->
+          <article class="module-content" id="module-content">
+
+            <!-- SECTION 1 -->
+            <h2 id="s1" data-lang="en">Section 1 — Introduction to the Modular Rig</h2>
+            <h2 id="s1-no" data-lang="no">Seksjon 1 — Introduksjon til Modulriggen</h2>
+            <h2 id="s1-ua" data-lang="ua">Розділ 1 — Вступ до модульної установки</h2>
+
+            <p data-lang="en">The Skjoldr Modular Rig is a vehicle-mounted firefighting and civil defence system designed for rapid deployment in complex emergency environments. It is built on a solid-steel platform that attaches to a host vehicle, drawing hydraulic power directly from the vehicle's Power Take-Off (PTO) unit — eliminating the need for a separate generator or power source.</p>
+            <p data-lang="no">Skjoldr Modulrigg er et kjøretøymontert brannsluknings- og sivilforsvarssystem designet for rask utsendelse i komplekse nødmiljøer. Det er bygget på en solid stålplattform som festes til et moderkjøretøy og henter hydraulisk kraft direkte fra kjøretøyets kraftuttaksenhet.</p>
+            <p data-lang="ua">Skjoldr Modular Rig — це змонтована на транспортному засобі система пожежогасіння та цивільного захисту, призначена для швидкого розгортання в складних аварійних умовах. Вона встановлена на міцній сталевій платформі, яка кріпиться до базового транспортного засобу і отримує гідравлічну потужність безпосередньо від ВВП.</p>
+
+            <div class="callout">
+              <strong data-lang="en">Learning Objective</strong>
+              <strong data-lang="no">Læringsmål</strong>
+              <strong data-lang="ua">Навчальна мета</strong>
+              <p data-lang="en" style="margin:0.35rem 0 0;">By the end of this module, you will be able to name, locate, and describe the function of all 8 major rig components without reference material.</p>
+              <p data-lang="no" style="margin:0.35rem 0 0;">Ved slutten av denne modulen vil du kunne navngi, lokalisere og beskrive funksjonen til alle 8 hovedelementer uten referansemateriale.</p>
+              <p data-lang="ua" style="margin:0.35rem 0 0;">Після закінчення цього модуля ви зможете назвати, знайти та описати функцію всіх 8 основних компонентів установки без допоміжних матеріалів.</p>
+            </div>
+
+            <h3 data-lang="en">Design Philosophy</h3>
+            <h3 data-lang="no">Designfilosofi</h3>
+            <h3 data-lang="ua">Філософія дизайну</h3>
+
+            <p data-lang="en">The rig is built on three core design principles:</p>
+            <p data-lang="no">Riggen er bygget på tre kjernedesignprinsipper:</p>
+            <p data-lang="ua">Установка побудована на трьох основних принципах дизайну:</p>
+
+            <ul data-lang="en">
+              <li><strong>Modularity</strong> — components can be reconfigured or replaced in the field to adapt to different mission profiles.</li>
+              <li><strong>Speed</strong> — the system is designed to be combat-ready within minutes of arrival on scene.</li>
+              <li><strong>Operator safety</strong> — remote-controlled systems minimise operator exposure to hazardous environments.</li>
+            </ul>
+            <ul data-lang="no">
+              <li><strong>Modularitet</strong> — komponenter kan rekonfigureres eller byttes ut i felt for å tilpasse seg ulike oppdragsprofiler.</li>
+              <li><strong>Hastighet</strong> — systemet er designet for å være klart til innsats innen minutter etter ankomst.</li>
+              <li><strong>Operatørsikkerhet</strong> — fjernstyrt systemer minimerer operatørens eksponering for farlige miljøer.</li>
+            </ul>
+            <ul data-lang="ua">
+              <li><strong>Модульність</strong> — компоненти можна переналаштовувати або замінювати в полі для адаптації до різних профілів місії.</li>
+              <li><strong>Швидкість</strong> — система розроблена для приведення в бойову готовність протягом кількох хвилин після прибуття.</li>
+              <li><strong>Безпека оператора</strong> — системи дистанційного управління мінімізують вплив небезпечних умов на оператора.</li>
+            </ul>
+
+            <!-- SECTION 2 -->
+            <h2 id="s2" data-lang="en">Section 2 — The 8 Core Components</h2>
+            <h2 id="s2-no" data-lang="no">Seksjon 2 — De 8 Kjernekomponentene</h2>
+            <h2 id="s2-ua" data-lang="ua">Розділ 2 — 8 основних компонентів</h2>
+
+            <p data-lang="en">Each component is numbered in the standard Skjoldr identification system. Operators must be able to identify each component by number and name in any lighting or weather condition.</p>
+            <p data-lang="no">Hvert komponent er nummerert i det standard Skjoldr identifikasjonssystemet. Operatører må kunne identifisere hvert komponent etter nummer og navn under alle lysforhold og værforhold.</p>
+            <p data-lang="ua">Кожен компонент пронумерований у стандартній системі ідентифікації Skjoldr. Оператори повинні вміти ідентифікувати кожен компонент за номером та назвою в будь-яких умовах освітлення та погоди.</p>
+
+            <!-- Component 01 -->
+            <div class="component-detail">
+              <div class="component-detail__header">
+                <div class="component-detail__num">01</div>
+                <h4 data-lang="en">Remote-Controlled Water Cannon</h4>
+                <h4 data-lang="no">Fjernstyrt Vannkanon</h4>
+                <h4 data-lang="ua">Водяна гармата з дистанційним керуванням</h4>
+              </div>
+              <p data-lang="en">The water cannon is the primary suppression tool. Mounted on a rotating turret at the front of the rig, it can be aimed and fired from a safe remote position using the operator control unit. The cannon provides both jet and fog spray patterns, selectable depending on the incident type.</p>
+              <p data-lang="no">Vannkanonen er det primære slukkeverktøyet. Montert på en roterende tårn i fronten av riggen, kan den rettes og utløses fra en sikker fjernposisjon ved hjelp av operatørkontrollenheten. Kanonen gir både jet- og tåkespray-mønstre.</p>
+              <p data-lang="ua">Водяна гармата є основним засобом придушення. Встановлена на обертовій турелі в передній частині установки, вона може наводитися та активуватися з безпечної дистанційної позиції за допомогою пульта оператора.</p>
+              <table class="spec-table">
+                <thead>
+                  <tr>
+                    <th data-lang="en">Parameter</th><th data-lang="no">Parameter</th><th data-lang="ua">Параметр</th>
+                    <th data-lang="en">Value</th><th data-lang="no">Verdi</th><th data-lang="ua">Значення</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-lang="en">Max Flow Rate</td><td data-lang="no">Maks. gjennomstrømning</td><td data-lang="ua">Макс. витрата</td>
+                    <td>2,400 L/min</td>
+                  </tr>
+                  <tr>
+                    <td data-lang="en">Range (jet)</td><td data-lang="no">Rekkevidde (jet)</td><td data-lang="ua">Дальність (струмінь)</td>
+                    <td>60 m</td>
+                  </tr>
+                  <tr>
+                    <td data-lang="en">Rotation</td><td data-lang="no">Rotasjon</td><td data-lang="ua">Обертання</td>
+                    <td>360°</td>
+                  </tr>
+                  <tr>
+                    <td data-lang="en">Elevation</td><td data-lang="no">Elevasjon</td><td data-lang="ua">Піднімання</td>
+                    <td>−10° to +75°</td>
+                  </tr>
+                  <tr>
+                    <td data-lang="en">Control</td><td data-lang="no">Kontroll</td><td data-lang="ua">Управління</td>
+                    <td data-lang="en">Remote / Manual override</td><td data-lang="no">Fjern / Manuell overstyring</td><td data-lang="ua">Дистанційне / Ручне</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Component 02 -->
+            <div class="component-detail">
+              <div class="component-detail__header">
+                <div class="component-detail__num">02</div>
+                <h4 data-lang="en">Water Tanks — Modular &amp; Scalable</h4>
+                <h4 data-lang="no">Vanntanker — Modulære og Skalerbare</h4>
+                <h4 data-lang="ua">Водяні баки — модульні та масштабовані</h4>
+              </div>
+              <p data-lang="en">The rig can carry between one and four modular water tanks. Each tank is independently sealable and has its own isolation valve, allowing a damaged tank to be isolated without stopping the operation. Tanks are constructed from high-grade polymer with aluminium reinforcement ribs.</p>
+              <p data-lang="no">Riggen kan bære mellom én og fire modulære vanntanker. Hver tank kan forsegles uavhengig og har sin egen isoleringsventil, slik at en skadet tank kan isoleres uten å stoppe operasjonen.</p>
+              <p data-lang="ua">Установка може нести від одного до чотирьох модульних баків. Кожен бак може бути незалежно ізольований власним запірним клапаном, що дозволяє ізолювати пошкоджений бак без зупинки операції.</p>
+              <table class="spec-table">
+                <thead>
+                  <tr>
+                    <th data-lang="en">Parameter</th><th data-lang="no">Parameter</th><th data-lang="ua">Параметр</th>
+                    <th data-lang="en">Value</th><th data-lang="no">Verdi</th><th data-lang="ua">Значення</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-lang="en">Capacity per tank</td><td data-lang="no">Kapasitet per tank</td><td data-lang="ua">Ємність на бак</td>
+                    <td>1,000 L</td>
+                  </tr>
+                  <tr>
+                    <td data-lang="en">Max configuration</td><td data-lang="no">Maks. konfigurasjon</td><td data-lang="ua">Макс. конфігурація</td>
+                    <td data-lang="en">4 tanks (4,000 L)</td><td data-lang="no">4 tanker (4.000 L)</td><td data-lang="ua">4 баки (4 000 л)</td>
+                  </tr>
+                  <tr>
+                    <td data-lang="en">Fill time (external inlet)</td><td data-lang="no">Fylletid (eksternt inntak)</td><td data-lang="ua">Час заповнення</td>
+                    <td>&lt; 4 min / tank</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Component 03 -->
+            <div class="component-detail">
+              <div class="component-detail__header">
+                <div class="component-detail__num">03</div>
+                <h4 data-lang="en">Solid Steel Platform Structure</h4>
+                <h4 data-lang="no">Solid Stålplattformstruktur</h4>
+                <h4 data-lang="ua">Міцна сталева платформна конструкція</h4>
+              </div>
+              <p data-lang="en">The platform is the structural backbone of the Modular Rig. All other components mount to it. It is fabricated from high-tensile structural steel and rated for off-road terrain use. The mounting system is compatible with standard NATO utility vehicle hitchpoints.</p>
+              <p data-lang="no">Plattformen er det strukturelle ryggraden til Modulriggen. Alle andre komponenter monteres på den. Den er laget av høystyrkestål og godkjent for terrengbruk. Monteringssystemet er kompatibelt med standard NATO nyttekjøretøy festepunkter.</p>
+              <p data-lang="ua">Платформа є структурною основою модульної установки. Всі інші компоненти монтуються на ній. Виготовлена з конструкційної сталі підвищеної міцності для використання поза дорогами. Сумісна зі стандартними точками кріплення NATO.</p>
+            </div>
+
+            <!-- Component 04 -->
+            <div class="component-detail">
+              <div class="component-detail__header">
+                <div class="component-detail__num">04</div>
+                <h4 data-lang="en">Smart Hydraulic Centrifugal Pump</h4>
+                <h4 data-lang="no">Smart Hydraulisk Sentrifugalpumpe</h4>
+                <h4 data-lang="ua">Розумний гідравлічний відцентровий насос</h4>
+              </div>
+              <p data-lang="en">The centrifugal pump is the heart of the water supply system. It takes hydraulic power from the mother vehicle's PTO and converts it to water pressure. An onboard controller monitors pressure, flow, and temperature in real time and alerts the operator to anomalies via the control panel.</p>
+              <p data-lang="no">Sentrifugalpumpen er hjertet i vannforsyningssystemet. Den tar hydraulisk kraft fra moderkjøretøyets PTO og konverterer den til vanntrykk. En innebygd kontroller overvåker trykk, strøm og temperatur i sanntid.</p>
+              <p data-lang="ua">Відцентровий насос є серцем системи водопостачання. Він перетворює гідравлічну потужність ВВП базового транспортного засобу на тиск води. Вбудований контролер відстежує тиск, витрату та температуру в режимі реального часу.</p>
+              <table class="spec-table">
+                <thead>
+                  <tr>
+                    <th data-lang="en">Parameter</th><th data-lang="no">Parameter</th><th data-lang="ua">Параметр</th>
+                    <th data-lang="en">Value</th><th data-lang="no">Verdi</th><th data-lang="ua">Значення</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-lang="en">Max Output Pressure</td><td data-lang="no">Maks. utgangsstrykk</td><td data-lang="ua">Макс. тиск виходу</td>
+                    <td>16 bar</td>
+                  </tr>
+                  <tr>
+                    <td data-lang="en">Flow Rate</td><td data-lang="no">Gjennomstrømningshastighet</td><td data-lang="ua">Витрата</td>
+                    <td>2,400 L/min</td>
+                  </tr>
+                  <tr>
+                    <td data-lang="en">Drive</td><td data-lang="no">Drev</td><td data-lang="ua">Привід</td>
+                    <td data-lang="en">Hydraulic (PTO)</td><td data-lang="no">Hydraulisk (PTO)</td><td data-lang="ua">Гідравлічний (ВВП)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Component 05 -->
+            <div class="component-detail">
+              <div class="component-detail__header">
+                <div class="component-detail__num">05</div>
+                <h4 data-lang="en">Water Outlets</h4>
+                <h4 data-lang="no">Vannuttak</h4>
+                <h4 data-lang="ua">Водяні виходи</h4>
+              </div>
+              <p data-lang="en">The rig features multiple water outlet ports on each side of the platform. Each port accepts standard Storz or BSP fire hose couplings. Ports can be opened and closed independently to direct water to multiple teams simultaneously.</p>
+              <p data-lang="no">Riggen har flere vannuttaksporter på hver side av plattformen. Hver port aksepterer standard Storz- eller BSP-brannslangekoblinger. Porter kan åpnes og lukkes uavhengig.</p>
+              <p data-lang="ua">Установка має кілька портів водяних виходів з кожного боку платформи. Кожен порт сумісний зі стандартними з'єднаннями пожежного шланга Storz або BSP. Порти можна відкривати та закривати незалежно.</p>
+            </div>
+
+            <!-- Component 06 -->
+            <div class="component-detail">
+              <div class="component-detail__header">
+                <div class="component-detail__num">06</div>
+                <h4 data-lang="en">External Water Inlet</h4>
+                <h4 data-lang="no">Eksternt Vanninntak</h4>
+                <h4 data-lang="ua">Зовнішній водозабір</h4>
+              </div>
+              <p data-lang="en">The external inlet allows the rig to be resupplied from an external source while operations continue. It is compatible with fire hydrant, water tanker, and gravity-feed connections. An auto-fill sensor can be configured to trigger resupply automatically when tank levels drop below a set threshold.</p>
+              <p data-lang="no">Det eksterne inntaket gjør at riggen kan etterfylles fra en ekstern kilde mens operasjoner fortsetter. Det er kompatibelt med brannhydrant, tankvogn og gravitasjonstilkoblinger.</p>
+              <p data-lang="ua">Зовнішній водозабір дозволяє поповнювати запаси установки із зовнішнього джерела під час операцій. Сумісний з пожежним гідрантом, цистерною та гравітаційними з'єднаннями.</p>
+            </div>
+
+            <!-- Component 07 -->
+            <div class="component-detail">
+              <div class="component-detail__header">
+                <div class="component-detail__num">07</div>
+                <h4 data-lang="en">Hydraulic Powered Hose Reel</h4>
+                <h4 data-lang="no">Hydraulisk Drevet Slangekasse</h4>
+                <h4 data-lang="ua">Котушка для шланга з гідравлічним приводом</h4>
+              </div>
+              <p data-lang="en">The motorised hose reel carries up to 60 metres of pressurised attack hose. Deployment and retraction are controlled from the operator panel, reducing physical strain and enabling faster hose management. The reel can also be operated manually in case of hydraulic failure.</p>
+              <p data-lang="no">Den motoriserte slangekassen bærer opptil 60 meter trykkbelagt angrepslange. Utrulling og inntrekking styres fra operatørpanelet. Kassen kan også betjenes manuelt ved hydraulisk feil.</p>
+              <p data-lang="ua">Моторизована котушка вміщує до 60 метрів напірного шланга атаки. Розгортання та скочування управляється з пульта оператора. Котушка також може використовуватися вручну у разі гідравлічного відмови.</p>
+              <table class="spec-table">
+                <thead>
+                  <tr>
+                    <th data-lang="en">Parameter</th><th data-lang="no">Parameter</th><th data-lang="ua">Параметр</th>
+                    <th data-lang="en">Value</th><th data-lang="no">Verdi</th><th data-lang="ua">Значення</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-lang="en">Hose length</td><td data-lang="no">Slangelengde</td><td data-lang="ua">Довжина шланга</td>
+                    <td>60 m</td>
+                  </tr>
+                  <tr>
+                    <td data-lang="en">Hose diameter</td><td data-lang="no">Slangebånd</td><td data-lang="ua">Діаметр шланга</td>
+                    <td>52 mm</td>
+                  </tr>
+                  <tr>
+                    <td data-lang="en">Working pressure</td><td data-lang="no">Driftstrykk</td><td data-lang="ua">Робочий тиск</td>
+                    <td>16 bar</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Component 08 -->
+            <div class="component-detail">
+              <div class="component-detail__header">
+                <div class="component-detail__num">08</div>
+                <h4 data-lang="en">Hydraulic Power from Mother Vehicle</h4>
+                <h4 data-lang="no">Hydraulisk Kraft fra Moderkjøretøy</h4>
+                <h4 data-lang="ua">Гідравлічне живлення від базового транспортного засобу</h4>
+              </div>
+              <p data-lang="en">All hydraulic-powered components on the rig receive their power from the host vehicle's PTO system. The interface includes a quick-connect hydraulic coupling and a safety pressure-relief valve. The operator must verify PTO engagement and hydraulic pressure before commencing operations.</p>
+              <p data-lang="no">Alle hydraulisk drevne komponenter på riggen mottar kraft fra moderkjøretøyets PTO-system. Grensesnittet inkluderer en hurtigkoblings-hydraulikkkobling og en sikkerhets trykkavslagsventil.</p>
+              <p data-lang="ua">Всі компоненти з гідравлічним приводом отримують живлення від системи ВВП базового транспортного засобу. Інтерфейс включає швидкоз'ємне гідравлічне з'єднання та запобіжний клапан скидання тиску.</p>
+
+              <div class="callout callout--warn" style="margin-top:1rem;">
+                <strong data-lang="en">SAFETY: PTO Check Required</strong>
+                <strong data-lang="no">SIKKERHET: PTO-kontroll Påkrevd</strong>
+                <strong data-lang="ua">БЕЗПЕКА: Необхідна перевірка ВВП</strong>
+                <p data-lang="en" style="margin:0.35rem 0 0;max-width:none;">Always confirm PTO engagement and check hydraulic pressure gauge reads within the green zone (8–14 bar) before opening any valves or activating any hydraulic systems.</p>
+                <p data-lang="no" style="margin:0.35rem 0 0;max-width:none;">Bekreft alltid PTO-engasjement og kontroller at hydraulikktrykksmåleren leser innenfor den grønne sonen (8–14 bar) før du åpner ventiler eller aktiverer hydrauliske systemer.</p>
+                <p data-lang="ua" style="margin:0.35rem 0 0;max-width:none;">Завжди підтверджуйте увімкнення ВВП і переконайтеся, що манометр гідравлічного тиску показує значення в зеленій зоні (8–14 бар) перед відкриттям клапанів або активацією гідравлічних систем.</p>
+              </div>
+            </div>
+
+            <!-- SECTION 3 -->
+            <h2 id="s3" data-lang="en">Section 3 — Spatial Orientation &amp; Safety Zones</h2>
+            <h2 id="s3-no" data-lang="no">Seksjon 3 — Romlig Orientering og Sikkerhetssoner</h2>
+            <h2 id="s3-ua" data-lang="ua">Розділ 3 — Просторова орієнтація та зони безпеки</h2>
+
+            <p data-lang="en">Understanding the physical layout of the rig is essential for safe operation. All operators must be able to navigate the rig safely in reduced visibility conditions, such as smoke, darkness, or extreme weather.</p>
+            <p data-lang="no">Å forstå den fysiske utformingen av riggen er essensielt for sikker drift. Alle operatører må kunne navigere riggen trygt under redusert siktbarhet.</p>
+            <p data-lang="ua">Розуміння фізичного планування установки є необхідним для безпечної роботи. Усі оператори повинні вміти орієнтуватися в умовах зниженої видимості.</p>
+
+            <h3 data-lang="en">Reference Directions</h3>
+            <h3 data-lang="no">Referanseretninger</h3>
+            <h3 data-lang="ua">Референсні напрямки</h3>
+
+            <ul data-lang="en">
+              <li><strong>Forward</strong> — toward the direction of travel / cab of the host vehicle.</li>
+              <li><strong>Aft</strong> — toward the rear of the rig.</li>
+              <li><strong>Port (left)</strong> — standing at the rear, facing forward.</li>
+              <li><strong>Starboard (right)</strong> — standing at the rear, facing forward.</li>
+            </ul>
+            <ul data-lang="no">
+              <li><strong>Forover</strong> — mot kjøreretningen / hytta til moderkjøretøyet.</li>
+              <li><strong>Akter</strong> — mot baksiden av riggen.</li>
+              <li><strong>Babord (venstre)</strong> — stående bak, vendt fremover.</li>
+              <li><strong>Styrbord (høyre)</strong> — stående bak, vendt fremover.</li>
+            </ul>
+            <ul data-lang="ua">
+              <li><strong>Вперед</strong> — у напрямку руху / кабіни базового транспортного засобу.</li>
+              <li><strong>Назад</strong> — до задньої частини установки.</li>
+              <li><strong>Лівий борт</strong> — стоячи ззаду, обличчям вперед.</li>
+              <li><strong>Правий борт</strong> — стоячи ззаду, обличчям вперед.</li>
+            </ul>
+
+            <div class="callout">
+              <strong data-lang="en">Module Complete</strong>
+              <strong data-lang="no">Modul Fullført</strong>
+              <strong data-lang="ua">Модуль завершено</strong>
+              <p data-lang="en" style="margin:0.35rem 0 0;max-width:none;">You have reviewed all content for Module 01. Report your completion to your unit commander and proceed to Module 02: Pre-Deployment Checks when it becomes available.</p>
+              <p data-lang="no" style="margin:0.35rem 0 0;max-width:none;">Du har gjennomgått alt innhold for Modul 01. Rapporter fullføringen til enhetskommandøren og gå videre til Modul 02 når den er tilgjengelig.</p>
+              <p data-lang="ua" style="margin:0.35rem 0 0;max-width:none;">Ви переглянули весь вміст Модуля 01. Повідомте командира підрозділу про завершення та переходьте до Модуля 02, коли він стане доступним.</p>
+            </div>
+
+            <!-- Nav buttons -->
+            <div style="display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;">
+              <a href="modules.html" class="btn btn--outline" data-lang="en">&larr; All Modules</a>
+              <a href="modules.html" class="btn btn--outline" data-lang="no">&larr; Alle moduler</a>
+              <a href="modules.html" class="btn btn--outline" data-lang="ua">&larr; Всі модулі</a>
+              <span class="btn" style="opacity:0.4;cursor:not-allowed;background:var(--grey-dark);border-color:transparent;" data-lang="en">Module 02 &rarr;</span>
+              <span class="btn" style="opacity:0.4;cursor:not-allowed;background:var(--grey-dark);border-color:transparent;" data-lang="no">Modul 02 &rarr;</span>
+              <span class="btn" style="opacity:0.4;cursor:not-allowed;background:var(--grey-dark);border-color:transparent;" data-lang="ua">Модуль 02 &rarr;</span>
+            </div>
+          </article>
+
+          <!-- Sidebar -->
+          <aside class="module-sidebar">
+            <div class="sidebar-box">
+              <h4 data-lang="en">In This Module</h4>
+              <h4 data-lang="no">I Denne Modulen</h4>
+              <h4 data-lang="ua">У цьому модулі</h4>
+              <div class="progress-bar" style="margin-bottom:1rem;">
+                <div class="progress-fill" style="width:100%"></div>
+              </div>
+              <ul>
+                <li>
+                  <a href="#s1" data-lang="en">1. Introduction</a>
+                  <a href="#s1-no" data-lang="no">1. Introduksjon</a>
+                  <a href="#s1-ua" data-lang="ua">1. Вступ</a>
+                </li>
+                <li>
+                  <a href="#s2" data-lang="en">2. The 8 Core Components</a>
+                  <a href="#s2-no" data-lang="no">2. De 8 Kjernekomponentene</a>
+                  <a href="#s2-ua" data-lang="ua">2. 8 основних компонентів</a>
+                </li>
+                <li>
+                  <a href="#s3" data-lang="en">3. Spatial Orientation</a>
+                  <a href="#s3-no" data-lang="no">3. Romlig orientering</a>
+                  <a href="#s3-ua" data-lang="ua">3. Просторова орієнтація</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="sidebar-box">
+              <h4 data-lang="en">Key Terms</h4>
+              <h4 data-lang="no">Nøkkelbegreper</h4>
+              <h4 data-lang="ua">Ключові терміни</h4>
+              <ul>
+                <li><a href="glossary.html">PTO / Kraftuttak / ВВП</a></li>
+                <li><a href="glossary.html">Storz Coupling</a></li>
+                <li><a href="glossary.html">Centrifugal Pump</a></li>
+                <li><a href="glossary.html">Water Cannon</a></li>
+                <li><a href="glossary.html">Modular Tank</a></li>
+              </ul>
+            </div>
+
+            <div class="sidebar-box">
+              <h4 data-lang="en">All Modules</h4>
+              <h4 data-lang="no">Alle Moduler</h4>
+              <h4 data-lang="ua">Всі модулі</h4>
+              <ul>
+                <li>
+                  <a href="module-01.html" class="active" data-lang="en">01 — Rig Overview</a>
+                  <a href="module-01.html" class="active" data-lang="no">01 — Riggoversikt</a>
+                  <a href="module-01.html" class="active" data-lang="ua">01 — Огляд установки</a>
+                </li>
+                <li><a href="modules.html" style="opacity:0.45;">02 — Pre-Deployment</a></li>
+                <li><a href="modules.html" style="opacity:0.45;">03 — Water Cannon</a></li>
+                <li><a href="modules.html" style="opacity:0.45;">04 — Hydraulics</a></li>
+                <li><a href="modules.html" style="opacity:0.45;">05 — Deployment</a></li>
+                <li><a href="modules.html" style="opacity:0.45;">06 — Maintenance</a></li>
+              </ul>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="index.html" class="nav__logo">
+              <div class="nav__logo-mark">S</div>
+              <span class="nav__logo-text">Skjoldr</span>
+            </a>
+            <p>Norwegian civil defence training platform for the Skjoldr Modular Rig.</p>
+          </div>
+          <div class="footer__col">
+            <h5>Training</h5>
+            <ul>
+              <li><a href="modules.html">All Modules</a></li>
+              <li><a href="module-01.html">Module 01</a></li>
+              <li><a href="glossary.html">Glossary</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="about.html">About Skjoldr</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Languages</h5>
+            <ul>
+              <li><a href="#" data-set-lang="en">English</a></li>
+              <li><a href="#" data-set-lang="no">Norsk</a></li>
+              <li><a href="#" data-set-lang="ua">Українська</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>&copy; 2026 Skjoldr AS. All rights reserved.</span>
+          <span style="color:var(--yellow);font-weight:600;letter-spacing:0.06em;">WHEN MINUTES MATTER</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const LANG_KEY = 'skjoldr_lang';
+    let currentLang = localStorage.getItem(LANG_KEY) || 'en';
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem(LANG_KEY, lang);
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        const show = el.dataset.lang === lang;
+        el.classList.toggle('lang-visible', show);
+        const tag = el.tagName;
+        if (tag === 'A' || tag === 'BUTTON') el.style.display = show ? 'inline-flex' : 'none';
+        else if (['P','H1','H2','H3','H4','STRONG','SPAN','UL','OL'].includes(tag)) el.style.display = show ? '' : 'none';
+        else el.style.display = show ? '' : 'none';
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.setLang === lang);
+      });
+      document.documentElement.lang = lang === 'ua' ? 'uk' : lang;
+    }
+
+    document.querySelectorAll('[data-set-lang]').forEach(el => {
+      el.addEventListener('click', e => { e.preventDefault(); setLang(el.dataset.setLang); });
+    });
+
+    const toggle = document.querySelector('.nav__toggle');
+    const mobileNav = document.getElementById('mobileNav');
+    toggle.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    setLang(currentLang);
+  </script>
+</body>
+</html>
