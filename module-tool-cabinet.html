@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tool Cabinet — Skjoldr Modular Rig component." />
+  <title>Tool Cabinet — Skjoldr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo" aria-label="Skjoldr home">
+      <div class="nav__logo-mark">S</div>
+      <span class="nav__logo-text">Skjoldr</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="modules.html" class="active">Modules</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="firemap.html">Firemap</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__right" style="display:flex;align-items:center;gap:1rem;">
+      <div class="lang-switcher" role="group" aria-label="Language selector">
+        <button class="lang-btn active" data-set-lang="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" data-set-lang="no" aria-pressed="false">NO</button>
+        <button class="lang-btn" data-set-lang="ua" aria-pressed="false">UA</button>
+      </div>
+      <a href="contact.html" class="btn btn--primary btn--sm">Get a Quote</a>
+    </div>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileNav" aria-hidden="true">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="modules.html">Modules</a></li>
+    <li><a href="training.html">Training</a></li>
+    <li><a href="firemap.html">Firemap</a></li>
+    <li><a href="glossary.html">Glossary</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-set-lang="en">EN</button>
+    <button class="lang-btn" data-set-lang="no">NO</button>
+    <button class="lang-btn" data-set-lang="ua">UA</button>
+  </div>
+</div>
+
+<!-- Breadcrumb -->
+<div style="background:var(--grey-dark);padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+  <div class="container" style="font-size:0.82rem;color:var(--grey-mid);">
+    <a href="modules.html" style="color:var(--grey-mid);text-decoration:none;">← All Modules</a>
+    <span style="margin:0 0.5rem;">·</span>
+    <span>Tool Cabinet</span>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="mod-hero">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem;flex-wrap:wrap;">
+      <span style="font-size:0.75rem;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;">Module 10</span>
+      <span class="status-badge status-badge--delivery">Ready for Delivery</span>
+    </div>
+    <h1 data-lang="en">Tool Cabinet</h1>
+    <h1 data-lang="no" style="display:none;">Verktøyskap</h1>
+    <h1 data-lang="ua" style="display:none;">Інструментальна шафа</h1>
+    <p style="max-width:600px;opacity:0.8;margin-top:0.75rem;" data-lang="en">The Tool Cabinet is a lockable, weather-resistant steel cabinet pre-loaded with the tools and consumables required for field maintenance and emergency repair of the Skjoldr Modular Rig.</p>
+    <p style="max-width:600px;opacity:0.8;margin-top:0.75rem;display:none;" data-lang="no">Verktøyskapet er et låsbart, værsikkert stålskap forhåndslastet med verktøy og forbruksmateriell for feltvedlikehold og nødreparasjon av Skjoldr Modulær Rigg.</p>
+    <p style="max-width:600px;opacity:0.8;margin-top:0.75rem;display:none;" data-lang="ua">Інструментальна шафа — це сталева шафа з замком, попередньо завантажена інструментами та витратними матеріалами для технічного обслуговування та аварійного ремонту Skjoldr Модульної Установки.</p>
+  </div>
+</section>
+
+<!-- Detail -->
+<section class="section" style="padding-top:3rem;padding-bottom:4rem;">
+  <div class="container">
+    <div class="mod-detail">
+
+      <!-- Left: Overview + Specs -->
+      <div class="mod-col-left">
+        <h2 data-lang="en">Overview</h2>
+        <h2 data-lang="no" style="display:none;">Oversikt</h2>
+        <h2 data-lang="ua" style="display:none;">Огляд</h2>
+        <p data-lang="en">The Tool Cabinet is a lockable, weather-resistant steel cabinet pre-loaded with the tools and consumables required for field maintenance and emergency repair of the Skjoldr Modular Rig. Contents include hydraulic fittings, hose repair clamps, pump service kit, electrical connectors, first-aid kit, and operator documentation. The cabinet mounts directly to the rig platform using the standardised rail system and can be swapped out for a pre-loaded spare in under five minutes. It features a gas-strut lid for single-hand operation and a foam-padded interior with custom cutouts for each tool.</p>
+        <p data-lang="no" style="display:none;">Verktøyskapet er et låsbart, værsikkert stålskap forhåndslastet med verktøy og forbruksmateriell for feltvedlikehold og nødreparasjon av Skjoldr Modulær Rigg. Innholdet inkluderer hydrauliske beslag, slangeklemmer og operatørdokumentasjon.</p>
+        <p data-lang="ua" style="display:none;">Інструментальна шафа — це сталева шафа з замком, попередньо завантажена інструментами та витратними матеріалами для технічного обслуговування та аварійного ремонту Skjoldr Модульної Установки в польових умовах.</p>
+
+        <h3 style="margin-top:2rem;" data-lang="en">Technical Specifications</h3>
+        <h3 style="margin-top:2rem;display:none;" data-lang="no">Tekniske spesifikasjoner</h3>
+        <h3 style="margin-top:2rem;display:none;" data-lang="ua">Технічні характеристики</h3>
+        <ul class="mod-spec-list">
+          <li><span>Material</span><span>Powder-coated steel</span></li>
+          <li><span>Dimensions</span><span>600 × 400 × 300 mm</span></li>
+          <li><span>Locking</span><span>2-point key lock</span></li>
+          <li><span>Mount</span><span>ISO rail compatible</span></li>
+          <li><span>Weight (loaded)</span><span>22 kg</span></li>
+          <li><span>Contents</span><span>47 items</span></li>
+          <li><span>IP Rating</span><span>IP54</span></li>
+          <li><span>Lid</span><span>Gas-strut assisted</span></li>
+        </ul>
+      </div>
+
+      <!-- Centre: Module Info -->
+      <div class="mod-col-centre">
+        <div class="mod-info-panel">
+          <div class="mod-info-row">
+            <span>Status</span>
+            <span class="status-badge status-badge--delivery">Ready for Delivery</span>
+          </div>
+          <div class="mod-info-row">
+            <span>Module</span>
+            <span style="font-weight:600;color:var(--white);">10</span>
+          </div>
+          <div class="mod-info-row">
+            <span>Section</span>
+            <span style="color:var(--white);">Add-Ons · Ready for Delivery</span>
+          </div>
+          <div class="mod-info-row">
+            <span>Supplier</span>
+            <span style="color:var(--white);">Lista (Switzerland)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Key Specs Summary -->
+      <div class="mod-col-right">
+        <div class="mod-info-panel">
+          <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--grey-mid);margin-bottom:0.75rem;" data-lang="en">Key Specs</p>
+          <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--grey-mid);margin-bottom:0.75rem;display:none;" data-lang="no">Nøkkelspesifikasjoner</p>
+          <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--grey-mid);margin-bottom:0.75rem;display:none;" data-lang="ua">Ключові характеристики</p>
+          <div class="mod-info-row"><span>Material</span><span>Powder-coated steel</span></div>
+          <div class="mod-info-row"><span>Dimensions</span><span>600 × 400 × 300 mm</span></div>
+          <div class="mod-info-row"><span>Locking</span><span>2-point key lock</span></div>
+          <div class="mod-info-row"><span>IP Rating</span><span>IP54</span></div>
+        </div>
+
+        <div style="margin-top:1.5rem;">
+          <a href="contact.html" class="btn btn--primary" style="width:100%;text-align:center;display:block;" data-lang="en">Request Quote</a>
+          <a href="contact.html" class="btn btn--primary" style="width:100%;text-align:center;display:block;display:none;" data-lang="no">Be om tilbud</a>
+          <a href="contact.html" class="btn btn--primary" style="width:100%;text-align:center;display:block;display:none;" data-lang="ua">Запросити пропозицію</a>
+          <a href="modules.html" class="btn btn--outline" style="width:100%;text-align:center;display:block;margin-top:0.75rem;" data-lang="en">All Modules</a>
+          <a href="modules.html" class="btn btn--outline" style="width:100%;text-align:center;display:block;margin-top:0.75rem;display:none;" data-lang="no">Alle moduler</a>
+          <a href="modules.html" class="btn btn--outline" style="width:100%;text-align:center;display:block;margin-top:0.75rem;display:none;" data-lang="ua">Всі модулі</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="background:var(--green);padding:2.5rem 0;text-align:center;">
+  <div class="container">
+    <p style="color:var(--white);font-size:1.1rem;margin-bottom:1rem;" data-lang="en">Ready to configure? Contact us.</p>
+    <p style="color:var(--white);font-size:1.1rem;margin-bottom:1rem;display:none;" data-lang="no">Klar til å konfigurere? Kontakt oss.</p>
+    <p style="color:var(--white);font-size:1.1rem;margin-bottom:1rem;display:none;" data-lang="ua">Готові до налаштування? Зв'яжіться з нами.</p>
+    <a href="contact.html" class="btn btn--primary">Contact Us</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col footer__col--brand">
+        <a href="index.html" class="nav__logo" style="margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;">
+          <div class="nav__logo-mark">S</div>
+          <span class="nav__logo-text">Skjoldr</span>
+        </a>
+        <p>Modular fire and readiness systems for decentralised first-line response.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Modules</h5>
+        <ul>
+          <li><a href="modules.html">All Modules</a></li>
+          <li><a href="module-rig-platform.html">Rig Platform</a></li>
+          <li><a href="module-water-cannon.html">Water Cannon</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Training</h5>
+        <ul>
+          <li><a href="training.html">Training Modules</a></li>
+          <li><a href="module-01.html">Module 01</a></li>
+          <li><a href="glossary.html">Glossary</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Skjoldr</a></li>
+          <li><a href="firemap.html">Firemap</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2025 Skjoldr AS. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.style.display = el.dataset.lang === lang ? '' : 'none';
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.setLang === lang);
+      btn.setAttribute('aria-pressed', btn.dataset.setLang === lang);
+    });
+    localStorage.setItem('skjoldr_lang', lang);
+  }
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.setLang));
+  });
+  setLang(localStorage.getItem('skjoldr_lang') || 'en');
+  const toggle = document.querySelector('.nav__toggle');
+  const mobileNav = document.getElementById('mobileNav');
+  toggle.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    mobileNav.setAttribute('aria-hidden', !open);
+  });
+</script>
+</body>
+</html>

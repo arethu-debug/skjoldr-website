@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Wireless Remote Control — Skjoldr Modular Rig component." />
+  <title>Wireless Remote Control — Skjoldr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo" aria-label="Skjoldr home">
+      <div class="nav__logo-mark">S</div>
+      <span class="nav__logo-text">Skjoldr</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="modules.html" class="active">Modules</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="firemap.html">Firemap</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav__right" style="display:flex;align-items:center;gap:1rem;">
+      <div class="lang-switcher" role="group" aria-label="Language selector">
+        <button class="lang-btn active" data-set-lang="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" data-set-lang="no" aria-pressed="false">NO</button>
+        <button class="lang-btn" data-set-lang="ua" aria-pressed="false">UA</button>
+      </div>
+      <a href="contact.html" class="btn btn--primary btn--sm">Get a Quote</a>
+    </div>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav__mobile" id="mobileNav" aria-hidden="true">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="modules.html">Modules</a></li>
+    <li><a href="training.html">Training</a></li>
+    <li><a href="firemap.html">Firemap</a></li>
+    <li><a href="glossary.html">Glossary</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-set-lang="en">EN</button>
+    <button class="lang-btn" data-set-lang="no">NO</button>
+    <button class="lang-btn" data-set-lang="ua">UA</button>
+  </div>
+</div>
+
+<!-- Breadcrumb -->
+<div style="background:var(--grey-dark);padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.05);">
+  <div class="container" style="font-size:0.82rem;color:var(--grey-mid);">
+    <a href="modules.html" style="color:var(--grey-mid);text-decoration:none;">← All Modules</a>
+    <span style="margin:0 0.5rem;">·</span>
+    <span>Wireless Remote Control</span>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="mod-hero">
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:0.75rem;flex-wrap:wrap;">
+      <span style="font-size:0.75rem;font-weight:700;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.1em;">Module 03</span>
+      <span class="status-badge status-badge--prod">Ready for Production</span>
+    </div>
+    <h1 data-lang="en">Wireless Remote Control</h1>
+    <h1 data-lang="no" style="display:none;">Trådløs Fjernkontroll</h1>
+    <h1 data-lang="ua" style="display:none;">Бездротове дистанційне керування</h1>
+    <p style="max-width:600px;opacity:0.8;margin-top:0.75rem;" data-lang="en">The Wireless Remote Control system enables a single operator to control the entire Skjoldr Modular Rig from a safe distance of up to 300 metres.</p>
+    <p style="max-width:600px;opacity:0.8;margin-top:0.75rem;display:none;" data-lang="no">Det trådløse fjernkontrollsystemet lar en enkelt operatør styre hele Skjoldr Modulær Rigg fra en trygg avstand på opptil 300 meter.</p>
+    <p style="max-width:600px;opacity:0.8;margin-top:0.75rem;display:none;" data-lang="ua">Система бездротового дистанційного керування дозволяє одному оператору керувати всією Skjoldr Модульною Установкою з безпечної відстані до 300 метрів.</p>
+  </div>
+</section>
+
+<!-- Detail -->
+<section class="section" style="padding-top:3rem;padding-bottom:4rem;">
+  <div class="container">
+    <div class="mod-detail">
+
+      <!-- Left: Overview + Specs -->
+      <div class="mod-col-left">
+        <h2 data-lang="en">Overview</h2>
+        <h2 data-lang="no" style="display:none;">Oversikt</h2>
+        <h2 data-lang="ua" style="display:none;">Огляд</h2>
+        <p data-lang="en">The Wireless Remote Control system enables a single operator to control the entire Skjoldr Modular Rig from a safe distance of up to 300 metres. Functions include full cannon pan/tilt control, flow rate adjustment, pump start/stop, foam injection ratio, and emergency shutoff. The handheld unit is IP67 waterproof, glove-operable, and features a dead-man switch for automatic shutoff if the operator drops or releases the controller. The system uses frequency-hopping spread spectrum (FHSS) for reliable interference-free operation in congested RF environments.</p>
+        <p data-lang="no" style="display:none;">Det trådløse fjernkontrollsystemet lar en enkelt operatør styre hele Skjoldr Modulær Rigg fra en trygg avstand på opptil 300 meter. Funksjoner inkluderer full kanonkontroll, strømningshastighetsregulering og nødstopps.</p>
+        <p data-lang="ua" style="display:none;">Система бездротового дистанційного керування дозволяє одному оператору керувати всією Skjoldr Модульною Установкою з безпечної відстані до 300 метрів.</p>
+
+        <h3 style="margin-top:2rem;" data-lang="en">Technical Specifications</h3>
+        <h3 style="margin-top:2rem;display:none;" data-lang="no">Tekniske spesifikasjoner</h3>
+        <h3 style="margin-top:2rem;display:none;" data-lang="ua">Технічні характеристики</h3>
+        <ul class="mod-spec-list">
+          <li><span>Range</span><span>300 m line-of-sight</span></li>
+          <li><span>Protocol</span><span>FHSS 433 MHz</span></li>
+          <li><span>IP Rating</span><span>IP67</span></li>
+          <li><span>Battery Life</span><span>14 hours</span></li>
+          <li><span>Dead-Man Switch</span><span>Yes</span></li>
+          <li><span>Controls</span><span>Cannon pan/tilt, pump, flow, foam</span></li>
+          <li><span>Weight</span><span>0.9 kg</span></li>
+          <li><span>Charging</span><span>USB-C</span></li>
+        </ul>
+      </div>
+
+      <!-- Centre: Module Info -->
+      <div class="mod-col-centre">
+        <div class="mod-info-panel">
+          <div class="mod-info-row">
+            <span>Status</span>
+            <span class="status-badge status-badge--prod">Ready for Production</span>
+          </div>
+          <div class="mod-info-row">
+            <span>Module</span>
+            <span style="font-weight:600;color:var(--white);">03</span>
+          </div>
+          <div class="mod-info-row">
+            <span>Section</span>
+            <span style="color:var(--white);">Standard Configuration</span>
+          </div>
+          <div class="mod-info-row">
+            <span>Supplier</span>
+            <span style="color:var(--white);">Hetronic (Germany)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Key Specs Summary -->
+      <div class="mod-col-right">
+        <div class="mod-info-panel">
+          <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--grey-mid);margin-bottom:0.75rem;" data-lang="en">Key Specs</p>
+          <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--grey-mid);margin-bottom:0.75rem;display:none;" data-lang="no">Nøkkelspesifikasjoner</p>
+          <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--grey-mid);margin-bottom:0.75rem;display:none;" data-lang="ua">Ключові характеристики</p>
+          <div class="mod-info-row"><span>Range</span><span>300 m</span></div>
+          <div class="mod-info-row"><span>Protocol</span><span>FHSS 433 MHz</span></div>
+          <div class="mod-info-row"><span>IP Rating</span><span>IP67</span></div>
+          <div class="mod-info-row"><span>Battery Life</span><span>14 hours</span></div>
+        </div>
+
+        <div style="margin-top:1.5rem;">
+          <a href="contact.html" class="btn btn--primary" style="width:100%;text-align:center;display:block;" data-lang="en">Request Quote</a>
+          <a href="contact.html" class="btn btn--primary" style="width:100%;text-align:center;display:block;display:none;" data-lang="no">Be om tilbud</a>
+          <a href="contact.html" class="btn btn--primary" style="width:100%;text-align:center;display:block;display:none;" data-lang="ua">Запросити пропозицію</a>
+          <a href="modules.html" class="btn btn--outline" style="width:100%;text-align:center;display:block;margin-top:0.75rem;" data-lang="en">All Modules</a>
+          <a href="modules.html" class="btn btn--outline" style="width:100%;text-align:center;display:block;margin-top:0.75rem;display:none;" data-lang="no">Alle moduler</a>
+          <a href="modules.html" class="btn btn--outline" style="width:100%;text-align:center;display:block;margin-top:0.75rem;display:none;" data-lang="ua">Всі модулі</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="background:var(--green);padding:2.5rem 0;text-align:center;">
+  <div class="container">
+    <p style="color:var(--white);font-size:1.1rem;margin-bottom:1rem;" data-lang="en">Ready to configure? Contact us.</p>
+    <p style="color:var(--white);font-size:1.1rem;margin-bottom:1rem;display:none;" data-lang="no">Klar til å konfigurere? Kontakt oss.</p>
+    <p style="color:var(--white);font-size:1.1rem;margin-bottom:1rem;display:none;" data-lang="ua">Готові до налаштування? Зв'яжіться з нами.</p>
+    <a href="contact.html" class="btn btn--primary">Contact Us</a>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__col footer__col--brand">
+        <a href="index.html" class="nav__logo" style="margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;">
+          <div class="nav__logo-mark">S</div>
+          <span class="nav__logo-text">Skjoldr</span>
+        </a>
+        <p>Modular fire and readiness systems for decentralised first-line response.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Modules</h5>
+        <ul>
+          <li><a href="modules.html">All Modules</a></li>
+          <li><a href="module-rig-platform.html">Rig Platform</a></li>
+          <li><a href="module-water-cannon.html">Water Cannon</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Training</h5>
+        <ul>
+          <li><a href="training.html">Training Modules</a></li>
+          <li><a href="module-01.html">Module 01</a></li>
+          <li><a href="glossary.html">Glossary</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Skjoldr</a></li>
+          <li><a href="firemap.html">Firemap</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2025 Skjoldr AS. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.style.display = el.dataset.lang === lang ? '' : 'none';
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.setLang === lang);
+      btn.setAttribute('aria-pressed', btn.dataset.setLang === lang);
+    });
+    localStorage.setItem('skjoldr_lang', lang);
+  }
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.setLang));
+  });
+  setLang(localStorage.getItem('skjoldr_lang') || 'en');
+  const toggle = document.querySelector('.nav__toggle');
+  const mobileNav = document.getElementById('mobileNav');
+  toggle.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    mobileNav.setAttribute('aria-hidden', !open);
+  });
+</script>
+</body>
+</html>

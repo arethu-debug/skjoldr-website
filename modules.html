@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Skjoldr training module library — all operator training modules for the Modular Rig." />
-  <title>Training Modules — Skjoldr</title>
+  <meta name="description" content="Skjoldr Modular Rig — full product module catalogue. Standard configuration, add-ons ready for delivery, and modules under development." />
+  <title>Product Modules — Skjoldr</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -12,37 +12,45 @@
 </head>
 <body>
 
+  <!-- ═══════════════════════════════════════ NAVIGATION -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
     <div class="nav__inner">
       <a href="index.html" class="nav__logo" aria-label="Skjoldr home">
         <div class="nav__logo-mark">S</div>
         <span class="nav__logo-text">Skjoldr</span>
       </a>
+
       <ul class="nav__links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="modules.html" class="active">Training</a></li>
+        <li><a href="modules.html" class="active">Modules</a></li>
+        <li><a href="training.html">Training</a></li>
         <li><a href="firemap.html">Firemap</a></li>
         <li><a href="glossary.html">Glossary</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-      <div style="display:flex;align-items:center;gap:1rem;">
+
+      <div class="nav__right" style="display:flex;align-items:center;gap:1rem;">
         <div class="lang-switcher" role="group" aria-label="Language selector">
-          <button class="lang-btn active" data-set-lang="en">EN</button>
-          <button class="lang-btn" data-set-lang="no">NO</button>
-          <button class="lang-btn" data-set-lang="ua">UA</button>
+          <button class="lang-btn active" data-set-lang="en" aria-pressed="true">EN</button>
+          <button class="lang-btn" data-set-lang="no" aria-pressed="false">NO</button>
+          <button class="lang-btn" data-set-lang="ua" aria-pressed="false">UA</button>
         </div>
+        <a href="contact.html" class="btn btn--primary btn--sm">Get a Quote</a>
       </div>
+
       <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
+  <!-- Mobile nav -->
   <div class="nav__mobile" id="mobileNav" aria-hidden="true">
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="modules.html">Training</a></li>
+      <li><a href="modules.html">Modules</a></li>
+      <li><a href="training.html">Training</a></li>
       <li><a href="firemap.html">Firemap</a></li>
       <li><a href="glossary.html">Glossary</a></li>
       <li><a href="about.html">About</a></li>
@@ -55,330 +63,434 @@
     </div>
   </div>
 
-  <div class="page-content">
+  <!-- ═══════════════════════════════════════ HERO -->
+  <section class="mod-hero">
+    <div class="container">
+      <span class="label" data-lang="en">Skjoldr Modular Rig</span>
+      <span class="label" data-lang="no" style="display:none;">Skjoldr Modulær Rigg</span>
+      <span class="label" data-lang="ua" style="display:none;">Skjoldr Модульна Установка</span>
 
-    <!-- Page header -->
-    <div style="background:var(--green);padding:4rem 0 3rem;border-bottom:1px solid rgba(232,245,90,0.12);">
-      <div class="container">
-        <span class="label" data-lang="en">Training Programme</span>
-        <span class="label" data-lang="no">Opplæringsprogram</span>
-        <span class="label" data-lang="ua">Навчальна програма</span>
+      <h1 data-lang="en" style="margin-top:0.5rem;">Product Modules</h1>
+      <h1 data-lang="no" style="display:none;margin-top:0.5rem;">Produktmoduler</h1>
+      <h1 data-lang="ua" style="display:none;margin-top:0.5rem;">Модулі продукту</h1>
 
-        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:0.75rem;" data-lang="en">Training Module Library</h1>
-        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:0.75rem;" data-lang="no">Bibliotek med Opplæringsmoduler</h1>
-        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:0.75rem;" data-lang="ua">Бібліотека навчальних модулів</h1>
+      <p style="max-width:600px;opacity:0.8;margin-top:1rem;" data-lang="en">The Skjoldr Modular Rig is built around a standard 9-module configuration with optional add-ons for specialised operations. Every module is engineered for rapid field deployment.</p>
+      <p style="max-width:600px;opacity:0.8;margin-top:1rem;display:none;" data-lang="no">Skjoldr Modulær Rigg er bygget rundt en standard 9-modulkonfigurasjon med valgfrie tillegg for spesialiserte operasjoner.</p>
+      <p style="max-width:600px;opacity:0.8;margin-top:1rem;display:none;" data-lang="ua">Skjoldr Модульна Установка побудована навколо стандартної 9-модульної конфігурації з додатковими опціями для спеціалізованих операцій.</p>
+    </div>
+  </section>
 
-        <p style="color:rgba(232,245,255,0.75);max-width:56ch;font-size:1.05rem;" data-lang="en">
-          Complete all modules to achieve full operator certification on the Skjoldr Modular Rig.
-          Work at your own pace — all content is available 24/7.
-        </p>
-        <p style="color:rgba(232,245,255,0.75);max-width:56ch;font-size:1.05rem;" data-lang="no">
-          Fullfør alle moduler for å oppnå full operatørsertifisering på Skjoldr Modulriggen.
-          Arbeid i ditt eget tempo — alt innhold er tilgjengelig døgnet rundt.
-        </p>
-        <p style="color:rgba(232,245,255,0.75);max-width:56ch;font-size:1.05rem;" data-lang="ua">
-          Завершіть усі модулі для отримання повної сертифікації оператора Skjoldr Modular Rig.
-          Навчайтеся у власному темпі — весь вміст доступний цілодобово.
-        </p>
+  <!-- ═══════════════════════════════════════ SECTION 1: STANDARD CONFIGURATION -->
+  <section class="section" style="padding-top:3rem;">
+    <div class="container">
+      <div style="margin-bottom:2rem;">
+        <span class="status-badge status-badge--prod" data-lang="en">Standard Configuration</span>
+        <span class="status-badge status-badge--prod" data-lang="no" style="display:none;">Standardkonfigurasjon</span>
+        <span class="status-badge status-badge--prod" data-lang="ua" style="display:none;">Стандартна конфігурація</span>
+        <h2 style="margin-top:1rem;" data-lang="en">Modules 1–9</h2>
+        <h2 style="margin-top:1rem;display:none;" data-lang="no">Moduler 1–9</h2>
+        <h2 style="margin-top:1rem;display:none;" data-lang="ua">Модулі 1–9</h2>
+        <p class="text-muted" data-lang="en">Included in every Skjoldr Modular Rig. Ready for production.</p>
+        <p class="text-muted" style="display:none;" data-lang="no">Inkludert i alle Skjoldr Modulær Rigg. Klar for produksjon.</p>
+        <p class="text-muted" style="display:none;" data-lang="ua">Включено до кожної Skjoldr Модульної Установки. Готово до виробництва.</p>
+      </div>
 
-        <!-- Progress bar -->
-        <div style="margin-top:2rem;max-width:360px;">
-          <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;">
-            <span style="font-size:0.8rem;color:rgba(232,245,90,0.7);text-transform:uppercase;letter-spacing:0.06em;" data-lang="en">Overall Progress</span>
-            <span style="font-size:0.8rem;color:rgba(232,245,90,0.7);text-transform:uppercase;letter-spacing:0.06em;" data-lang="no">Samlet fremgang</span>
-            <span style="font-size:0.8rem;color:rgba(232,245,90,0.7);text-transform:uppercase;letter-spacing:0.06em;" data-lang="ua">Загальний прогрес</span>
-            <span style="font-size:0.8rem;color:var(--yellow);font-weight:700;">1 / 6</span>
+      <div class="prod-card-grid">
+
+        <!-- 1. Rig Platform -->
+        <a href="module-rig-platform.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">01</span>
+            <span class="status-badge status-badge--prod">Ready</span>
           </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width:16.6%"></div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">Rig Platform</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">Riggplattform</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Платформа установки</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">Flatbed trailer or skid base. Transport-agnostic: truck, helicopter, ship, or ATV.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">Tilhenger eller slede. Transport-agnostisk: lastebil, helikopter, skip eller ATV.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">Причіп або салазки. Незалежний від транспорту: вантажівка, гелікоптер, судно або ATV.</p>
+        </a>
+
+        <!-- 2. Water Cannon -->
+        <a href="module-water-cannon.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">02</span>
+            <span class="status-badge status-badge--prod">Ready</span>
           </div>
-        </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">Water Cannon</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">Vannkanon</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Водяна гармата</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">Hydraulic monitor with 360° rotation and remote adjustment. Up to 2 000 l/min.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">Hydraulisk monitor med 360° rotasjon og fjerninnstilling. Opptil 2 000 l/min.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">Гідравлічний монітор з обертанням 360° та дистанційним регулюванням. До 2 000 л/хв.</p>
+        </a>
+
+        <!-- 3. Wireless Remote -->
+        <a href="module-wireless-remote.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">03</span>
+            <span class="status-badge status-badge--prod">Ready</span>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">Wireless Remote Control</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">Trådløs Fjernkontroll</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Бездротове дистанційне керування</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">Full rig operation from safe distance. Controls cannon pan/tilt, pump, and flow.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">Full riggoperasjon fra sikker avstand. Styrer kanon, pumpe og gjennomstrømning.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">Повне керування установкою з безпечної відстані. Керує гарматою, насосом і потоком.</p>
+        </a>
+
+        <!-- 4. IBC Tanks -->
+        <a href="module-ibc-tanks.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">04</span>
+            <span class="status-badge status-badge--prod">Ready</span>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">IBC Tanks</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">IBC-tanker</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Контейнери IBC</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">2 × 1 000 L intermediate bulk containers. Foam concentrate or plain water supply.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">2 × 1 000 L mellomstore bulkcontainere. Skumkonsentrat eller vanntilførsel.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">2 × 1 000 Л проміжні контейнери. Концентрат піни або звичайна вода.</p>
+        </a>
+
+        <!-- 5. Hydraulic Connector -->
+        <a href="module-hydraulic-connector.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">05</span>
+            <span class="status-badge status-badge--prod">Ready</span>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">Hydraulic Connector</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">Hydraulisk Kobling</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Гідравлічне з'єднання</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">Single-point power and fluid connection between rig and carrier vehicle.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">Enkeltpunkt kraft- og væskeforbindelse mellom rigg og kjøretøy.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">Одноточкове з'єднання живлення та рідини між установкою та транспортним засобом.</p>
+        </a>
+
+        <!-- 6. Hose Reel -->
+        <a href="module-hose-reel.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">06</span>
+            <span class="status-badge status-badge--prod">Ready</span>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">Hose Reel</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">Slangekasse</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Котушка шланга</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">60 m of 25 mm high-pressure hose. Reaches inaccessible areas beyond the rig's direct throw.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">60 m med 25 mm høytrykkslange. Når utilgjengelige områder utover riggkastets rekkevidde.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">60 м шланга 25 мм високого тиску. Досягає недоступних зон поза прямим кидком установки.</p>
+        </a>
+
+        <!-- 7. Main Pump -->
+        <a href="module-main-pump.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">07</span>
+            <span class="status-badge status-badge--prod">Ready</span>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">Main Pump</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">Hovedpumpe</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Головний насос</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">High-pressure centrifugal pump. Powers both the cannon and hose reel simultaneously.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">Høytrykksentrifugalpumpe. Driver både kanon og slangekasse samtidig.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">Відцентровий насос високого тиску. Живить як гармату, так і котушку шланга одночасно.</p>
+        </a>
+
+        <!-- 8. External Intake -->
+        <a href="module-external-intake.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">08</span>
+            <span class="status-badge status-badge--prod">Ready</span>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">External Water Intake</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">Ekstern Vanninntak</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Зовнішній водозабір</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">Connects rig directly to hydrant, open water, or tanker. Extends operational endurance.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">Kobler riggen direkte til hydrant, åpent vann eller tanker. Forlenger operasjonell utholdenhet.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">З'єднує установку безпосередньо з гідрантом, відкритою водою або цистерною.</p>
+        </a>
+
+        <!-- 9. Fire Hose Nozzle -->
+        <a href="module-fire-hose-nozzle.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">09</span>
+            <span class="status-badge status-badge--prod">Ready</span>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">Fire Hose &amp; Nozzle Kit</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">Brannslange- og Dysesett</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Комплект пожежного шланга та насадки</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">Manual suppression kit for use by trained operators in close-range firefighting.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">Manuelt slokningssett for trente operatører i nærkampslokking.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">Ручний комплект для гасіння, що використовується навченими операторами.</p>
+        </a>
+
       </div>
     </div>
+  </section>
 
-    <section class="section section--dark">
-      <div class="container">
+  <!-- ═══════════════════════════════════════ SECTION 2: ADD-ONS READY FOR DELIVERY -->
+  <section class="section" style="padding-top:2rem;">
+    <div class="container">
+      <div style="margin-bottom:2rem;">
+        <span class="status-badge status-badge--delivery" data-lang="en">Add-Ons · Ready for Delivery</span>
+        <span class="status-badge status-badge--delivery" data-lang="no" style="display:none;">Tillegg · Klar for levering</span>
+        <span class="status-badge status-badge--delivery" data-lang="ua" style="display:none;">Доповнення · Готово до доставки</span>
+        <h2 style="margin-top:1rem;" data-lang="en">Optional Modules</h2>
+        <h2 style="margin-top:1rem;display:none;" data-lang="no">Valgfrie moduler</h2>
+        <h2 style="margin-top:1rem;display:none;" data-lang="ua">Необов'язкові модулі</h2>
+        <p class="text-muted" data-lang="en">Ordered separately and field-fitted to the standard rig. All production-ready.</p>
+        <p class="text-muted" style="display:none;" data-lang="no">Bestilles separat og monteres i felt på standardriggen. Alle produksjonsklare.</p>
+        <p class="text-muted" style="display:none;" data-lang="ua">Замовляються окремо та встановлюються в полі на стандартну установку.</p>
+      </div>
 
-        <!-- Filter row -->
-        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;align-items:center;justify-content:space-between;">
-          <div class="glossary-filter" style="margin-bottom:0;">
-            <button class="filter-btn active" data-filter="all" data-lang="en">All</button>
-            <button class="filter-btn active" data-filter="all" data-lang="no" style="display:none;">Alle</button>
-            <button class="filter-btn active" data-filter="all" data-lang="ua" style="display:none;">Всі</button>
-            <button class="filter-btn" data-filter="available" data-lang="en">Available</button>
-            <button class="filter-btn" data-filter="available" data-lang="no" style="display:none;">Tilgjengelig</button>
-            <button class="filter-btn" data-filter="available" data-lang="ua" style="display:none;">Доступні</button>
-            <button class="filter-btn" data-filter="foundational">
-              <span data-lang="en">Foundational</span>
-              <span data-lang="no">Grunnleggende</span>
-              <span data-lang="ua">Базові</span>
-            </button>
-            <button class="filter-btn" data-filter="advanced">
-              <span data-lang="en">Advanced</span>
-              <span data-lang="no">Avansert</span>
-              <span data-lang="ua">Розширені</span>
-            </button>
+      <div class="prod-card-grid">
+
+        <!-- 10. Tool Cabinet -->
+        <a href="module-tool-cabinet.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">10</span>
+            <span class="status-badge status-badge--delivery">Ready</span>
           </div>
-        </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">Tool Cabinet</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">Verktøyskap</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Інструментальна шафа</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">Lockable steel cabinet with pre-loaded field maintenance tools and consumables.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">Låsbart stålskap med forhåndslastede feltvedlikeholdsverktøy og forbruksmateriell.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">Сталева шафа з замком із попередньо завантаженими інструментами та витратними матеріалами.</p>
+        </a>
 
-        <!-- Module list — full width cards -->
-        <div style="display:flex;flex-direction:column;gap:1.25rem;">
-
-          <!-- Module 01 — Available -->
-          <div class="module-card" style="display:grid;grid-template-columns:200px 1fr auto;overflow:visible;" data-status="available" data-level="foundational">
-            <div class="module-card__header" style="border-radius:var(--radius-lg) 0 0 var(--radius-lg);flex-direction:column;align-items:flex-start;justify-content:center;gap:0.75rem;min-height:130px;">
-              <span class="module-card__num">Module 01</span>
-              <span class="module-card__status module-card__status--available" data-lang="en">Available</span>
-              <span class="module-card__status module-card__status--available" data-lang="no">Tilgjengelig</span>
-              <span class="module-card__status module-card__status--available" data-lang="ua">Доступний</span>
-            </div>
-            <div class="module-card__body" style="border-radius:0;border-left:none;">
-              <h3 data-lang="en">Rig Overview &amp; Components</h3>
-              <h3 data-lang="no">Riggoversikt og Komponenter</h3>
-              <h3 data-lang="ua">Огляд установки та компоненти</h3>
-              <p data-lang="en">Identify all 8 major components of the Modular Rig, understand their purpose and interrelation, and learn safe spatial orientation during active operations.</p>
-              <p data-lang="no">Identifiser alle 8 hovedelementer i Modulriggen, forstå formålet og sammenhengen mellom dem, og lær sikker romlig orientering under aktive operasjoner.</p>
-              <p data-lang="ua">Визначте всі 8 основних компонентів модульної установки, зрозумійте їх призначення та взаємозв'язок, вивчіть безпечне просторове орієнтування під час активних операцій.</p>
-              <div class="module-card__meta" style="margin-bottom:0;">
-                <span>&#9200; 45 min</span>
-                <span>&#128196; 3 sections</span>
-                <span style="color:var(--yellow);">&#11088; Foundational</span>
-              </div>
-            </div>
-            <div style="padding:1.75rem;display:flex;align-items:center;">
-              <a href="module-01.html" class="btn btn--primary" data-lang="en">Open &rarr;</a>
-              <a href="module-01.html" class="btn btn--primary" data-lang="no">Åpne &rarr;</a>
-              <a href="module-01.html" class="btn btn--primary" data-lang="ua">Відкрити &rarr;</a>
-            </div>
+        <!-- 11. Helicopter Tank -->
+        <a href="module-helicopter-tank.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">11</span>
+            <span class="status-badge status-badge--delivery">Ready</span>
           </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">Helicopter Water Tank</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">Helikopter-vanntank</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Вертолітна водяна цистерна</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">Collapsible 2 000 L bladder tank for aerial fill operations. Deploys in under 5 minutes.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">Sammenleggbar 2 000 L blæretank for luftfylling. Settes opp på under 5 minutter.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">Складана 2 000 Л резервуарна ємність для повітряного заповнення. Розгортається менш ніж за 5 хвилин.</p>
+        </a>
 
-          <!-- Modules 02–06 — Coming Soon -->
-          <div class="module-card" style="display:grid;grid-template-columns:200px 1fr auto;overflow:visible;opacity:0.7;" data-status="soon" data-level="intermediate">
-            <div class="module-card__header" style="border-radius:var(--radius-lg) 0 0 var(--radius-lg);flex-direction:column;align-items:flex-start;justify-content:center;gap:0.75rem;min-height:130px;">
-              <span class="module-card__num">Module 02</span>
-              <span class="module-card__status module-card__status--soon" data-lang="en">Coming Soon</span>
-              <span class="module-card__status module-card__status--soon" data-lang="no">Kommer snart</span>
-              <span class="module-card__status module-card__status--soon" data-lang="ua">Незабаром</span>
-            </div>
-            <div class="module-card__body" style="border-radius:0;border-left:none;">
-              <h3 data-lang="en">Pre-Deployment Checks</h3>
-              <h3 data-lang="no">Kontroll Før Utsendelse</h3>
-              <h3 data-lang="ua">Перевірки перед розгортанням</h3>
-              <p data-lang="en">Systematic inspection routines, fault identification, and readiness verification protocols to ensure operational safety before every deployment.</p>
-              <p data-lang="no">Systematiske inspeksjonsrutiner, feilidentifisering og beredskapsverifiseringsprotokoller.</p>
-              <p data-lang="ua">Систематичні процедури перевірки, виявлення несправностей та верифікація готовності до кожного розгортання.</p>
-              <div class="module-card__meta" style="margin-bottom:0;">
-                <span>&#9200; 60 min</span>
-                <span>&#128196; 4 sections</span>
-                <span>&#127997; Intermediate</span>
-              </div>
-            </div>
-            <div style="padding:1.75rem;display:flex;align-items:center;">
-              <span class="card__tag card__tag--info" data-lang="en">Locked</span>
-              <span class="card__tag card__tag--info" data-lang="no">Låst</span>
-              <span class="card__tag card__tag--info" data-lang="ua">Заблоковано</span>
-            </div>
+        <!-- 12. Drinking Water Tank -->
+        <a href="module-drinking-water-tank.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">12</span>
+            <span class="status-badge status-badge--delivery">Ready</span>
           </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">Drinking Water Tank</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">Drikkevannstank</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Бак для питної води</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">Food-grade 500 L IBC for field water supply. Supports humanitarian and dual-use operations.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">Næringsmiddelgodkjent 500 L IBC for feltvanntilførsel. Støtter humanitære operasjoner.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">Харчовий 500 Л контейнер для польового водопостачання. Підтримує гуманітарні операції.</p>
+        </a>
 
-          <div class="module-card" style="display:grid;grid-template-columns:200px 1fr auto;overflow:visible;opacity:0.7;" data-status="soon" data-level="intermediate">
-            <div class="module-card__header" style="border-radius:var(--radius-lg) 0 0 var(--radius-lg);flex-direction:column;align-items:flex-start;justify-content:center;gap:0.75rem;min-height:130px;">
-              <span class="module-card__num">Module 03</span>
-              <span class="module-card__status module-card__status--soon" data-lang="en">Coming Soon</span>
-              <span class="module-card__status module-card__status--soon" data-lang="no">Kommer snart</span>
-              <span class="module-card__status module-card__status--soon" data-lang="ua">Незабаром</span>
-            </div>
-            <div class="module-card__body" style="border-radius:0;border-left:none;">
-              <h3 data-lang="en">Water Cannon Operation</h3>
-              <h3 data-lang="no">Betjening av Vannkanon</h3>
-              <h3 data-lang="ua">Управління водяною гарматою</h3>
-              <p data-lang="en">Remote control procedures, trajectory calculation, flow rate management, and suppression pattern strategies for wildfire and structural scenarios.</p>
-              <p data-lang="no">Fjernkontrollprosedyrer, baneberegning og slukkingsmønsterstrategier for skogs- og strukturbranner.</p>
-              <p data-lang="ua">Дистанційне управління, розрахунок траєкторії, управління витратою та стратегії гасіння для пожеж.</p>
-              <div class="module-card__meta" style="margin-bottom:0;">
-                <span>&#9200; 75 min</span>
-                <span>&#128196; 5 sections</span>
-                <span>&#127997; Intermediate</span>
-              </div>
-            </div>
-            <div style="padding:1.75rem;display:flex;align-items:center;">
-              <span class="card__tag card__tag--info" data-lang="en">Locked</span>
-              <span class="card__tag card__tag--info" data-lang="no">Låst</span>
-              <span class="card__tag card__tag--info" data-lang="ua">Заблоковано</span>
-            </div>
+        <!-- 13. Electricity Generator -->
+        <a href="module-electricity-generator.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">13</span>
+            <span class="status-badge status-badge--delivery">Ready</span>
           </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">Electricity Generator</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">Strømaggregat</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Електрогенератор</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">5 kVA diesel generator for off-grid power. Runs lighting, communications, and charging.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">5 kVA dieselaggregat for nettfri strøm. Driver lys, kommunikasjon og lading.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">5 кВА дизельний генератор для автономного живлення. Забезпечує освітлення та зв'язок.</p>
+        </a>
 
-          <div class="module-card" style="display:grid;grid-template-columns:200px 1fr auto;overflow:visible;opacity:0.7;" data-status="soon" data-level="advanced">
-            <div class="module-card__header" style="border-radius:var(--radius-lg) 0 0 var(--radius-lg);flex-direction:column;align-items:flex-start;justify-content:center;gap:0.75rem;min-height:130px;">
-              <span class="module-card__num">Module 04</span>
-              <span class="module-card__status module-card__status--soon" data-lang="en">Coming Soon</span>
-              <span class="module-card__status module-card__status--soon" data-lang="no">Kommer snart</span>
-              <span class="module-card__status module-card__status--soon" data-lang="ua">Незабаром</span>
-            </div>
-            <div class="module-card__body" style="border-radius:0;border-left:none;">
-              <h3 data-lang="en">Hydraulic Systems</h3>
-              <h3 data-lang="no">Hydrauliske Systemer</h3>
-              <h3 data-lang="ua">Гідравлічні системи</h3>
-              <p data-lang="en">Deep-dive into pump operation, PTO integration with the mother vehicle, pressure and flow management, and systematic fault response procedures.</p>
-              <p data-lang="no">Inngående studie av pumpeoperasjon, PTO-integrering med moderkjøretøy og trykkstyring.</p>
-              <p data-lang="ua">Детальний розгляд роботи насоса, інтеграції ВВП з базовим транспортним засобом, управління тиском.</p>
-              <div class="module-card__meta" style="margin-bottom:0;">
-                <span>&#9200; 90 min</span>
-                <span>&#128196; 6 sections</span>
-                <span style="color:#ff8c42;">&#128308; Advanced</span>
-              </div>
-            </div>
-            <div style="padding:1.75rem;display:flex;align-items:center;">
-              <span class="card__tag card__tag--info" data-lang="en">Locked</span>
-              <span class="card__tag card__tag--info" data-lang="no">Låst</span>
-              <span class="card__tag card__tag--info" data-lang="ua">Заблоковано</span>
-            </div>
+        <!-- 16. External Pump -->
+        <a href="module-external-pump.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">16</span>
+            <span class="status-badge status-badge--delivery">Ready</span>
           </div>
-
-          <div class="module-card" style="display:grid;grid-template-columns:200px 1fr auto;overflow:visible;opacity:0.7;" data-status="soon" data-level="advanced">
-            <div class="module-card__header" style="border-radius:var(--radius-lg) 0 0 var(--radius-lg);flex-direction:column;align-items:flex-start;justify-content:center;gap:0.75rem;min-height:130px;">
-              <span class="module-card__num">Module 05</span>
-              <span class="module-card__status module-card__status--soon" data-lang="en">Coming Soon</span>
-              <span class="module-card__status module-card__status--soon" data-lang="no">Kommer snart</span>
-              <span class="module-card__status module-card__status--soon" data-lang="ua">Незабаром</span>
-            </div>
-            <div class="module-card__body" style="border-radius:0;border-left:none;">
-              <h3 data-lang="en">Field Deployment Tactics</h3>
-              <h3 data-lang="no">Taktikk for Feltoperasjoner</h3>
-              <h3 data-lang="ua">Тактика польового розгортання</h3>
-              <p data-lang="en">Scene assessment, optimal rig positioning, multi-team coordination, command communication protocols, and adaptive response to evolving incident conditions.</p>
-              <p data-lang="no">Scenevurdering, optimal riggerplassering, koordinering av lag og kommandokommunikasjon.</p>
-              <p data-lang="ua">Оцінка місця, оптимальне розташування, координація команд та протоколи зв'язку і управління.</p>
-              <div class="module-card__meta" style="margin-bottom:0;">
-                <span>&#9200; 80 min</span>
-                <span>&#128196; 5 sections</span>
-                <span style="color:#ff8c42;">&#128308; Advanced</span>
-              </div>
-            </div>
-            <div style="padding:1.75rem;display:flex;align-items:center;">
-              <span class="card__tag card__tag--info" data-lang="en">Locked</span>
-              <span class="card__tag card__tag--info" data-lang="no">Låst</span>
-              <span class="card__tag card__tag--info" data-lang="ua">Заблоковано</span>
-            </div>
-          </div>
-
-          <div class="module-card" style="display:grid;grid-template-columns:200px 1fr auto;overflow:visible;opacity:0.7;" data-status="soon" data-level="foundational">
-            <div class="module-card__header" style="border-radius:var(--radius-lg) 0 0 var(--radius-lg);flex-direction:column;align-items:flex-start;justify-content:center;gap:0.75rem;min-height:130px;">
-              <span class="module-card__num">Module 06</span>
-              <span class="module-card__status module-card__status--soon" data-lang="en">Coming Soon</span>
-              <span class="module-card__status module-card__status--soon" data-lang="no">Kommer snart</span>
-              <span class="module-card__status module-card__status--soon" data-lang="ua">Незабаром</span>
-            </div>
-            <div class="module-card__body" style="border-radius:0;border-left:none;">
-              <h3 data-lang="en">Maintenance &amp; Post-Op</h3>
-              <h3 data-lang="no">Vedlikehold og Etteroperasjon</h3>
-              <h3 data-lang="ua">Технічне обслуговування та постопераційні процедури</h3>
-              <p data-lang="en">Post-deployment flushing, component-by-component inspection checklist, correct storage and securing, incident log completion, and escalation procedures.</p>
-              <p data-lang="no">Etterspyling, komponent-for-komponent inspeksjonssjekkliste, lagring og sikring, hendelseslogg.</p>
-              <p data-lang="ua">Промивка після розгортання, перевірка компонентів, зберігання, заповнення журналів та ескалація.</p>
-              <div class="module-card__meta" style="margin-bottom:0;">
-                <span>&#9200; 55 min</span>
-                <span>&#128196; 4 sections</span>
-                <span>&#127996; All Levels</span>
-              </div>
-            </div>
-            <div style="padding:1.75rem;display:flex;align-items:center;">
-              <span class="card__tag card__tag--info" data-lang="en">Locked</span>
-              <span class="card__tag card__tag--info" data-lang="no">Låst</span>
-              <span class="card__tag card__tag--info" data-lang="ua">Заблоковано</span>
-            </div>
-          </div>
-
-        </div><!-- /module list -->
-
-        <!-- Certification note -->
-        <div class="callout" style="margin-top:3rem;max-width:600px;">
-          <strong data-lang="en">Certification Path</strong>
-          <strong data-lang="no">Sertifiseringsløp</strong>
-          <strong data-lang="ua">Шлях до сертифікації</strong>
-          <p data-lang="en" style="margin-top:0.4rem;max-width:none;">Complete Modules 01–06 in sequence to earn the Skjoldr Modular Rig Operator Certificate. Each module must be completed before the next unlocks. Contact your unit commander to register your completions.</p>
-          <p data-lang="no" style="margin-top:0.4rem;max-width:none;">Fullfør Modul 01–06 i rekkefølge for å tjene Skjoldr Modulrigg Operatørsertifikat. Kontakt enhetskommandøren din for å registrere fullføringer.</p>
-          <p data-lang="ua" style="margin-top:0.4rem;max-width:none;">Завершіть модулі 01–06 послідовно, щоб отримати сертифікат оператора Skjoldr Modular Rig. Зверніться до командира підрозділу для реєстрації.</p>
-        </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">External Pump</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">Ekstern Pumpe</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Зовнішній насос</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">Portable high-capacity pump for drawing from open water sources up to 400 m away.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">Bærbar høykapasitetspumpe for uttak fra åpne vannkilder opptil 400 m unna.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">Портативний насос великої потужності для забору з відкритих джерел води до 400 м.</p>
+        </a>
 
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__grid">
-          <div class="footer__brand">
-            <a href="index.html" class="nav__logo">
-              <div class="nav__logo-mark">S</div>
-              <span class="nav__logo-text">Skjoldr</span>
-            </a>
-            <p>Norwegian civil defence training platform for the Skjoldr Modular Rig.</p>
+  <!-- ═══════════════════════════════════════ SECTION 3: ADD-ONS UNDER DEVELOPMENT -->
+  <section class="section" style="padding-top:2rem;padding-bottom:4rem;">
+    <div class="container">
+      <div style="margin-bottom:2rem;">
+        <span class="status-badge status-badge--dev" data-lang="en">Add-Ons · Under Development</span>
+        <span class="status-badge status-badge--dev" data-lang="no" style="display:none;">Tillegg · Under utvikling</span>
+        <span class="status-badge status-badge--dev" data-lang="ua" style="display:none;">Доповнення · У розробці</span>
+        <h2 style="margin-top:1rem;" data-lang="en">Coming Soon</h2>
+        <h2 style="margin-top:1rem;display:none;" data-lang="no">Kommer snart</h2>
+        <h2 style="margin-top:1rem;display:none;" data-lang="ua">Незабаром</h2>
+        <p class="text-muted" data-lang="en">Advanced capabilities in active development. Contact us to join the pilot programme.</p>
+        <p class="text-muted" style="display:none;" data-lang="no">Avanserte funksjoner under aktiv utvikling. Kontakt oss for å delta i pilotprogrammet.</p>
+        <p class="text-muted" style="display:none;" data-lang="ua">Розширені можливості в активній розробці. Зв'яжіться з нами для участі в пілотній програмі.</p>
+      </div>
+
+      <div class="prod-card-grid">
+
+        <!-- 14. Smoke Fan -->
+        <a href="module-smoke-fan.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">14</span>
+            <span class="status-badge status-badge--dev">In Development</span>
           </div>
-          <div class="footer__col">
-            <h5>Training</h5>
-            <ul>
-              <li><a href="modules.html">All Modules</a></li>
-              <li><a href="module-01.html">Module 01</a></li>
-              <li><a href="glossary.html">Glossary</a></li>
-            </ul>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">Smoke Fan / Ventilation Unit</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">Røykvifte / Ventilasjonsaggregat</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Димовий вентилятор / Вентиляційний блок</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">Positive pressure ventilation for smoke clearance in enclosed structures.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">Positiv trykkventilasjonsventilasjon for røykfjerning i lukkede strukturer.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">Вентиляція з надлишковим тиском для видалення диму в закритих спорудах.</p>
+        </a>
+
+        <!-- 15. Air Compressor -->
+        <a href="module-air-compressor.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">15</span>
+            <span class="status-badge status-badge--dev">In Development</span>
           </div>
-          <div class="footer__col">
-            <h5>Company</h5>
-            <ul>
-              <li><a href="about.html">About Skjoldr</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">Air Compressor</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">Luftkompressor</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Повітряний компресор</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">Fills SCBA cylinders in field. Supports extended operations without resupply.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">Fyller SCBA-flasker i felt. Støtter utvidede operasjoner uten etterforsyning.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">Заповнює балони SCBA в полі. Підтримує тривалі операції без поповнення запасів.</p>
+        </a>
+
+        <!-- 17. Drone Hangar -->
+        <a href="module-drone-hangar.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">17</span>
+            <span class="status-badge status-badge--dev">In Development</span>
           </div>
-          <div class="footer__col">
-            <h5>Languages</h5>
-            <ul>
-              <li><a href="#" data-set-lang="en">English</a></li>
-              <li><a href="#" data-set-lang="no">Norsk</a></li>
-              <li><a href="#" data-set-lang="ua">Українська</a></li>
-            </ul>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">Drone Hangar</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">Dronehangar</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">Ангар для дрона</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">Integrated UAV storage, charging dock, and launch cradle for reconnaissance drones.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">Integrert UAV-lagring, ladedokk og startramme for rekognoseringsdroner.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">Інтегроване сховище БПЛА, зарядна станція та пусковий пристрій для розвідувальних дронів.</p>
+        </a>
+
+        <!-- 18. AFS Aerial -->
+        <a href="module-afs-aerial.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">18</span>
+            <span class="status-badge status-badge--dev">In Development</span>
           </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">AFS — Aerial Fire System</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">AFS — Luftbårent brannsystem</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">AFS — Повітряна система пожежогасіння</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">Drone-mounted suppression payload for aerial fire attack on wildland and structure fires.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">Dronebasert slokkingsnyttelast for luftbårent brannangep på skog- og bygningsbranner.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">Корисне навантаження для гасіння на дроні для повітряної атаки на лісові та будівельні пожежі.</p>
+        </a>
+
+        <!-- 19. AFS ATV -->
+        <a href="module-afs-atv.html" class="prod-card" style="text-decoration:none;color:inherit;display:block;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;">
+            <span style="font-size:0.75rem;font-weight:700;color:var(--grey-mid);text-transform:uppercase;letter-spacing:0.08em;">19</span>
+            <span class="status-badge status-badge--dev">In Development</span>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;" data-lang="en">AFS — ATV Fire System</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="no">AFS — ATV-brannsystem</h3>
+          <h3 style="font-size:1.1rem;margin-bottom:0.5rem;display:none;" data-lang="ua">AFS — Система пожежогасіння на ATV</h3>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;" data-lang="en">Compact suppression skid for ATV or quad-bike carrier. Off-road wildland response.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="no">Kompakt slokningsskid for ATV eller firehjuling. Terrengkjøring i skogbrann.</p>
+          <p class="text-muted" style="font-size:0.85rem;margin:0;display:none;" data-lang="ua">Компактна установка для гасіння на ATV або квадроциклі. Реагування на пожежі поза дорогами.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ CTA -->
+  <section class="section" style="background:var(--green);padding:3.5rem 0;text-align:center;">
+    <div class="container">
+      <h2 style="color:var(--yellow);margin-bottom:1rem;" data-lang="en">Configure Your Rig</h2>
+      <h2 style="color:var(--yellow);margin-bottom:1rem;display:none;" data-lang="no">Konfigurer din rigg</h2>
+      <h2 style="color:var(--yellow);margin-bottom:1rem;display:none;" data-lang="ua">Налаштуйте вашу установку</h2>
+      <p style="color:rgba(255,255,255,0.8);max-width:520px;margin:0 auto 2rem;" data-lang="en">Talk to our team about the right module combination for your operational environment.</p>
+      <p style="color:rgba(255,255,255,0.8);max-width:520px;margin:0 auto 2rem;display:none;" data-lang="no">Snakk med teamet vårt om riktig modulkombinasjon for ditt operasjonelle miljø.</p>
+      <p style="color:rgba(255,255,255,0.8);max-width:520px;margin:0 auto 2rem;display:none;" data-lang="ua">Поговоріть з нашою командою про правильну комбінацію модулів для вашого операційного середовища.</p>
+      <a href="contact.html" class="btn btn--primary" data-lang="en">Contact Us</a>
+      <a href="contact.html" class="btn btn--primary" data-lang="no" style="display:none;">Kontakt oss</a>
+      <a href="contact.html" class="btn btn--primary" data-lang="ua" style="display:none;">Зв'яжіться з нами</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col footer__col--brand">
+          <a href="index.html" class="nav__logo" style="margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;">
+            <div class="nav__logo-mark">S</div>
+            <span class="nav__logo-text">Skjoldr</span>
+          </a>
+          <p>Modular fire and readiness systems for decentralised first-line response.</p>
         </div>
-        <div class="footer__bottom">
-          <span>&copy; 2026 Skjoldr AS. All rights reserved.</span>
-          <span style="color:var(--yellow);font-weight:600;letter-spacing:0.06em;">WHEN MINUTES MATTER</span>
+        <div class="footer__col">
+          <h5>Modules</h5>
+          <ul>
+            <li><a href="modules.html">All Modules</a></li>
+            <li><a href="module-rig-platform.html">Rig Platform</a></li>
+            <li><a href="module-water-cannon.html">Water Cannon</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h5>Training</h5>
+          <ul>
+            <li><a href="training.html">Training Modules</a></li>
+            <li><a href="module-01.html">Module 01</a></li>
+            <li><a href="glossary.html">Glossary</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="about.html">About Skjoldr</a></li>
+            <li><a href="firemap.html">Firemap</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
         </div>
       </div>
-    </footer>
-  </div>
+      <div class="footer__bottom">
+        <p>&copy; 2025 Skjoldr AS. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    const LANG_KEY = 'skjoldr_lang';
-    let currentLang = localStorage.getItem(LANG_KEY) || 'en';
-
+    // Language switcher
     function setLang(lang) {
-      currentLang = lang;
-      localStorage.setItem(LANG_KEY, lang);
       document.querySelectorAll('[data-lang]').forEach(el => {
-        const show = el.dataset.lang === lang;
-        el.classList.toggle('lang-visible', show);
-        const tag = el.tagName;
-        if (tag === 'A' || tag === 'BUTTON') el.style.display = show ? 'inline-flex' : 'none';
-        else if (['P','H1','H2','H3','STRONG','SPAN'].includes(tag)) el.style.display = show ? 'inline' : 'none';
-        else el.style.display = show ? '' : 'none';
+        el.style.display = el.dataset.lang === lang ? '' : 'none';
       });
       document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.setLang === lang);
+        btn.setAttribute('aria-pressed', btn.dataset.setLang === lang);
       });
-      document.documentElement.lang = lang === 'ua' ? 'uk' : lang;
+      localStorage.setItem('skjoldr_lang', lang);
     }
-
-    document.querySelectorAll('[data-set-lang]').forEach(el => {
-      el.addEventListener('click', e => { e.preventDefault(); setLang(el.dataset.setLang); });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => setLang(btn.dataset.setLang));
     });
+    setLang(localStorage.getItem('skjoldr_lang') || 'en');
 
+    // Mobile nav
     const toggle = document.querySelector('.nav__toggle');
     const mobileNav = document.getElementById('mobileNav');
     toggle.addEventListener('click', () => {
       const open = mobileNav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open);
+      mobileNav.setAttribute('aria-hidden', !open);
     });
-
-    setLang(currentLang);
   </script>
 </body>
 </html>

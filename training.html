@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Skjoldr training module library — all operator training modules for the Modular Rig." />
+  <title>Training Modules — Skjoldr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="Skjoldr home">
+        <div class="nav__logo-mark">S</div>
+        <span class="nav__logo-text">Skjoldr</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="modules.html">Modules</a></li>
+        <li><a href="training.html" class="active">Training</a></li>
+        <li><a href="firemap.html">Firemap</a></li>
+        <li><a href="glossary.html">Glossary</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <div class="lang-switcher" role="group" aria-label="Language selector">
+          <button class="lang-btn active" data-set-lang="en">EN</button>
+          <button class="lang-btn" data-set-lang="no">NO</button>
+          <button class="lang-btn" data-set-lang="ua">UA</button>
+        </div>
+      </div>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav__mobile" id="mobileNav" aria-hidden="true">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="modules.html">Modules</a></li>
+        <li><a href="training.html">Training</a></li>
+      <li><a href="firemap.html">Firemap</a></li>
+      <li><a href="glossary.html">Glossary</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-set-lang="en">EN</button>
+      <button class="lang-btn" data-set-lang="no">NO</button>
+      <button class="lang-btn" data-set-lang="ua">UA</button>
+    </div>
+  </div>
+
+  <div class="page-content">
+
+    <!-- Page header -->
+    <div style="background:var(--green);padding:4rem 0 3rem;border-bottom:1px solid rgba(232,245,90,0.12);">
+      <div class="container">
+        <span class="label" data-lang="en">Training Programme</span>
+        <span class="label" data-lang="no">Opplæringsprogram</span>
+        <span class="label" data-lang="ua">Навчальна програма</span>
+
+        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:0.75rem;" data-lang="en">Training Module Library</h1>
+        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:0.75rem;" data-lang="no">Bibliotek med Opplæringsmoduler</h1>
+        <h1 style="color:var(--white);margin-top:0.5rem;margin-bottom:0.75rem;" data-lang="ua">Бібліотека навчальних модулів</h1>
+
+        <p style="color:rgba(232,245,255,0.75);max-width:56ch;font-size:1.05rem;" data-lang="en">
+          Complete all modules to achieve full operator certification on the Skjoldr Modular Rig.
+          Work at your own pace — all content is available 24/7.
+        </p>
+        <p style="color:rgba(232,245,255,0.75);max-width:56ch;font-size:1.05rem;" data-lang="no">
+          Fullfør alle moduler for å oppnå full operatørsertifisering på Skjoldr Modulriggen.
+          Arbeid i ditt eget tempo — alt innhold er tilgjengelig døgnet rundt.
+        </p>
+        <p style="color:rgba(232,245,255,0.75);max-width:56ch;font-size:1.05rem;" data-lang="ua">
+          Завершіть усі модулі для отримання повної сертифікації оператора Skjoldr Modular Rig.
+          Навчайтеся у власному темпі — весь вміст доступний цілодобово.
+        </p>
+
+        <!-- Progress bar -->
+        <div style="margin-top:2rem;max-width:360px;">
+          <div style="display:flex;justify-content:space-between;margin-bottom:0.4rem;">
+            <span style="font-size:0.8rem;color:rgba(232,245,90,0.7);text-transform:uppercase;letter-spacing:0.06em;" data-lang="en">Overall Progress</span>
+            <span style="font-size:0.8rem;color:rgba(232,245,90,0.7);text-transform:uppercase;letter-spacing:0.06em;" data-lang="no">Samlet fremgang</span>
+            <span style="font-size:0.8rem;color:rgba(232,245,90,0.7);text-transform:uppercase;letter-spacing:0.06em;" data-lang="ua">Загальний прогрес</span>
+            <span style="font-size:0.8rem;color:var(--yellow);font-weight:700;">1 / 6</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width:16.6%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section section--dark">
+      <div class="container">
+
+        <!-- Filter row -->
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;align-items:center;justify-content:space-between;">
+          <div class="glossary-filter" style="margin-bottom:0;">
+            <button class="filter-btn active" data-filter="all" data-lang="en">All</button>
+            <button class="filter-btn active" data-filter="all" data-lang="no" style="display:none;">Alle</button>
+            <button class="filter-btn active" data-filter="all" data-lang="ua" style="display:none;">Всі</button>
+            <button class="filter-btn" data-filter="available" data-lang="en">Available</button>
+            <button class="filter-btn" data-filter="available" data-lang="no" style="display:none;">Tilgjengelig</button>
+            <button class="filter-btn" data-filter="available" data-lang="ua" style="display:none;">Доступні</button>
+            <button class="filter-btn" data-filter="foundational">
+              <span data-lang="en">Foundational</span>
+              <span data-lang="no">Grunnleggende</span>
+              <span data-lang="ua">Базові</span>
+            </button>
+            <button class="filter-btn" data-filter="advanced">
+              <span data-lang="en">Advanced</span>
+              <span data-lang="no">Avansert</span>
+              <span data-lang="ua">Розширені</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Module list — full width cards -->
+        <div style="display:flex;flex-direction:column;gap:1.25rem;">
+
+          <!-- Module 01 — Available -->
+          <div class="module-card" style="display:grid;grid-template-columns:200px 1fr auto;overflow:visible;" data-status="available" data-level="foundational">
+            <div class="module-card__header" style="border-radius:var(--radius-lg) 0 0 var(--radius-lg);flex-direction:column;align-items:flex-start;justify-content:center;gap:0.75rem;min-height:130px;">
+              <span class="module-card__num">Module 01</span>
+              <span class="module-card__status module-card__status--available" data-lang="en">Available</span>
+              <span class="module-card__status module-card__status--available" data-lang="no">Tilgjengelig</span>
+              <span class="module-card__status module-card__status--available" data-lang="ua">Доступний</span>
+            </div>
+            <div class="module-card__body" style="border-radius:0;border-left:none;">
+              <h3 data-lang="en">Rig Overview &amp; Components</h3>
+              <h3 data-lang="no">Riggoversikt og Komponenter</h3>
+              <h3 data-lang="ua">Огляд установки та компоненти</h3>
+              <p data-lang="en">Identify all 8 major components of the Modular Rig, understand their purpose and interrelation, and learn safe spatial orientation during active operations.</p>
+              <p data-lang="no">Identifiser alle 8 hovedelementer i Modulriggen, forstå formålet og sammenhengen mellom dem, og lær sikker romlig orientering under aktive operasjoner.</p>
+              <p data-lang="ua">Визначте всі 8 основних компонентів модульної установки, зрозумійте їх призначення та взаємозв'язок, вивчіть безпечне просторове орієнтування під час активних операцій.</p>
+              <div class="module-card__meta" style="margin-bottom:0;">
+                <span>&#9200; 45 min</span>
+                <span>&#128196; 3 sections</span>
+                <span style="color:var(--yellow);">&#11088; Foundational</span>
+              </div>
+            </div>
+            <div style="padding:1.75rem;display:flex;align-items:center;">
+              <a href="module-01.html" class="btn btn--primary" data-lang="en">Open &rarr;</a>
+              <a href="module-01.html" class="btn btn--primary" data-lang="no">Åpne &rarr;</a>
+              <a href="module-01.html" class="btn btn--primary" data-lang="ua">Відкрити &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Modules 02–06 — Coming Soon -->
+          <div class="module-card" style="display:grid;grid-template-columns:200px 1fr auto;overflow:visible;opacity:0.7;" data-status="soon" data-level="intermediate">
+            <div class="module-card__header" style="border-radius:var(--radius-lg) 0 0 var(--radius-lg);flex-direction:column;align-items:flex-start;justify-content:center;gap:0.75rem;min-height:130px;">
+              <span class="module-card__num">Module 02</span>
+              <span class="module-card__status module-card__status--soon" data-lang="en">Coming Soon</span>
+              <span class="module-card__status module-card__status--soon" data-lang="no">Kommer snart</span>
+              <span class="module-card__status module-card__status--soon" data-lang="ua">Незабаром</span>
+            </div>
+            <div class="module-card__body" style="border-radius:0;border-left:none;">
+              <h3 data-lang="en">Pre-Deployment Checks</h3>
+              <h3 data-lang="no">Kontroll Før Utsendelse</h3>
+              <h3 data-lang="ua">Перевірки перед розгортанням</h3>
+              <p data-lang="en">Systematic inspection routines, fault identification, and readiness verification protocols to ensure operational safety before every deployment.</p>
+              <p data-lang="no">Systematiske inspeksjonsrutiner, feilidentifisering og beredskapsverifiseringsprotokoller.</p>
+              <p data-lang="ua">Систематичні процедури перевірки, виявлення несправностей та верифікація готовності до кожного розгортання.</p>
+              <div class="module-card__meta" style="margin-bottom:0;">
+                <span>&#9200; 60 min</span>
+                <span>&#128196; 4 sections</span>
+                <span>&#127997; Intermediate</span>
+              </div>
+            </div>
+            <div style="padding:1.75rem;display:flex;align-items:center;">
+              <span class="card__tag card__tag--info" data-lang="en">Locked</span>
+              <span class="card__tag card__tag--info" data-lang="no">Låst</span>
+              <span class="card__tag card__tag--info" data-lang="ua">Заблоковано</span>
+            </div>
+          </div>
+
+          <div class="module-card" style="display:grid;grid-template-columns:200px 1fr auto;overflow:visible;opacity:0.7;" data-status="soon" data-level="intermediate">
+            <div class="module-card__header" style="border-radius:var(--radius-lg) 0 0 var(--radius-lg);flex-direction:column;align-items:flex-start;justify-content:center;gap:0.75rem;min-height:130px;">
+              <span class="module-card__num">Module 03</span>
+              <span class="module-card__status module-card__status--soon" data-lang="en">Coming Soon</span>
+              <span class="module-card__status module-card__status--soon" data-lang="no">Kommer snart</span>
+              <span class="module-card__status module-card__status--soon" data-lang="ua">Незабаром</span>
+            </div>
+            <div class="module-card__body" style="border-radius:0;border-left:none;">
+              <h3 data-lang="en">Water Cannon Operation</h3>
+              <h3 data-lang="no">Betjening av Vannkanon</h3>
+              <h3 data-lang="ua">Управління водяною гарматою</h3>
+              <p data-lang="en">Remote control procedures, trajectory calculation, flow rate management, and suppression pattern strategies for wildfire and structural scenarios.</p>
+              <p data-lang="no">Fjernkontrollprosedyrer, baneberegning og slukkingsmønsterstrategier for skogs- og strukturbranner.</p>
+              <p data-lang="ua">Дистанційне управління, розрахунок траєкторії, управління витратою та стратегії гасіння для пожеж.</p>
+              <div class="module-card__meta" style="margin-bottom:0;">
+                <span>&#9200; 75 min</span>
+                <span>&#128196; 5 sections</span>
+                <span>&#127997; Intermediate</span>
+              </div>
+            </div>
+            <div style="padding:1.75rem;display:flex;align-items:center;">
+              <span class="card__tag card__tag--info" data-lang="en">Locked</span>
+              <span class="card__tag card__tag--info" data-lang="no">Låst</span>
+              <span class="card__tag card__tag--info" data-lang="ua">Заблоковано</span>
+            </div>
+          </div>
+
+          <div class="module-card" style="display:grid;grid-template-columns:200px 1fr auto;overflow:visible;opacity:0.7;" data-status="soon" data-level="advanced">
+            <div class="module-card__header" style="border-radius:var(--radius-lg) 0 0 var(--radius-lg);flex-direction:column;align-items:flex-start;justify-content:center;gap:0.75rem;min-height:130px;">
+              <span class="module-card__num">Module 04</span>
+              <span class="module-card__status module-card__status--soon" data-lang="en">Coming Soon</span>
+              <span class="module-card__status module-card__status--soon" data-lang="no">Kommer snart</span>
+              <span class="module-card__status module-card__status--soon" data-lang="ua">Незабаром</span>
+            </div>
+            <div class="module-card__body" style="border-radius:0;border-left:none;">
+              <h3 data-lang="en">Hydraulic Systems</h3>
+              <h3 data-lang="no">Hydrauliske Systemer</h3>
+              <h3 data-lang="ua">Гідравлічні системи</h3>
+              <p data-lang="en">Deep-dive into pump operation, PTO integration with the mother vehicle, pressure and flow management, and systematic fault response procedures.</p>
+              <p data-lang="no">Inngående studie av pumpeoperasjon, PTO-integrering med moderkjøretøy og trykkstyring.</p>
+              <p data-lang="ua">Детальний розгляд роботи насоса, інтеграції ВВП з базовим транспортним засобом, управління тиском.</p>
+              <div class="module-card__meta" style="margin-bottom:0;">
+                <span>&#9200; 90 min</span>
+                <span>&#128196; 6 sections</span>
+                <span style="color:#ff8c42;">&#128308; Advanced</span>
+              </div>
+            </div>
+            <div style="padding:1.75rem;display:flex;align-items:center;">
+              <span class="card__tag card__tag--info" data-lang="en">Locked</span>
+              <span class="card__tag card__tag--info" data-lang="no">Låst</span>
+              <span class="card__tag card__tag--info" data-lang="ua">Заблоковано</span>
+            </div>
+          </div>
+
+          <div class="module-card" style="display:grid;grid-template-columns:200px 1fr auto;overflow:visible;opacity:0.7;" data-status="soon" data-level="advanced">
+            <div class="module-card__header" style="border-radius:var(--radius-lg) 0 0 var(--radius-lg);flex-direction:column;align-items:flex-start;justify-content:center;gap:0.75rem;min-height:130px;">
+              <span class="module-card__num">Module 05</span>
+              <span class="module-card__status module-card__status--soon" data-lang="en">Coming Soon</span>
+              <span class="module-card__status module-card__status--soon" data-lang="no">Kommer snart</span>
+              <span class="module-card__status module-card__status--soon" data-lang="ua">Незабаром</span>
+            </div>
+            <div class="module-card__body" style="border-radius:0;border-left:none;">
+              <h3 data-lang="en">Field Deployment Tactics</h3>
+              <h3 data-lang="no">Taktikk for Feltoperasjoner</h3>
+              <h3 data-lang="ua">Тактика польового розгортання</h3>
+              <p data-lang="en">Scene assessment, optimal rig positioning, multi-team coordination, command communication protocols, and adaptive response to evolving incident conditions.</p>
+              <p data-lang="no">Scenevurdering, optimal riggerplassering, koordinering av lag og kommandokommunikasjon.</p>
+              <p data-lang="ua">Оцінка місця, оптимальне розташування, координація команд та протоколи зв'язку і управління.</p>
+              <div class="module-card__meta" style="margin-bottom:0;">
+                <span>&#9200; 80 min</span>
+                <span>&#128196; 5 sections</span>
+                <span style="color:#ff8c42;">&#128308; Advanced</span>
+              </div>
+            </div>
+            <div style="padding:1.75rem;display:flex;align-items:center;">
+              <span class="card__tag card__tag--info" data-lang="en">Locked</span>
+              <span class="card__tag card__tag--info" data-lang="no">Låst</span>
+              <span class="card__tag card__tag--info" data-lang="ua">Заблоковано</span>
+            </div>
+          </div>
+
+          <div class="module-card" style="display:grid;grid-template-columns:200px 1fr auto;overflow:visible;opacity:0.7;" data-status="soon" data-level="foundational">
+            <div class="module-card__header" style="border-radius:var(--radius-lg) 0 0 var(--radius-lg);flex-direction:column;align-items:flex-start;justify-content:center;gap:0.75rem;min-height:130px;">
+              <span class="module-card__num">Module 06</span>
+              <span class="module-card__status module-card__status--soon" data-lang="en">Coming Soon</span>
+              <span class="module-card__status module-card__status--soon" data-lang="no">Kommer snart</span>
+              <span class="module-card__status module-card__status--soon" data-lang="ua">Незабаром</span>
+            </div>
+            <div class="module-card__body" style="border-radius:0;border-left:none;">
+              <h3 data-lang="en">Maintenance &amp; Post-Op</h3>
+              <h3 data-lang="no">Vedlikehold og Etteroperasjon</h3>
+              <h3 data-lang="ua">Технічне обслуговування та постопераційні процедури</h3>
+              <p data-lang="en">Post-deployment flushing, component-by-component inspection checklist, correct storage and securing, incident log completion, and escalation procedures.</p>
+              <p data-lang="no">Etterspyling, komponent-for-komponent inspeksjonssjekkliste, lagring og sikring, hendelseslogg.</p>
+              <p data-lang="ua">Промивка після розгортання, перевірка компонентів, зберігання, заповнення журналів та ескалація.</p>
+              <div class="module-card__meta" style="margin-bottom:0;">
+                <span>&#9200; 55 min</span>
+                <span>&#128196; 4 sections</span>
+                <span>&#127996; All Levels</span>
+              </div>
+            </div>
+            <div style="padding:1.75rem;display:flex;align-items:center;">
+              <span class="card__tag card__tag--info" data-lang="en">Locked</span>
+              <span class="card__tag card__tag--info" data-lang="no">Låst</span>
+              <span class="card__tag card__tag--info" data-lang="ua">Заблоковано</span>
+            </div>
+          </div>
+
+        </div><!-- /module list -->
+
+        <!-- Certification note -->
+        <div class="callout" style="margin-top:3rem;max-width:600px;">
+          <strong data-lang="en">Certification Path</strong>
+          <strong data-lang="no">Sertifiseringsløp</strong>
+          <strong data-lang="ua">Шлях до сертифікації</strong>
+          <p data-lang="en" style="margin-top:0.4rem;max-width:none;">Complete Modules 01–06 in sequence to earn the Skjoldr Modular Rig Operator Certificate. Each module must be completed before the next unlocks. Contact your unit commander to register your completions.</p>
+          <p data-lang="no" style="margin-top:0.4rem;max-width:none;">Fullfør Modul 01–06 i rekkefølge for å tjene Skjoldr Modulrigg Operatørsertifikat. Kontakt enhetskommandøren din for å registrere fullføringer.</p>
+          <p data-lang="ua" style="margin-top:0.4rem;max-width:none;">Завершіть модулі 01–06 послідовно, щоб отримати сертифікат оператора Skjoldr Modular Rig. Зверніться до командира підрозділу для реєстрації.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a href="index.html" class="nav__logo">
+              <div class="nav__logo-mark">S</div>
+              <span class="nav__logo-text">Skjoldr</span>
+            </a>
+            <p>Norwegian civil defence training platform for the Skjoldr Modular Rig.</p>
+          </div>
+          <div class="footer__col">
+            <h5>Training</h5>
+            <ul>
+              <li><a href="training.html">All Modules</a></li>
+              <li><a href="module-01.html">Module 01</a></li>
+              <li><a href="glossary.html">Glossary</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="about.html">About Skjoldr</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h5>Languages</h5>
+            <ul>
+              <li><a href="#" data-set-lang="en">English</a></li>
+              <li><a href="#" data-set-lang="no">Norsk</a></li>
+              <li><a href="#" data-set-lang="ua">Українська</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>&copy; 2026 Skjoldr AS. All rights reserved.</span>
+          <span style="color:var(--yellow);font-weight:600;letter-spacing:0.06em;">WHEN MINUTES MATTER</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const LANG_KEY = 'skjoldr_lang';
+    let currentLang = localStorage.getItem(LANG_KEY) || 'en';
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem(LANG_KEY, lang);
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        const show = el.dataset.lang === lang;
+        el.classList.toggle('lang-visible', show);
+        const tag = el.tagName;
+        if (tag === 'A' || tag === 'BUTTON') el.style.display = show ? 'inline-flex' : 'none';
+        else if (['P','H1','H2','H3','STRONG','SPAN'].includes(tag)) el.style.display = show ? 'inline' : 'none';
+        else el.style.display = show ? '' : 'none';
+      });
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.setLang === lang);
+      });
+      document.documentElement.lang = lang === 'ua' ? 'uk' : lang;
+    }
+
+    document.querySelectorAll('[data-set-lang]').forEach(el => {
+      el.addEventListener('click', e => { e.preventDefault(); setLang(el.dataset.setLang); });
+    });
+
+    const toggle = document.querySelector('.nav__toggle');
+    const mobileNav = document.getElementById('mobileNav');
+    toggle.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    setLang(currentLang);
+  </script>
+</body>
+</html>
