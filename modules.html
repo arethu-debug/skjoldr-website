@@ -470,7 +470,9 @@
     // Language switcher
     function setLang(lang) {
       document.querySelectorAll('[data-lang]').forEach(el => {
-        el.style.display = el.dataset.lang === lang ? '' : 'none';
+        const show = el.dataset.lang === lang;
+        el.classList.toggle('lang-visible', show);
+        el.style.display = show ? '' : 'none';
       });
       document.querySelectorAll('.lang-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.setLang === lang);
