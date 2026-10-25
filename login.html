@@ -24,6 +24,9 @@
     <div id="loginError" class="callout callout--warn auth-card__error" role="alert" hidden>
       <strong>Email or password is incorrect.</strong>
     </div>
+    <div id="loginUnavailable" class="callout callout--warn auth-card__error" role="alert" hidden>
+      <strong>Login is not available right now. Please contact your Skjoldr admin.</strong>
+    </div>
 
     <form method="post" action="/api/login">
       <input type="hidden" name="next" id="next" value="/" />
@@ -52,7 +55,8 @@
   <script>
     const params = new URLSearchParams(location.search);
     if (params.get('next')) document.getElementById('next').value = params.get('next');
-    if (params.get('error')) document.getElementById('loginError').hidden = false;
+    if (params.get('error') === 'unavailable') document.getElementById('loginUnavailable').hidden = false;
+    else if (params.get('error')) document.getElementById('loginError').hidden = false;
   </script>
 </body>
 </html>
