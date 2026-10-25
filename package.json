@@ -1,0 +1,11 @@
+{
+  "name": "skjoldr-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "add-user": "node scripts/add-user.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
