@@ -1834,6 +1834,104 @@ p { max-width: 68ch; }
   font-size: 0.9em;
 }
 
+/* --- Login wall (login.html, 403 page, user bar) --- */
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(28,61,53,0.45) 0%, transparent 70%),
+    var(--black);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--grey-dark);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-top: 3px solid var(--yellow);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.auth-card__logo { margin-bottom: 2rem; }
+
+.auth-card__title {
+  font-size: 1.8rem;
+  color: var(--white);
+  margin: 0.4rem 0 1.5rem;
+}
+
+.auth-card__text {
+  color: var(--grey-mid);
+  font-size: 0.95rem;
+  margin-bottom: 1.75rem;
+}
+
+.auth-card__text strong { color: var(--white); }
+
+.auth-card__error { margin: 0 0 1.25rem; }
+
+.auth-card__remember {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.form-group.auth-card__remember input { width: auto; accent-color: var(--yellow); }
+
+.form-group.auth-card__remember label {
+  margin: 0;
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.auth-card__submit { width: 100%; justify-content: center; }
+
+.auth-card__actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+.auth-card__help {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--grey-mid);
+  text-align: center;
+}
+
+.user-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.user-bar__name { color: var(--grey-mid); }
+
+.user-bar__logout {
+  font-weight: 600;
+  color: var(--yellow);
+  padding: 0.3rem 0.6rem;
+  border: 1px solid rgba(232,245,90,0.25);
+  border-radius: var(--radius);
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.user-bar__logout:hover { background: rgba(232,245,90,0.1); border-color: var(--yellow); }
+
+/* Fallback when a page has no nav to sit in */
+.user-bar--floating {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 0.75rem);
+  right: 1rem;
+  z-index: 1100;
+  background: rgba(10,10,10,0.9);
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--radius);
+}
+
 /* --- Responsive --- */
 @media (max-width: 1024px) {
   .module-layout {
@@ -1896,6 +1994,8 @@ p { max-width: 68ch; }
   .glossary-table td:nth-child(3) { display: none; }
 
   .product-img img { height: 280px; }
+
+  .user-bar__name { display: none; }
 }
 
 @media (max-width: 480px) {

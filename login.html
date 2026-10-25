@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Log in — Skjoldr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body class="auth-page">
+
+  <main class="auth-card">
+    <div class="nav__logo auth-card__logo">
+      <div class="nav__logo-mark">S</div>
+      <span class="nav__logo-text">Skjoldr</span>
+    </div>
+
+    <span class="label">Operator Training Platform</span>
+    <h1 class="auth-card__title">Log in</h1>
+
+    <div id="loginError" class="callout callout--warn auth-card__error" role="alert" hidden>
+      <strong>Email or password is incorrect.</strong>
+    </div>
+    <div id="loginUnavailable" class="callout callout--warn auth-card__error" role="alert" hidden>
+      <strong>Login is not available right now. Please contact your Skjoldr admin.</strong>
+    </div>
+
+    <form method="post" action="/api/login">
+      <input type="hidden" name="next" id="next" value="/" />
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="username" required autofocus />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required />
+      </div>
+
+      <div class="form-group auth-card__remember">
+        <input type="checkbox" id="remember" name="remember" value="1" />
+        <label for="remember">Keep me signed in for 30 days</label>
+      </div>
+
+      <button type="submit" class="btn btn--primary auth-card__submit">Log in</button>
+    </form>
+
+    <p class="auth-card__help">Need access or a new password? Contact your Skjoldr admin.</p>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    if (params.get('next')) document.getElementById('next').value = params.get('next');
+    if (params.get('error') === 'unavailable') document.getElementById('loginUnavailable').hidden = false;
+    else if (params.get('error')) document.getElementById('loginError').hidden = false;
+  </script>
+</body>
+</html>
