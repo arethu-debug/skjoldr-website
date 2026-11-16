@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Skjoldr · Brand book</title>
+<meta name="description" content="Skjoldr brand book. TLP:AMBER.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a brand book in the brand's own colours. Spruce side rail with section index, light reading column, colour lab embedded as a working tool.
+   Single deliberate look (the brand book shows the brand), so every colour is set explicitly. */
+:root {
+  --spruce: #1C3A34; --spruce-2: #24493f; --orange: #FF6B1A; --signal: #F2FF80;
+  --ink: #141a18; --muted: #55605c; --paper: #ffffff; --ground: #f3f4f2; --line: #dfe3e0; --soft: #e6e6e6; --grey: #595959;
+  --ok: #1f6b45; --ok-bg: #e2f1e7; --disc: #8a4b00; --disc-bg: #fff0dc; --todo: #4b5563; --todo-bg: #eceef0;
+  --font: "Inter", Arial, sans-serif; --mono: "JetBrains Mono", Consolas, monospace;
+  --p-bg: #1c3a34; --p-accent: #ff6b1a; --p-signal: #f2ff80; --p-dark: #000000; --p-light: #ffffff; --p-neutral: #595959; --p-soft: #e6e6e6; --p-on-accent: #000000; --slide-shield: #f2ff80;
+  color-scheme: light;
+}
+* { box-sizing: border-box }
+html { scroll-behavior: smooth }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } }
+body { background: var(--ground); color: var(--ink); font-family: var(--font); font-size: 15px; line-height: 1.6 }
+a { color: var(--spruce) }
+:focus-visible { outline: 2px solid var(--orange); outline-offset: 2px }
+p { margin: 0 }
+h1, h2, h3, h4 { margin: 0; text-wrap: balance; letter-spacing: -0.015em }
+
+.shell { display: grid; grid-template-columns: 260px minmax(0, 1fr); min-height: 100% }
+@media (max-width: 900px) { .shell { grid-template-columns: 1fr } }
+
+.rail { background: var(--spruce); color: #fff; position: sticky; top: env(safe-area-inset-top, 0px); height: 100vh; overflow-y: auto; padding: 28px 22px; padding-left: max(22px, env(safe-area-inset-left, 0px)); display: grid; align-content: start; gap: 26px }
+@media (max-width: 900px) { .rail { position: static; height: auto; padding-block: 20px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) } .rail nav ol { columns: 2; column-gap: 20px } }
+.rail .logo { color: var(--orange); width: 150px }
+.rail .meta { display: grid; gap: 6px; font-size: 12px; color: rgba(255,255,255,.75) }
+.tlp { display: inline-flex; align-items: center; gap: 6px; background: #000; color: #ffc000; font-family: var(--mono); font-weight: 500; font-size: 11.5px; padding: 3px 8px; width: max-content; letter-spacing: .04em }
+.rail nav ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; counter-reset: s }
+.rail nav li { break-inside: avoid }
+.rail nav a { display: flex; gap: 10px; color: rgba(255,255,255,.86); text-decoration: none; padding: 5px 0; font-size: 13.5px; border-radius: 4px }
+.rail nav a:hover { color: #fff }
+.rail nav a .n { font-family: var(--mono); font-size: 11px; color: var(--orange); padding-top: 2px; min-width: 18px }
+.rail .legend { display: grid; gap: 6px; font-size: 12px; color: rgba(255,255,255,.75) }
+
+main { padding-block: 40px 96px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 72px; justify-items: center; min-width: 0 }
+.col { width: 100%; max-width: 1080px; display: grid; gap: 28px; min-width: 0 }
+.sec-head { display: grid; gap: 10px; border-top: 2px solid var(--spruce); padding-top: 18px }
+.sec-head .eyebrow { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted) }
+.sec-head .eyebrow .num { font-family: var(--mono); color: var(--orange); letter-spacing: 0 }
+.sec-head h2 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 700; line-height: 1.12 }
+.sec-head p { color: var(--muted); max-width: 68ch }
+
+.status { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px }
+.status::before { content: ""; width: 7px; height: 7px; border-radius: 50% ; background: currentColor }
+.s-ok { background: var(--ok-bg); color: var(--ok) } .s-disc { background: var(--disc-bg); color: var(--disc) } .s-todo { background: var(--todo-bg); color: var(--todo) }
+.rail .status { font-size: 10px }
+
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 20px; display: grid; gap: 10px; align-content: start; min-width: 0 }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px }
+.grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px }
+.label { font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted) }
+.big { font-size: clamp(22px, 2.6vw, 30px); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em }
+.prose { display: grid; gap: 14px; max-width: 70ch }
+.prose p { color: #2b3330 }
+.disc-card { background: var(--disc-bg); border: 1px solid #f3d4a8; border-radius: 10px; padding: 16px 18px; display: grid; gap: 6px }
+.disc-card .label { color: var(--disc) }
+.todo-card { background: var(--paper); border: 1.5px dashed #b9c1bd; border-radius: 10px; padding: 18px; display: grid; gap: 6px; color: var(--muted) }
+.todo-card .label { color: var(--todo) }
+
+/* One-pager */
+.onepager { background: var(--spruce); color: #fff; border-radius: 14px; padding: clamp(22px, 4vw, 40px); display: grid; gap: 28px; position: relative; overflow: hidden }
+.onepager .bg-mark { position: absolute; right: -60px; top: -80px; width: 380px; color: rgba(242,255,128,.12); pointer-events: none }
+.onepager .vision { font-size: clamp(30px, 4.4vw, 48px); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; position: relative }
+.onepager .vision em { font-style: normal; color: var(--orange) }
+.op-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px 28px; position: relative }
+.op-grid .k { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--orange) }
+.op-grid .v { font-size: 17px; font-weight: 600; line-height: 1.3 }
+.op-grid .d { font-size: 13px; color: rgba(255,255,255,.75) }
+
+/* Values */
+.values { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px }
+.value { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 22px; display: grid; gap: 10px; align-content: start }
+.value h3 { font-size: 22px; letter-spacing: .02em; text-transform: uppercase; color: var(--spruce) }
+.value .kw { font-size: 13px; color: var(--muted); font-style: italic }
+.promises { display: grid; gap: 0; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; overflow: hidden }
+.promise { display: grid; grid-template-columns: 180px minmax(0,1fr); gap: 18px; padding: 16px 20px; border-top: 1px solid var(--line) }
+.promise:first-child { border-top: 0 }
+.promise .who { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding-top: 3px }
+.promise h4 { font-size: 16px; color: var(--spruce) }
+@media (max-width: 600px) { .promise { grid-template-columns: 1fr; gap: 4px } }
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px }
+.metric { border-left: 3px solid var(--orange); padding: 4px 0 4px 16px; display: grid; gap: 2px }
+.metric .m { font-size: 18px; font-weight: 700 }
+
+/* Position */
+.ladder { display: grid; gap: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--paper) }
+.ladder div { padding: 12px 16px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; color: var(--muted) }
+.ladder div:first-child { border-top: 0 }
+.ladder div.here { background: var(--spruce); color: #fff; font-weight: 600 }
+.ladder div.here span:last-child { color: var(--orange); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase }
+.principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; counter-reset: p }
+.principle { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 20px; display: grid; gap: 8px; align-content: start }
+.principle .tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--orange) }
+.principle h3 { font-size: 18px }
+.principle p { font-size: 14px; color: #36403c }
+
+/* Visual keywords */
+.kws { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px }
+.kw-card { border-radius: 10px; overflow: hidden; background: var(--paper); border: 1px solid var(--line); display: grid; grid-template-rows: 120px auto }
+.kw-card .ph { position: relative; display: grid; place-items: center; color: rgba(255,255,255,.9); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600 }
+.kw-card .body { padding: 16px 18px; display: grid; gap: 6px }
+.kw-card h3 { font-size: 20px; display: flex; justify-content: space-between; align-items: baseline; gap: 10px }
+.kw-card h3 small { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: .08em; text-transform: uppercase }
+.kw-card p { font-size: 14px; color: #36403c }
+.ph-solid { background: linear-gradient(160deg, #1c3a34, #0f201c) } .ph-earned { background: linear-gradient(160deg, #4a3b2a, #1d1712) }
+.ph-rugged { background: linear-gradient(160deg, #39403d, #161a19) } .ph-tactile { background: repeating-linear-gradient(115deg, #59544c 0 3px, #4d4842 3px 7px) }
+.ph-confront { background: radial-gradient(circle at 60% 85%, #ff6b1a 0, #8a2a08 28%, #1b0d07 70%) } .ph-together { background: linear-gradient(160deg, #24493f, #1c3a34) }
+
+/* Logo */
+.logo-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px }
+.lt { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--paper); display: grid }
+.lt .art { aspect-ratio: 16/9; display: grid; place-items: center }
+.lt .art svg { width: 66% }
+.lt .art svg.mark { width: 28% }
+.lt .cap { padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 13px; border-top: 1px solid var(--line); flex-wrap: wrap }
+.lt .cap b { font-weight: 600 }
+.btn { font: inherit; font-size: 12.5px; font-weight: 600; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 7px; padding: 6px 11px; cursor: pointer }
+.btn:hover { border-color: var(--muted) }
+.btn.primary { background: var(--spruce); color: #fff; border-color: var(--spruce) }
+.btn.on { background: var(--ink); color: #fff; border-color: var(--ink) }
+.toast { font-size: 12px; color: var(--ok) }
+
+/* Typography */
+.spec { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 24px; display: grid; gap: 18px }
+.spec .aa { font-size: clamp(64px, 10vw, 120px); font-weight: 700; line-height: .9; letter-spacing: -0.04em; color: var(--spruce) }
+.spec .chars { font-size: 18px; letter-spacing: .02em; word-break: break-all }
+.scale { display: grid; gap: 10px }
+.scale div { display: grid; grid-template-columns: 120px minmax(0,1fr); gap: 16px; align-items: baseline; border-top: 1px solid var(--line); padding-top: 10px }
+.scale small { font-family: var(--mono); font-size: 11.5px; color: var(--muted) }
+.fonts-table { width: 100%; border-collapse: collapse; font-size: 14px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; overflow: hidden }
+.fonts-table th, .fonts-table td { text-align: left; padding: 10px 14px; border-top: 1px solid var(--line); vertical-align: top }
+.fonts-table th { background: var(--ground); font-size: 12px; color: var(--muted); font-weight: 600; border-top: 0 }
+.tablewrap { overflow-x: auto }
+
+/* Colour lab */
+.lab { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: clamp(16px, 2.4vw, 24px); display: grid; gap: 22px; min-width: 0 }
+.lab > * { min-width: 0 }
+.lab-bar > * { min-width: 0 }
+.lab-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between }
+.lab-bar .row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center }
+.small { font-size: 12.5px; color: var(--muted) }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 10px }
+.sw { border: 1px solid var(--line); border-radius: 9px; overflow: hidden; display: grid; min-width: 0; background: var(--paper) }
+.sw .chipc { height: 74px; position: relative; display: flex; align-items: end; padding: 7px 9px; cursor: pointer }
+.sw .chipc .group { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; opacity: .85 }
+.sw .chipc input[type=color] { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; border: 0 }
+.sw .meta { padding: 8px 9px; display: grid; gap: 4px }
+.sw .meta .nm { font-weight: 600; font-size: 12.5px; line-height: 1.3 }
+.sw .meta input.hx { font-family: var(--mono); font-size: 12.5px; padding: 4px 7px; width: 100%; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); background: var(--paper) }
+.sw .vals { font-family: var(--mono); color: var(--muted); font-size: 10.5px; line-height: 1.5; font-variant-numeric: tabular-nums }
+.roles { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px }
+.roles label { display: grid; gap: 4px; font-size: 12px; color: var(--muted); align-content: start }
+.roles select { font: inherit; font-size: 13px; padding: 6px 8px; border: 1px solid var(--line); border-radius: 7px; background: var(--paper); color: var(--ink); width: 100% }
+.previews { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px }
+@media (max-width: 420px) { .previews { grid-template-columns: 1fr } }
+.pv { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: grid; min-width: 0; margin: 0; background: var(--paper) }
+.pv figcaption { padding: 9px 12px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap }
+.pv figcaption b { color: var(--ink); font-weight: 600 }
+.stage { position: relative; overflow: hidden; font-family: var(--font) }
+.sim .stage { filter: var(--sim) }
+.lg-inline { display: block; aspect-ratio: 910 / 262 }
+.st-logo { background: var(--p-bg); color: var(--p-accent); aspect-ratio: 16/9; display: grid; place-items: center } .st-logo svg { width: 70% }
+.st-logo-l { background: var(--p-light); color: var(--p-bg); aspect-ratio: 16/9; display: grid; place-items: center } .st-logo-l svg { width: 70% }
+.st-web { background: var(--p-bg); color: var(--p-light); aspect-ratio: 16/10; display: grid; grid-template-rows: auto 1fr }
+.st-web nav { display: flex; align-items: center; justify-content: space-between; padding: 9px 12px; border-bottom: 1px solid color-mix(in srgb, var(--p-light) 14%, transparent); font-size: 10px }
+.st-web nav .lk { display: flex; gap: 9px; opacity: .85 }
+.st-web nav svg { width: 58px; height: auto; color: var(--p-accent) }
+.st-web .hero { padding: 14px; display: grid; align-content: center; gap: 7px }
+.st-web .eyebrow { font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--p-accent); font-weight: 700 }
+.st-web h3 { font-size: 21px; line-height: 1.05; letter-spacing: -0.02em }
+.st-web h3 em { font-style: normal; color: var(--p-accent) }
+.st-web p { font-size: 10.5px; opacity: .8; max-width: 32ch }
+.st-web .btns { display: flex; gap: 7px; margin-top: 4px }
+.st-web .b1 { background: var(--p-accent); color: var(--p-on-accent); padding: 6px 10px; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase }
+.st-web .b2 { border: 1.5px solid var(--p-light); padding: 5px 10px; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase }
+.st-slide { background: var(--p-bg); color: var(--p-light); aspect-ratio: 16/9; display: grid; align-content: end; padding: 14px 16px }
+.st-slide .bigshield { position: absolute; right: -6%; top: -34%; width: 58%; color: var(--slide-shield) }
+.st-slide .t { font-size: 18px; font-weight: 500; position: relative }
+.st-slide .rule { height: 1px; background: var(--p-light); opacity: .7; margin: 9px 0 7px; width: 70% }
+.st-slide .ft svg { width: 40px; height: auto; color: var(--p-light) }
+.st-steel { aspect-ratio: 16/10; background: linear-gradient(135deg, #8d9496 0%, #b9bfc1 38%, #7d8487 62%, #a7adaf 100%); display: grid; place-items: center }
+.st-steel .plate { background: var(--p-bg); padding: 12px 16px; display: grid; gap: 9px; width: 78%; box-shadow: 0 2px 0 rgba(0,0,0,.25) }
+.st-steel .plate svg { width: 100%; height: auto; color: var(--p-accent) }
+.st-steel .hz { height: 11px; background: repeating-linear-gradient(-45deg, var(--p-signal) 0 10px, var(--p-dark) 10px 20px) }
+.st-steel .spec2 { display: flex; justify-content: space-between; color: var(--p-light); font-size: 8.5px; letter-spacing: .1em; text-transform: uppercase; font-family: var(--mono) }
+.st-ui { background: var(--p-soft); color: var(--p-dark); aspect-ratio: 16/10; padding: 14px; display: grid; align-content: center }
+.st-ui .c { background: var(--p-light); padding: 12px; display: grid; gap: 7px }
+.st-ui h4 { font-size: 13px; color: var(--p-bg) }
+.st-ui .pills { display: flex; flex-wrap: wrap; gap: 5px }
+.st-ui .pill { font-size: 9.5px; font-weight: 700; padding: 3px 7px; letter-spacing: .04em; text-transform: uppercase }
+.st-ui .p1 { background: var(--p-signal); color: var(--p-dark) } .st-ui .p2 { background: var(--p-accent); color: var(--p-on-accent) } .st-ui .p3 { background: var(--p-bg); color: var(--p-light) } .st-ui .p4 { background: var(--p-neutral); color: var(--p-light) }
+.st-ui .bt { font-size: 10.5px; color: var(--p-neutral) } .st-ui .ln { font-size: 10.5px; color: var(--p-accent); font-weight: 600 }
+.cwrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px }
+table.cm { border-collapse: collapse; font-size: 11.5px; min-width: 740px; width: 100%; background: var(--paper) }
+.cm th, .cm td { padding: 7px 9px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap }
+.cm th { font-weight: 600; color: var(--muted) }
+.cm .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; border: 1px solid var(--line); vertical-align: -1px }
+.cm .sample { display: inline-block; padding: 1px 5px; font-weight: 700; margin-right: 5px }
+.cm .r { font-family: var(--mono); font-variant-numeric: tabular-nums }
+.badge { display: inline-block; font-size: 9.5px; font-weight: 700; padding: 1px 5px; border-radius: 4px; margin-left: 5px }
+.b-aaa { background: #d7efe0; color: #14532d } .b-aa { background: #e3f0d6; color: #365314 } .b-lg { background: #fdf0c8; color: #713f12 } .b-no { background: #f9dcdc; color: #7f1d1d }
+.proposal { background: var(--ground); border-radius: 10px; padding: 16px; display: grid; gap: 10px }
+.proposal .fields { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 10px }
+@media (max-width: 600px) { .proposal .fields { grid-template-columns: 1fr } }
+.proposal input, .proposal textarea { font: inherit; font-size: 13.5px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 7px; background: var(--paper); color: var(--ink); width: 100% }
+.proposal textarea { min-height: 64px; resize: vertical }
+#propOut { font-family: var(--mono); font-size: 12px; min-height: 120px }
+
+/* Templates */
+.sig { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 24px; display: grid; gap: 10px; font-family: Arial, sans-serif; align-content: start }
+.sig .nm { font-size: 18px; font-weight: 700; color: var(--spruce) }
+.sig .ti { font-size: 13px; color: var(--grey) }
+.sig .ln { height: 1px; background: var(--spruce); width: 220px; max-width: 100% }
+.sig .ct { font-size: 13px; line-height: 1.6 }
+.sig svg { width: 100px; color: var(--spruce) }
+.spec-list { display: grid; gap: 8px; font-size: 14px }
+.spec-list div { display: grid; grid-template-columns: 130px minmax(0,1fr); gap: 12px; border-top: 1px solid var(--line); padding-top: 8px }
+.spec-list span:first-child { color: var(--muted); font-size: 13px }
+
+/* Actions */
+.actions { width: 100%; border-collapse: collapse; background: var(--paper); font-size: 14px; min-width: 720px }
+.actions th, .actions td { text-align: left; padding: 11px 14px; border-top: 1px solid var(--line); vertical-align: top }
+.actions th { background: var(--ground); font-size: 12px; color: var(--muted); font-weight: 600; border-top: 0 }
+.actions td:first-child { font-family: var(--mono); color: var(--orange); font-size: 12px }
+.actions .grp td { background: var(--spruce); color: #fff; font-family: var(--font); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 8px 14px }
+.lvl { font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 4px; white-space: nowrap }
+.lvl-h { background: var(--ok-bg); color: var(--ok) } .lvl-m { background: var(--disc-bg); color: var(--disc) } .lvl-l { background: var(--todo-bg); color: var(--todo) }
+
+footer.doc { color: var(--muted); font-size: 12.5px; text-align: center; padding-top: 12px }
+
+/* ---------- Home view ---------- */
+[data-view] [hidden] {}
+.site-head { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--spruce); color: #fff; border-bottom: 1px solid rgba(255,255,255,.08) }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--spruce) }
+.site-head .in { max-width: 1240px; margin: 0 auto; padding-block: 14px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; align-items: center; justify-content: space-between; gap: 20px }
+.site-head .brand { width: 132px; color: var(--orange); flex: none; display: block }
+.site-nav { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; justify-content: flex-end }
+.site-nav a { color: rgba(255,255,255,.86); text-decoration: none; font-size: 14px; font-weight: 500; padding: 4px 0; border-bottom: 2px solid transparent }
+.site-nav a:hover { color: #fff }
+.site-nav a.cur { color: #fff; border-bottom-color: var(--orange) }
+.site-nav .green { display: inline-flex; gap: 6px; align-items: center }
+.site-nav .green i { font-style: normal; font-family: var(--mono); font-size: 9.5px; background: #000; color: #33ff00; padding: 1px 4px }
+.langs { display: flex; gap: 2px; background: rgba(0,0,0,.25); padding: 3px; border-radius: 6px }
+.langs span { font-size: 11.5px; font-weight: 700; padding: 3px 7px; border-radius: 4px; color: rgba(255,255,255,.7) }
+.langs span.on { background: rgba(255,255,255,.12); color: #fff }
+.who { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255,255,255,.8) }
+.who .out { border: 1px solid rgba(255,255,255,.3); color: #fff; padding: 5px 10px; border-radius: 6px; font-weight: 600; font-size: 12.5px }
+.menu-btn { display: none; font: inherit; font-weight: 600; font-size: 13px; color: #fff; background: transparent; border: 1px solid rgba(255,255,255,.35); border-radius: 6px; padding: 6px 12px; cursor: pointer }
+@media (max-width: 980px) {
+  .menu-btn { display: inline-block }
+  .site-head .in { flex-wrap: wrap }
+  .site-nav { display: none; width: 100%; flex-direction: column; align-items: flex-start; gap: 10px; padding-top: 8px }
+  .site-nav.open { display: flex }
+}
+.hero { position: relative; min-height: 640px; display: grid; align-items: center; color: #fff; overflow: hidden; background: #2b2a20 }
+.hero > video, .hero > img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 65% 60% }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(16,34,30,.94) 0%, rgba(16,34,30,.82) 34%, rgba(16,34,30,.25) 64%, rgba(16,34,30,0) 100%) }
+@media (max-width: 760px) { .hero::after { background: linear-gradient(180deg, rgba(16,34,30,0) 0%, rgba(16,34,30,.15) 22%, rgba(16,34,30,.92) 42%) } .hero { min-height: 0; align-items: end } .hero > video, .hero > video { height: 300px; object-position: 70% 50% } .vid-cap { top: 262px; bottom: auto } }
+.hero .in { position: relative; z-index: 1; max-width: 1240px; width: 100%; margin: 0 auto; padding-block: 72px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 22px }
+@media (max-width: 760px) { .hero .in { padding-top: 250px; padding-bottom: 40px } }
+.hero .eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--orange) }
+.hero .eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--orange) }
+.hero h1 { font-size: clamp(44px, 7vw, 84px); line-height: .98; letter-spacing: -0.035em; font-weight: 800; max-width: 11ch }
+.hero h1 em { font-style: normal; color: var(--orange) }
+.hero p.sub { font-size: 18px; color: rgba(255,255,255,.86); max-width: 46ch }
+.hero .ctas { display: flex; gap: 12px; flex-wrap: wrap }
+.cta { display: inline-block; padding: 14px 22px; font-weight: 700; font-size: 14px; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; border-radius: 3px }
+.cta.solid { background: var(--orange); color: #000 }
+.cta.line { border: 2px solid #fff; color: #fff; padding: 12px 20px }
+.stats { display: flex; gap: clamp(20px, 4vw, 48px); flex-wrap: wrap; margin-top: 18px }
+.stats div { display: grid; gap: 2px }
+.stats b { font-size: clamp(28px, 3.4vw, 38px); font-weight: 800; color: var(--orange); letter-spacing: -0.02em; font-variant-numeric: tabular-nums }
+.stats span { font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.8); font-weight: 600 }
+.photo-note { position: absolute; z-index: 1; right: max(16px, env(safe-area-inset-right, 0px)); bottom: 12px; font-size: 11px; color: rgba(255,255,255,.75); background: rgba(0,0,0,.35); padding: 3px 8px; border-radius: 4px }
+.home-body { padding-block: 64px 80px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 64px; justify-items: center }
+.home-body .col { max-width: 1240px }
+.map { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px }
+.zone { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 20px; display: grid; gap: 10px; align-content: start; text-decoration: none; color: inherit }
+a.zone:hover { border-color: var(--spruce) }
+.zone h3 { font-size: 19px; color: var(--spruce) }
+.zone p { font-size: 14px; color: #36403c }
+.zone ul { margin: 0; padding-left: 18px; font-size: 13.5px; color: var(--muted) }
+.zone .go { font-weight: 700; font-size: 13px; color: var(--spruce) }
+.zone.here { border: 2px solid var(--orange) }
+.tlpb { font-family: var(--mono); font-size: 11px; font-weight: 500; padding: 2px 7px; background: #000; width: max-content; letter-spacing: .04em }
+.t-clear { color: #fff } .t-green { color: #33ff00 } .t-amber { color: #ffc000 } .t-red { color: #ff2b2b }
+.stages { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--paper) }
+.stage-s { padding: 14px 16px; border-left: 1px solid var(--line); display: grid; gap: 4px }
+.stage-s:first-child { border-left: 0 }
+.stage-s b { font-size: 14px }
+.stage-s span { font-size: 12.5px; color: var(--muted) }
+.stage-s.now { background: var(--spruce); color: #fff }
+.stage-s.now span { color: rgba(255,255,255,.8) }
+.stage-s.now b::after { content: "  ← this draft"; color: var(--orange); font-size: 12px }
+.site-foot { background: var(--spruce); color: rgba(255,255,255,.75); font-size: 12.5px }
+.site-foot .in { max-width: 1240px; margin: 0 auto; padding-block: 22px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap }
+.rail .back { color: #fff; font-size: 13px; font-weight: 600; text-decoration: none; display: inline-flex; gap: 6px }
+.rail .back:hover { color: var(--orange) }
+
+[hidden] { display: none !important }
+.head-right { display: flex; align-items: center; gap: 14px }
+.burger { width: 44px; height: 40px; display: grid; align-content: center; gap: 5px; padding: 0 11px; background: transparent; border: 1px solid rgba(255,255,255,.35); border-radius: 6px; cursor: pointer }
+.burger:hover { border-color: var(--orange) }
+.burger span { display: block; height: 2px; background: #fff; border-radius: 2px }
+.scrim { position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 40 }
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(340px, 88vw); background: var(--spruce); color: #fff; z-index: 50; overflow-y: auto; display: grid; grid-template-rows: auto 1fr auto; gap: 18px; padding: calc(18px + env(safe-area-inset-top, 0px)) calc(22px + env(safe-area-inset-right, 0px)) calc(22px + env(safe-area-inset-bottom, 0px)) 22px; box-shadow: -10px 0 30px rgba(0,0,0,.3) }
+.dr-top { display: flex; justify-content: space-between; align-items: center }
+.who-n { display: grid; font-weight: 600 } .who-n small { font-weight: 500; color: rgba(255,255,255,.65); font-size: 12px }
+.dr-close { font: inherit; font-size: 26px; line-height: 1; color: #fff; background: transparent; border: 0; cursor: pointer; padding: 4px 8px }
+.dr-nav { display: grid; gap: 22px; align-content: start }
+.dr-grp { display: grid; gap: 4px; border-top: 1px solid rgba(255,255,255,.12); padding-top: 14px }
+.dr-h { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.6); margin: 6px 0 2px }
+.dr-grp a { color: #fff; text-decoration: none; font-size: 15px; padding: 4px 0 }
+.dr-grp a:hover { color: var(--orange) }
+.dr-grp a.strong { font-weight: 700; font-size: 17px; color: var(--orange) }
+.dr-soon { font-size: 13px; color: rgba(255,255,255,.5) }
+.dr-out { border: 1px solid rgba(255,255,255,.3); padding: 8px 12px; border-radius: 6px; width: max-content; font-weight: 600; font-size: 13px }
+
+#products, #zone-training, [id] { scroll-margin-top: 90px }
+.pf-filter { display: flex; flex-wrap: wrap; gap: 6px }
+.pf { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px }
+.prod { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: grid; grid-template-rows: 150px auto; min-width: 0 }
+.prod .pic { position: relative; background: var(--spruce); display: grid; place-items: center; color: rgba(255,255,255,.55); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; overflow: hidden }
+.prod .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; max-width: none }
+.prod .pic .real { position: absolute; right: 10px; bottom: 10px; background: var(--orange); color: #000; font-size: 10px; padding: 2px 7px; border-radius: 4px; letter-spacing: .06em; font-weight: 700 }
+.prod .pic .cg { position: absolute; right: 10px; bottom: 10px; background: rgba(0,0,0,.55); color: #fff; font-size: 10px; padding: 2px 7px; border-radius: 4px; letter-spacing: .06em }
+.prod .pic .plat { position: absolute; left: 10px; top: 10px; background: rgba(0,0,0,.55); color: #fff; font-size: 10.5px; padding: 3px 8px; border-radius: 4px; letter-spacing: .06em }
+.prod .pic svg { width: 60px; height: 63px; color: rgba(255,107,26,.55) }
+.prod .bd { padding: 16px 18px; display: grid; gap: 8px; align-content: start }
+.prod h3 { font-size: 18px; color: var(--spruce); display: grid; gap: 2px }
+.prod h3 small { font-size: 13px; color: var(--orange); font-weight: 700 }
+.prod p { font-size: 13.5px; color: #36403c }
+.prod dl { margin: 0; display: grid; grid-template-columns: 82px minmax(0,1fr); gap: 3px 10px; font-size: 12.5px }
+.prod dt { color: var(--muted) } .prod dd { margin: 0 }
+.st { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding: 2px 7px; border-radius: 4px; width: max-content }
+.st-prod { background: var(--ok-bg); color: var(--ok) } .st-con { background: var(--disc-bg); color: var(--disc) } .st-dev { background: var(--todo-bg); color: var(--todo) }
+.pf-note { font-size: 13px; color: var(--muted) }
+.pf-bar { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; justify-content: space-between }
+.pf-jump { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13.5px; font-weight: 600 } .pf-jump a { color: var(--spruce) }
+#pf { display: grid; gap: 40px }
+.pf-group { display: grid; gap: 14px; min-width: 0 }
+.pf-gh { display: grid; grid-template-columns: auto minmax(0,1fr); gap: 14px; align-items: start; border-top: 2px solid var(--spruce); padding-top: 14px }
+.pf-gh .n { width: 34px; height: 34px; border-radius: 50%; background: var(--orange); color: #000; display: grid; place-items: center; font-weight: 800; font-size: 16px }
+.pf-gh h3 { font-size: 22px; color: var(--spruce); margin-bottom: 2px } .pf-gh p { font-size: 14px; color: #36403c; max-width: 70ch }
+.pf-lead { background: var(--spruce); color: #fff; border-radius: 10px; padding: 14px 18px; font-size: 15.5px; line-height: 1.45 } .pf-lead strong { color: var(--orange) }
+.chk { font-size: 11px; background: rgba(255,255,255,.14); padding: 1px 7px; border-radius: 4px; white-space: nowrap }
+.pf-sub { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: 4px }
+.cars { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px }
+.car { margin: 0; border-radius: 10px; overflow: hidden; background: #2b3331; min-width: 0 }
+.car .pic { position: relative; aspect-ratio: 16/9 } .car img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; max-width: none }
+.car .real, .car .cg { position: absolute; right: 8px; bottom: 8px; font-size: 10px; padding: 2px 7px; border-radius: 4px; letter-spacing: .06em }
+.car .real { background: var(--orange); color: #000; font-weight: 700 } .car .cg { background: rgba(0,0,0,.6); color: #fff }
+.car figcaption { color: #fff; font-weight: 600; font-size: 14.5px; padding: 10px 12px; text-align: center }
+.car-note { font-size: 13px; color: var(--muted) }
+.prod .tags { display: flex; flex-wrap: wrap; gap: 6px }
+.ed { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding: 2px 7px; border-radius: 4px }
+.ed-arc { background: #dcebf5; color: #1d4e6e } .ed-mil { background: #e3e6d6; color: #45502a }
+.wn { display: inline-block; margin-left: 8px; font-size: 10.5px; font-weight: 600; color: var(--muted); vertical-align: middle; text-transform: uppercase; letter-spacing: .05em }
+
+
+.vid-cap { position: absolute; z-index: 1; right: max(16px, env(safe-area-inset-right, 0px)); bottom: 14px; display: flex; align-items: center; gap: 8px; font-size: 12px; color: #fff }
+.vid-cap .vc-name { font-weight: 700; background: rgba(0,0,0,.45); padding: 4px 9px; border-radius: 4px }
+.vid-cap .vc-type { background: rgba(0,0,0,.35); padding: 4px 8px; border-radius: 4px; color: rgba(255,255,255,.8) }
+.vc-btn { font: inherit; font-size: 12px; font-weight: 600; color: #fff; background: rgba(0,0,0,.45); border: 1px solid rgba(255,255,255,.35); border-radius: 4px; padding: 3px 9px; cursor: pointer }
+@media (prefers-reduced-motion: reduce) { .hero > video { display: none } .hero { background: #2b2a20 url(img/hero-poster.jpg) 65% 60% / cover } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo" viewBox="140 290 910 262"><path fill="currentColor" d="M500 439.5C501.4 457.7 515.9 469.7 536.6 469.7 554.8 469.7 567.7 461.4 567.7 446.7 567.7 429.9 551.1 426.4 530.6 422.9 508.7 419.2 486.3 412.1 486.3 385.8 486.3 362.8 505.1 347.3 532.5 347.3 561.5 347.3 580.9 364.1 582.4 388.5L565.8 388.5C563.9 372.8 550.7 362.6 532.5 362.6 514.9 362.6 503.1 370.3 503.1 384.8 503.1 401.1 519.5 404.3 539.9 407.8 562 411.5 584.6 418.8 584.6 445.1 584.6 468.5 564.9 485 536.4 485 504.1 485 484.4 466.2 483.4 439.5L500 439.5Z"/><path fill="currentColor" d="M618 348.4 618 438.2 668.1 385.2 687.1 385.2 649.2 425.6 689.8 483.8 670.6 483.8 637.7 437 618 457.7 618 483.8 602.1 483.8 602.1 348.4 618 348.4Z"/><path fill="currentColor" d="M689.8 508C697.7 508 700.6 504.7 700.6 497.2L700.6 385.2 716.5 385.2 716.5 496.8C716.5 514.2 709.1 522.5 690.8 522.5L677.5 522.5 677.5 508 689.8 508ZM718.8 357.5C718.8 363.5 714.4 367.8 708.5 367.8 702.7 367.8 698.2 363.5 698.2 357.5 698.2 351.5 702.7 347.2 708.5 347.2 714.4 347.3 718.8 351.5 718.8 357.5Z"/><path fill="currentColor" d="M731.4 434.5C731.4 404.5 751.5 384 780.3 384 809.1 384 829.2 404.5 829.2 434.5 829.2 464.5 809.2 485 780.4 485 751.6 485 731.4 464.5 731.4 434.5ZM813.1 434.5C813.1 413.4 799.9 398.1 780.4 398.1 760.9 398.1 747.7 413.4 747.7 434.5 747.7 455.6 760.9 470.9 780.4 470.9 799.9 470.9 813.1 455.6 813.1 434.5Z"/><path fill="currentColor" d="M861.3 348.4 861.3 483.8 845.4 483.8 845.4 348.4 861.3 348.4Z"/><path fill="currentColor" d="M974.1 348.4 974.1 483.8 960.4 483.8 958.3 467.9C951.7 477 941.1 484.9 924.4 484.9 897.1 484.9 877 466.5 877 434.4 877 404.2 897.1 383.9 924.4 383.9 941 383.9 952.3 390.7 958.3 400.2L958.3 348.4 974.1 348.4ZM958.5 434.9C958.5 413.2 945.3 398.1 926 398.1 906.5 398.1 893.3 413 893.3 434.5 893.3 456 906.5 470.9 926 470.9 945.3 470.9 958.5 456 958.5 434.9Z"/><path fill="currentColor" d="M1044.4 385.2 1044.4 400.7 1036.5 400.7C1015.8 400.7 1010.2 417.9 1010.2 433.6L1010.2 483.9 994.3 483.9 994.3 385.2 1008 385.2 1010.1 400.1C1014.7 392.6 1022.3 385.2 1039.9 385.2L1044.4 385.2Z"/><path fill="currentColor" d="M382.8 347 333 297.2 333 297.2 275 297.2 249.8 297.2 196 297.2 196 297.2 146.2 347 185.9 386.7 146.2 426.4 264.5 544.7 382.8 426.4 343.1 386.7 382.8 347ZM354.5 426.4 264.5 516.4 174.5 426.4 214.2 386.7 214.2 386.7 214.2 386.7 174.5 347 204.3 317.2 251 317.2 276.6 317.2 324.7 317.2 354.5 347 314.8 386.7 314.8 386.7 314.8 386.7 354.5 426.4Z"/></symbol>
+    <symbol id="mark" viewBox="140 290 250 262"><path fill="currentColor" d="M382.8 347 333 297.2 333 297.2 275 297.2 249.8 297.2 196 297.2 196 297.2 146.2 347 185.9 386.7 146.2 426.4 264.5 544.7 382.8 426.4 343.1 386.7 382.8 347ZM354.5 426.4 264.5 516.4 174.5 426.4 214.2 386.7 214.2 386.7 214.2 386.7 174.5 347 204.3 317.2 251 317.2 276.6 317.2 324.7 317.2 354.5 347 314.8 386.7 314.8 386.7 314.8 386.7 354.5 426.4Z"/></symbol>
+    <symbol id="shieldline" viewBox="505 327 180 188"><path d="M549.1 337.5 515.5 371.1 542.3 397.9 515.5 424.7 595.3 504.5 675.1 424.7 648.3 397.9 675.1 371.1 641.5 337.5 549.1 337.5Z" fill="none" stroke="currentColor" stroke-width="7" stroke-miterlimit="10"/></symbol>
+    <filter id="f-deut"><feColorMatrix type="matrix" values="0.367 0.861 -0.228 0 0  0.280 0.673 0.047 0 0  -0.012 0.043 0.969 0 0  0 0 0 1 0"/></filter>
+    <filter id="f-prot"><feColorMatrix type="matrix" values="0.152 1.053 -0.205 0 0  0.115 0.786 0.099 0 0  -0.004 -0.048 1.052 0 0  0 0 0 1 0"/></filter>
+    <filter id="f-trit"><feColorMatrix type="matrix" values="1.256 -0.077 -0.179 0 0  -0.078 0.931 0.148 0 0  0.005 0.691 0.304 0 0  0 0 0 1 0"/></filter>
+    <filter id="f-grey"><feColorMatrix type="saturate" values="0"/></filter>
+  </defs>
+</svg>
+<div id="view-brand">
+<div class="shell">
+  <aside class="rail">
+    <a class="back" href="/">← Shared Vision home</a>
+    <svg class="logo lg-inline" aria-label="Skjoldr"><use href="#logo"/></svg>
+    <div class="meta">
+      <span class="tlp">TLP:AMBER</span>
+      <span>Brand Book · Alpha v0.1</span>
+      <span>Updated 10 November 2026</span>
+    </div>
+    <nav aria-label="Sections">
+      <ol>
+        <li><a href="#one-page"><span class="n">01</span>Brand on one page</a></li>
+        <li><a href="#name"><span class="n">02</span>Brand name</a></li>
+        <li><a href="#story"><span class="n">03</span>Core story</a></li>
+        <li><a href="#platform"><span class="n">04</span>Vision, values, ambition</a></li>
+        <li><a href="#position"><span class="n">05</span>Position: Škoda+</a></li>
+        <li><a href="#keywords"><span class="n">06</span>Visual keywords</a></li>
+        <li><a href="#logo"><span class="n">07</span>Logo</a></li>
+        <li><a href="#colours"><span class="n">08</span>Colours</a></li>
+        <li><a href="#type"><span class="n">09</span>Typography</a></li>
+        <li><a href="#materials"><span class="n">10</span>Materials and surfaces</a></li>
+        <li><a href="#tagline"><span class="n">11</span>Tagline</a></li>
+        <li><a href="#templates"><span class="n">12</span>Templates</a></li>
+        <li><a href="#actions"><span class="n">13</span>Next actions</a></li>
+      </ol>
+    </nav>
+    <div class="legend">
+      <span class="status s-ok">Decided</span>
+      <span class="status s-disc">For discussion</span>
+      <span class="status s-todo">To come</span>
+    </div>
+  </aside>
+
+  <main>
+    <!-- 01 -->
+    <section class="col" id="one-page" aria-labelledby="h1">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">01</span>Brand on one page <span class="status s-ok">Decided</span></div>
+        <h2 id="h1">Effective in action, local at heart and resourceful by nature</h2>
+        <p>The whole brand in one view. Everything else in this book expands on these lines.</p>
+      </div>
+      <div class="onepager">
+        <svg class="bg-mark" aria-hidden="true"><use href="#shieldline"/></svg>
+        <div>
+          <div class="op-grid" style="margin-bottom:14px"><div class="k">Vision</div></div>
+          <div class="vision">A world without <em>wildfires</em></div>
+        </div>
+        <div class="op-grid">
+          <div><div class="k">DNA</div><div class="v">The First Response</div><div class="d">Readiness without response changes nothing.</div></div>
+          <div><div class="k">Ambition</div><div class="v">Stopping wildfires before they become wild</div></div>
+          <div><div class="k">Values</div><div class="v">Effective · Local · Resourceful</div></div>
+          <div><div class="k">Position</div><div class="v">Škoda+</div><div class="d">Everything you need. Nothing you don't.</div></div>
+          <div><div class="k">Tagline</div><div class="v">When minutes matter</div></div>
+          <div><div class="k">Markets</div><div class="v">Civilian first, military second</div><div class="d">Complete product for civilians; a capability in someone else's system for the military.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 -->
+    <section class="col" id="name" aria-labelledby="h2">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">02</span>Brand name <span class="status s-todo">To come</span></div>
+        <h2 id="h2">Skjoldr</h2>
+      </div>
+      <div class="grid2">
+        <div class="todo-card"><span class="label">The story behind the name</span><p>A few lines on where "Skjoldr" comes from and why it fits a company that shields communities from fire.</p></div>
+        <div class="todo-card"><span class="label">Pronunciation</span><p>How to say it in Norwegian, English and Spanish, written so a non-Norwegian can follow it.</p></div>
+      </div>
+    </section>
+
+    <!-- 03 -->
+    <section class="col" id="story" aria-labelledby="h3">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">03</span>Core story <span class="status s-ok">Decided</span></div>
+        <h2 id="h3">The missing link in battling wildfires</h2>
+        <p>Our narrative in three paragraphs: the problem, our answer, and where we are going. From the brand platform.</p>
+      </div>
+      <div class="prose">
+        <p>Across the world, wildfires are spreading faster and burning fiercer. Climate change, prolonged droughts, and global instability are fueling a new kind of existential threat. Investments in firefighting are rising, yet a crucial gap remains: the first phase of response. When fire breaks out, few are close enough, ready enough, or equipped enough to act in time. Making it the missing link in battling wildfires, that brief window where small fires turn into disasters.</p>
+        <p>Skjoldr was created to close a critical gap: the lack of tools for early, local response. Our modular fire suppression systems make rapid action possible anywhere and by anyone. With minimal training, our technology turns landowners, farmers, and local communities into capable first responders, restoring control to those closest to the risk.</p>
+        <p>In the coming years, Skjoldr will grow into a global force for early wildfire response. Our goal is to make first-phase readiness part of every safety infrastructure, ensuring that no community faces fire unprepared. We will expand through partnerships, innovation and responsible production, combining Scandinavian engineering with an international mindset. By turning early action into a shared standard, we will help protect lives, property and ecosystems, moving towards a world without wildfires.</p>
+      </div>
+    </section>
+
+    <!-- 04 -->
+    <section class="col" id="platform" aria-labelledby="h4">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">04</span>Vision, values, ambition, promises <span class="status s-ok">Decided</span></div>
+        <h2 id="h4">What we stand for</h2>
+        <p>The values guide our decisions, our designs, how we grow the team and how we work together.</p>
+      </div>
+      <div class="values">
+        <div class="value"><h3>Effective</h3><p>We don't wait for danger to grow. We stay alert, prepared and proactive, because readiness saves what matters the most.</p><p class="kw">Quick, fast, light, agile, simple</p></div>
+        <div class="value"><h3>Local</h3><p>We build strength by leaning on each other. Farmers, volunteers, firefighters and engineers, together we turn locals into first responders.</p><p class="kw">Community, together, collaboration, ownership, empower</p></div>
+        <div class="value"><h3>Resourceful</h3><p>We are in the business of solving challenges, and every obstacle is an opportunity to improve. That is why we question what's accepted and keep designing what's needed.</p><p class="kw">Curious, creative, forward-thinking, problem-solving</p></div>
+      </div>
+      <div class="card">
+        <span class="label">Ambition</span>
+        <div class="big">Stopping wildfires before they become wild.</div>
+        <p>Our work starts where wildfires begin, in the moments when they can still be stopped. By building mobile response rigs for early readiness, we give people and communities the power to act before disaster spreads. We measure our success by two figures:</p>
+        <div class="metrics"><div class="metric"><span class="m">Mobile response rigs delivered</span><span class="small">Number per year</span></div><div class="metric"><span class="m">Fires put out before they became full-scale wildfires</span><span class="small">Number per year</span></div></div>
+      </div>
+      <div class="promises" role="list" aria-label="Promises">
+        <div class="promise" role="listitem"><span class="who">Users</span><div><h4>From bystander to responder</h4><p>We empower people to act when it matters. With simple, mobile tools and basic training, anyone can make a difference in the first, crucial phase of a wildfire.</p></div></div>
+        <div class="promise" role="listitem"><span class="who">Public customers</span><div><h4>The missing link in wildfire response</h4><p>We strengthen existing systems with speed, mobility and accessibility. Skjoldr adds the first phase of response, helping public authorities contain fires before they escalate.</p></div></div>
+        <div class="promise" role="listitem"><span class="who">Private customers</span><div><h4>Effective response at an affordable price</h4><p>We deliver professional capability without complexity or high cost. Our modular systems make readiness realistic for private companies, landowners and industries that depend on safety and continuity.</p></div></div>
+        <div class="promise" role="listitem"><span class="who">Team</span><div><h4>Empower the people that protect our communities</h4><p>When you join Skjoldr, you join the world's first line of defense, enabling others to stop wildfires before they become wild.</p></div></div>
+        <div class="promise" role="listitem"><span class="who">Society</span><div><h4>A world without wildfires</h4><p>Our ultimate promise is to the world we share. We exist to protect communities and preserve nature, building a future where wildfire no longer threatens our daily life.</p></div></div>
+      </div>
+      <div class="card"><span class="label">DNA</span><div class="big">The First Response</div><p>At Skjoldr, the first response is more than just a phase, it's our core identity. It defines how we think, design and act. We know that the most powerful way to stop wildfires is to take action before disaster takes hold. That's why every idea, every solution and every rig we build is designed to empower others to become first responders. Because readiness without response changes nothing.</p></div>
+    </section>
+
+    <!-- 05 -->
+    <section class="col" id="position" aria-labelledby="h5">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">05</span>Position <span class="status s-ok">Decided</span></div>
+        <h2 id="h5">Škoda+: quality costs a bit more</h2>
+        <p>Above the low-price and purely functional end, without premium for premium's sake. High quality, strong value and clear character, with no unnecessary cost or complexity.</p>
+      </div>
+      <div class="grid2">
+        <div class="ladder" aria-label="Brand value position">
+          <div><span>Best no matter the price</span><span></span></div>
+          <div class="here"><span>Quality costs a bit more</span><span>Skjoldr</span></div>
+          <div><span>Value for money</span><span></span></div>
+          <div><span>Lowest possible price</span><span></span></div>
+        </div>
+        <div class="prose">
+          <p>Skjoldr makes equipment for first responders who need it to work the first time, the second time, and every time after. That sets a high bar for quality, reliability and performance, and it means avoiding more technology, features or complexity than the job requires.</p>
+          <p>In the civilian market we build and support a complete product, ready to use out of the box, like a Škoda. The military market places higher demands, which is the + in Škoda+: there Skjoldr becomes a capability within someone else's vehicles, platforms and missions.</p>
+          <p class="small">A brand is a promise, and the delivery on that promise, at an acceptable price, to both buyer and seller.</p>
+        </div>
+      </div>
+      <div class="principles">
+        <div class="principle"><span class="tag">Ideology</span><h3>Everything you need. Nothing you don't.</h3><p>We focus on value, not low price, and spend where it makes a real difference to quality, performance, reliability or use. We want the right product, not the cheapest or the most advanced one.</p></div>
+        <div class="principle"><span class="tag">Production</span><h3>One platform. Many jobs.</h3><p>We build around a common platform rather than a new product for every need. For military use, the same platform steps up; what we add depends on the job.</p></div>
+        <div class="principle"><span class="tag">Brand</span><h3>Recognisable as Skjoldr</h3><p>Professional equipment does not have to be anonymous. Function comes first, but design matters, from the products to the visual identity.</p></div>
+        <div class="principle"><span class="tag">Culture</span><h3>Shoulder to shoulder</h3><p>We listen to customers, users, partners and people who know more than we do. We are straightforward about what we know and what we don't, and do what we say we will do.</p></div>
+      </div>
+    </section>
+
+    <!-- 06 -->
+    <section class="col" id="keywords" aria-labelledby="h6">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">06</span>Visual keywords <span class="status s-ok">Decided</span> <span class="status s-todo">Photos to come</span></div>
+        <h2 id="h6">Six words for every visual choice</h2>
+        <p>The three values translated into six words that guide photography, communication, environments and industrial design. The image areas are placeholders until we have our own field photos.</p>
+      </div>
+      <div class="kws">
+        <div class="kw-card"><div class="ph ph-solid">Photo to come</div><div class="body"><h3>Solid <small>Effective</small></h3><p>Things should look like they can take a hit. Weight, stability, substantial forms and strong construction. Never delicate or ornamental.</p></div></div>
+        <div class="kw-card"><div class="ph ph-earned">Photo to come</div><div class="body"><h3>Earned <small>Resourceful</small></h3><p>Show the evidence of doing something rather than preparing to do it. Sweat, dirt, scratched equipment, used gloves, tired faces and wet clothing. After, not before.</p></div></div>
+        <div class="kw-card"><div class="ph ph-rugged">Photo to come</div><div class="body"><h3>Rugged <small>Effective</small></h3><p>Masculine without becoming macho. Functional clothing, rough environments, imperfect surfaces, physical work, weather and machinery. Strength without the theatre.</p></div></div>
+        <div class="kw-card"><div class="ph ph-tactile">Photo to come</div><div class="body"><h3>Tactile <small>Resourceful</small></h3><p>Materials should feel physical. Matt surfaces, visible grain, metal, rubber, fabric, dirt, skin, water and smoke. Texture over polish.</p></div></div>
+        <div class="kw-card"><div class="ph ph-confront">Photo to come</div><div class="body"><h3>Confrontable <small>Local</small></h3><p>Fire should feel real and come with consequences, but never look beyond control. We show the scale of fire that makes first response matter: something that can be fought before it becomes something bigger.</p></div></div>
+        <div class="kw-card"><div class="ph ph-together">Photo to come</div><div class="body"><h3>Together <small>Local</small></h3><p>People doing the job together rather than individual heroes posing for the camera. Shared effort, proximity, trust, and hands helping hands.</p></div></div>
+      </div>
+    </section>
+
+    <!-- 07 -->
+    <section class="col" id="logo" aria-labelledby="h7">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">07</span>Logo <span class="status s-ok">Decided</span> <span class="status s-todo">Usage rules to come</span></div>
+        <h2 id="h7">Logotype and symbol</h2>
+        <p>The primary version is orange on Spruce Dark Green. On light backgrounds the logo is Spruce Dark Green.</p>
+      </div>
+      <div class="logo-tiles">
+        <div class="lt"><div class="art" style="background:#1C3A34;color:#FF6B1A"><svg class="lg-inline" aria-label="Logo, primary"><use href="#logo"/></svg></div><div class="cap"><b>Primary</b><button class="btn" type="button" data-copy-svg="primary">Copy SVG</button></div></div>
+        <div class="lt"><div class="art" style="background:#ffffff;color:#1C3A34"><svg class="lg-inline" aria-label="Logo on light"><use href="#logo"/></svg></div><div class="cap"><b>On light</b><button class="btn" type="button" data-copy-svg="light">Copy SVG</button></div></div>
+        <div class="lt"><div class="art" style="background:#000000;color:#ffffff"><svg class="lg-inline" aria-label="Logo, white on black"><use href="#logo"/></svg></div><div class="cap"><b>White on black</b><button class="btn" type="button" data-copy-svg="white">Copy SVG</button></div></div>
+        <div class="lt"><div class="art" style="background:#1C3A34;color:#FF6B1A"><svg class="mark" viewBox="140 290 250 262" aria-label="Symbol"><use href="#mark"/></svg></div><div class="cap"><b>Symbol</b><button class="btn" type="button" data-copy-svg="mark">Copy SVG</button></div></div>
+      </div>
+      <div class="grid2">
+        <div class="card"><span class="label">Symbol on its own</span><p>Skjoldr is still an unknown name, so the symbol alone is used only where it is obvious that you are in a Skjoldr context. Think inside the office, but not on the outside of the building. Websites and first meetings always show the full logotype.</p></div>
+        <div class="todo-card"><span class="label">To come</span><p>Clear space, minimum size and examples of misuse. The draft says we make this page when we see the need for it.</p><span class="toast" id="svgToast" aria-live="polite"></span></div>
+      </div>
+    </section>
+
+    <!-- 08 -->
+    <section class="col" id="colours" aria-labelledby="h8">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">08</span>Colours <span class="status s-disc">For discussion</span></div>
+        <h2 id="h8">Spruce and Wildfire: forest and fire</h2>
+        <p>Spruce Dark Green stands for the forest and Wildfire Orange for the fire. The secondary colours are still open. Try your own proposal in the lab below: change a colour or a role, see it in use and check the contrast, then send your proposal.</p>
+      </div>
+      <div class="grid3">
+        <div class="disc-card"><span class="label">Question 1</span><p>Wildfire Orange #FF6B1A or Flame #FF5A1F? Wildfire scores slightly better on green (4.3:1 against 4.0:1).</p></div>
+        <div class="disc-card"><span class="label">Question 2</span><p>Should Signal Yellow be kept only for warnings and safety marking, so it does not compete with the orange?</p></div>
+        <div class="disc-card"><span class="label">Question 3</span><p>The title slides use a yellow shield outline today. Yellow, orange or white?</p></div>
+      </div>
+
+      <div class="lab" id="lab">
+        <div class="lab-bar">
+          <strong>Colour lab</strong>
+          <div class="row" role="group" aria-label="Presets"><span class="small">Start from:</span>
+            <button class="btn" type="button" data-preset="nov" id="pr-nov">10 Nov palette</button>
+            <button class="btn" type="button" data-preset="flame" id="pr-flame">Flame orange</button>
+            <button class="btn" type="button" data-preset="nosig" id="pr-nosig">No signal yellow</button>
+          </div>
+        </div>
+        <div class="swatches" id="swatches"></div>
+        <p class="small">Click a colour block to pick a colour, or type a hex value. RGB is exact; CMYK is a screen estimate. Print values come from the printer.</p>
+        <div><div class="label" style="margin-bottom:8px">Roles</div><div class="roles" id="roles"></div></div>
+        <div class="lab-bar"><div class="label">In use</div>
+          <div class="row" role="group" aria-label="Colour vision"><span class="small">View as:</span>
+            <button class="btn on" type="button" data-sim="none" id="sim-none">Normal</button>
+            <button class="btn" type="button" data-sim="deut" id="sim-deut">Deuteranopia</button>
+            <button class="btn" type="button" data-sim="prot" id="sim-prot">Protanopia</button>
+            <button class="btn" type="button" data-sim="trit" id="sim-trit">Tritanopia</button>
+            <button class="btn" type="button" data-sim="grey" id="sim-grey">Greyscale</button>
+          </div>
+        </div>
+        <div class="previews" id="previews">
+          <figure class="pv"><div class="stage st-logo"><svg class="lg-inline" aria-label="Logo on brand background"><use href="#logo"/></svg></div><figcaption><b>Logo, primary</b><span id="cap-logo"></span></figcaption></figure>
+          <figure class="pv"><div class="stage st-logo-l"><svg class="lg-inline" aria-label="Logo on light"><use href="#logo"/></svg></div><figcaption><b>Logo on light</b><span id="cap-logol"></span></figcaption></figure>
+          <figure class="pv"><div class="stage st-web"><nav><svg class="lg-inline"><use href="#logo"/></svg><span class="lk"><span>Products</span><span>Training</span><span>Contact</span></span></nav><div class="hero"><span class="eyebrow">Civil defence · first response</span><h3>When minutes <em>matter.</em></h3><p>Modular fire suppression for landowners, farmers and local communities.</p><div class="btns"><span class="b1">Book a demo</span><span class="b2">Training</span></div></div></div><figcaption><b>Website hero</b><span id="cap-web"></span></figcaption></figure>
+          <figure class="pv"><div class="stage st-slide"><svg class="bigshield"><use href="#shieldline"/></svg><div class="t">Peak Wildfire Season 2027</div><div class="rule"></div><div class="ft"><svg class="lg-inline"><use href="#logo"/></svg></div></div><figcaption><b>Title slide</b><span id="cap-slide"></span></figcaption></figure>
+          <figure class="pv"><div class="stage st-steel"><div class="plate"><svg class="lg-inline"><use href="#logo"/></svg><div class="hz"></div><div class="spec2"><span>Rig 1000 L</span><span>Max 8 bar</span></div></div></div><figcaption><b>Product plate on steel</b><span id="cap-steel"></span></figcaption></figure>
+          <figure class="pv"><div class="stage st-ui"><div class="c"><h4>Responder status</h4><div class="pills"><span class="pill p1">Check pump</span><span class="pill p2">Deployed</span><span class="pill p3">Ready</span><span class="pill p4">Stored</span></div><p class="bt">Last inspection 3 days ago. Tank 1 000 L, hose 60 m.</p><span class="ln">Open log</span></div></div><figcaption><b>Labels and links</b><span id="cap-ui"></span></figcaption></figure>
+        </div>
+        <div>
+          <div class="lab-bar" style="margin-bottom:8px"><div class="label">Contrast, text on background</div><span class="small"><span class="badge b-aaa">AAA</span> 7+ <span class="badge b-aa">AA</span> 4.5+ body text <span class="badge b-lg">Large</span> 3+ headings and logos <span class="badge b-no">Fail</span> under 3</span></div>
+          <div class="cwrap"><table class="cm" id="cm"></table></div>
+        </div>
+        <div class="proposal">
+          <div class="label">Send your proposal</div>
+          <div class="fields">
+            <input type="text" id="propName" placeholder="Your name" aria-label="Your name">
+            <textarea id="propComment" placeholder="What did you change, and why? (optional)" aria-label="Comment"></textarea>
+          </div>
+          <div class="lab-bar"><span class="small">Copies your palette, roles and comment as text. Paste it into an email or Teams message to Are.</span><span class="row"><button class="btn primary" type="button" id="propCopy">Copy my proposal</button><button class="btn" type="button" id="propReset">Reset to 10 Nov palette</button></span></div>
+          <textarea id="propOut" readonly aria-label="Proposal text"></textarea>
+          <span class="toast" id="propToast" aria-live="polite"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 -->
+    <section class="col" id="type" aria-labelledby="h9">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">09</span>Typography <span class="status s-ok">Decided for now</span></div>
+        <h2 id="h9">TWK Everett, with Inter and Arial in daily use</h2>
+        <p>TWK Everett is the brand typeface. Until it is licensed, we use typefaces everyone already has: Inter on the web and in Google, Arial in Microsoft Office. This page is set in Inter.</p>
+      </div>
+      <div class="grid2">
+        <div class="spec">
+          <div class="aa">Aa 1234</div>
+          <div class="chars">ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ<br>abcdefghijklmnopqrstuvwxyzæøå<br>1234567890</div>
+        </div>
+        <div class="spec scale">
+          <div><small>Headline · 700</small><span style="font-size:32px;font-weight:700;letter-spacing:-.02em;line-height:1.1">When minutes matter</span></div>
+          <div><small>Subhead · 600</small><span style="font-size:20px;font-weight:600">The First Response</span></div>
+          <div><small>Body · 400</small><span>Our modular fire suppression systems make rapid action possible anywhere and by anyone.</span></div>
+          <div><small>Label · 700 caps</small><span style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase">Civil defence · operator training</span></div>
+        </div>
+      </div>
+      <div class="tablewrap"><table class="fonts-table">
+        <thead><tr><th>Where</th><th>Typeface</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>Brand typeface</td><td>TWK Everett</td><td>Available from Weltkern. Licence not bought yet.</td></tr>
+          <tr><td>Web and Google Workspace</td><td>Inter</td><td>Free Google font, close in character to Everett.</td></tr>
+          <tr><td>Microsoft Office and email</td><td>Arial</td><td>Installed everywhere, so documents look the same for every reader.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- 10 -->
+    <section class="col" id="materials" aria-labelledby="h10">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">10</span>Materials and surfaces <span class="status s-disc">For discussion</span></div>
+        <h2 id="h10">What Skjoldr feels like to touch</h2>
+        <p>Materials carry the Tactile keyword into products, merchandise and environments.</p>
+      </div>
+      <div class="grid2">
+        <div class="disc-card"><span class="label">Input from Lorents</span><p>Leather and wool. Natural, durable materials that age well, alongside steel, rubber and canvas from the rigs themselves.</p></div>
+        <div class="disc-card"><span class="label">Open question</span><p>The cover of the draft uses a smooth, glossy dark texture. Does that fit "texture over polish", or should we agree on materials first and choose the texture from them?</p></div>
+      </div>
+    </section>
+
+    <!-- 11 -->
+    <section class="col" id="tagline" aria-labelledby="h11">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">11</span>Tagline <span class="status s-disc">For discussion</span></div>
+        <h2 id="h11">When minutes matter</h2>
+      </div>
+      <div class="grid2">
+        <div class="card" style="background:#1C3A34;color:#fff;border:0"><svg class="lg-inline" style="width:180px;color:#FF6B1A" aria-label="Skjoldr"><use href="#logo"/></svg><div class="big">When minutes matter</div></div>
+        <div class="prose">
+          <p>The tagline puts our DNA, the first response, into three words. A small fire becomes a disaster in minutes, and those minutes belong to whoever is closest. Skjoldr makes sure that person can act.</p>
+          <p class="small">Draft explanation. For Jørgen at Core Agency to refine against the brand platform.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12 -->
+    <section class="col" id="templates" aria-labelledby="h12">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">12</span>Templates <span class="status s-disc">In progress</span></div>
+        <h2 id="h12">Email signature, PowerPoint and website</h2>
+      </div>
+      <div class="grid2">
+        <div class="sig" aria-label="Email signature example">
+          <div><div class="nm">Navn Navnesen</div><div class="ti">Title</div></div>
+          <div class="ln"></div>
+          <div class="ct">Skjoldr<br>+47 000 00 000<br>name@skjoldr.com<br>www.skjoldr.com<br>LinkedIn</div>
+          <svg class="lg-inline" aria-label="Skjoldr"><use href="#logo"/></svg>
+        </div>
+        <div class="card">
+          <span class="label">Email signature</span>
+          <div class="spec-list">
+            <div><span>Name</span><span>Arial or equivalent, large, Spruce Dark Green</span></div>
+            <div><span>Details</span><span>Arial or equivalent, normal size</span></div>
+            <div><span>Line</span><span>1 pt, Spruce Dark Green</span></div>
+            <div><span>Logo</span><span>Skjoldr_E-mail_Logo.png (to be produced)</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="grid2">
+        <div class="disc-card"><span class="label">PowerPoint template</span><p>The layouts exist, but the theme colours are still Office defaults and charts use blue and orange from Office. Once the palette is settled, the theme colours and fonts are set in the template so every new slide and chart is on brand automatically.</p></div>
+        <div class="disc-card"><span class="label">Website</span><p>The header should show the full logotype with the name, since the symbol is not yet known on its own. The current site still uses the older lime accent and will follow the palette once it is decided.</p></div>
+      </div>
+    </section>
+
+    <!-- 13 -->
+    <section class="col" id="actions" aria-labelledby="h13">
+      <div class="sec-head">
+        <div class="eyebrow"><span class="num">13</span>Next actions</div>
+        <h2 id="h13">What gives the most for the least</h2>
+        <p>Ordered so the quick wins come first.</p>
+      </div>
+      <div class="tablewrap"><table class="actions">
+        <thead><tr><th>#</th><th>Action</th><th>Owner</th><th>Effort</th><th>Effect</th></tr></thead>
+        <tbody>
+          <tr class="grp"><td colspan="5">Quick wins</td></tr>
+          <tr><td>A1</td><td>Fix the errors on the colour slide: White #FFFFFF, Dark Grey RGB 89 89 89, the CMYK values for Light Grey and Signal Yellow, the spelling of Orange</td><td>Are</td><td><span class="lvl lvl-h">10 min</span></td><td><span class="lvl lvl-h">High</span></td></tr>
+          <tr><td>A2</td><td>Core team tries the colour lab and sends proposals; decide the three colour questions</td><td>Core team, Are</td><td><span class="lvl lvl-h">1 week</span></td><td><span class="lvl lvl-h">High</span></td></tr>
+          <tr><td>A3</td><td>Set theme colours, chart colours and Arial in the PowerPoint template</td><td>Claude, Are</td><td><span class="lvl lvl-m">1 hour</span></td><td><span class="lvl lvl-h">High</span></td></tr>
+          <tr><td>A4</td><td>Produce the email signature logo and a signature everyone can paste in</td><td>Claude</td><td><span class="lvl lvl-h">30 min</span></td><td><span class="lvl lvl-m">Medium</span></td></tr>
+          <tr class="grp"><td colspan="5">Next</td></tr>
+          <tr><td>B1</td><td>Collect 6 to 12 own field photos, one or two per visual keyword</td><td>Are, Lorents</td><td><span class="lvl lvl-m">Days</span></td><td><span class="lvl lvl-h">High</span></td></tr>
+          <tr><td>B2</td><td>Check the licence for the brand platform photos with Core Agency</td><td>Are</td><td><span class="lvl lvl-h">1 email</span></td><td><span class="lvl lvl-m">Medium</span></td></tr>
+          <tr><td>B3</td><td>Write the name story and pronunciation</td><td>Are, Jørgen</td><td><span class="lvl lvl-m">1 hour</span></td><td><span class="lvl lvl-m">Medium</span></td></tr>
+          <tr><td>B4</td><td>Refine the tagline explanation</td><td>Jørgen</td><td><span class="lvl lvl-h">Short</span></td><td><span class="lvl lvl-m">Medium</span></td></tr>
+          <tr><td>B5</td><td>Move the website to the new palette</td><td>Claude</td><td><span class="lvl lvl-m">1 session</span></td><td><span class="lvl lvl-h">High</span></td></tr>
+          <tr class="grp"><td colspan="5">Later</td></tr>
+          <tr><td>C1</td><td>Agree materials and surfaces with Lorents</td><td>Lorents, Are</td><td><span class="lvl lvl-m">Meeting</span></td><td><span class="lvl lvl-l">Low now</span></td></tr>
+          <tr><td>C2</td><td>Decide whether to license TWK Everett</td><td>Are, KEW</td><td><span class="lvl lvl-h">Decision</span></td><td><span class="lvl lvl-l">Low now</span></td></tr>
+          <tr><td>C3</td><td>Logo usage rules, product naming page, trademark classes</td><td>Are, Core Agency</td><td><span class="lvl lvl-l">Days</span></td><td><span class="lvl lvl-m">When needed</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <footer class="col doc">Skjoldr AS · Brand Book Alpha v0.1 · TLP:AMBER: Skjoldr team and partners under NDA only</footer>
+  </main>
+</div>
+</div>
+
+
+<script>
+(function(){
+  /* ---------- logo copy ---------- */
+  var LOGO_PATHS = document.querySelector('#logo').innerHTML;
+  var MARK_PATHS = document.querySelector('#mark').innerHTML;
+  function svgFor(kind){
+    var map = { primary:['#FF6B1A','#1C3A34'], light:['#1C3A34',null], white:['#FFFFFF','#000000'], mark:['#FF6B1A','#1C3A34'] };
+    var c = map[kind], isMark = kind === 'mark';
+    var vb = isMark ? '140 290 250 262' : '140 290 910 262';
+    var paths = (isMark ? MARK_PATHS : LOGO_PATHS).replace(/currentColor/g, c[0]);
+    var bg = c[1] ? '<rect x="'+vb.split(' ')[0]+'" y="'+vb.split(' ')[1]+'" width="'+vb.split(' ')[2]+'" height="'+vb.split(' ')[3]+'" fill="'+c[1]+'"/>' : '';
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="'+vb+'">'+bg+paths+'</svg>';
+  }
+  function copyText(text, toastEl, fallbackEl){
+    function done(){ toastEl.textContent = 'Copied'; setTimeout(function(){ toastEl.textContent=''; }, 2500); }
+    function fail(){ if (fallbackEl){ fallbackEl.value = text; fallbackEl.focus(); fallbackEl.select(); toastEl.textContent = 'Selected. Press Ctrl+C to copy.'; } else { toastEl.textContent = 'Copy is blocked here.'; } }
+    try { navigator.clipboard.writeText(text).then(done, fail); } catch(e){ fail(); }
+  }
+  document.querySelectorAll('[data-copy-svg]').forEach(function(b){
+    b.addEventListener('click', function(){ copyText(svgFor(b.dataset.copySvg), document.getElementById('svgToast')); });
+  });
+
+  /* ---------- colour lab ---------- */
+  var BASE = { colors: [
+      {k:'spruce', name:'Spruce Dark Green', group:'Primary', hex:'#1C3A34'},
+      {k:'orange', name:'Wildfire Orange', group:'Primary', hex:'#FF6B1A'},
+      {k:'black', name:'Black', group:'Secondary', hex:'#000000'},
+      {k:'white', name:'White', group:'Secondary', hex:'#FFFFFF'},
+      {k:'dgrey', name:'Dark Grey', group:'Secondary', hex:'#595959'},
+      {k:'lgrey', name:'Light Grey', group:'Secondary', hex:'#E6E6E6'},
+      {k:'yellow', name:'Signal Yellow', group:'Secondary', hex:'#F2FF80'}],
+    roles: {bg:'spruce', accent:'orange', signal:'yellow', slideShield:'yellow', light:'white', dark:'black', neutral:'dgrey', soft:'lgrey'} };
+  function clone(o){ return JSON.parse(JSON.stringify(o)); }
+  var PRESETS = { nov: clone(BASE), flame: clone(BASE), nosig: clone(BASE) };
+  PRESETS.flame.colors[1] = {k:'orange', name:'Flame Orange', group:'Primary', hex:'#FF5A1F'};
+  PRESETS.nosig.roles.signal = 'orange'; PRESETS.nosig.roles.slideShield = 'orange';
+  var ROLES = [
+    ['bg','Brand background'], ['accent','Accent and logo'], ['signal','Signal and warning'], ['slideShield','Slide shield outline'],
+    ['light','Light surface, text on dark'], ['dark','Text on light'], ['neutral','Secondary text'], ['soft','Soft background']];
+  var KEY = 'skjoldr-brandbook-lab-v1';
+  var state;
+  try { state = JSON.parse(localStorage.getItem(KEY)); } catch(e){}
+  if (!state || !state.colors || !state.roles) state = clone(BASE);
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
+
+  function norm(h){ h=(h||'').trim().replace(/^#?/,'#'); if(/^#[0-9a-fA-F]{3}$/.test(h)) h='#'+h[1]+h[1]+h[2]+h[2]+h[3]+h[3]; return /^#[0-9a-fA-F]{6}$/.test(h)?h.toUpperCase():null; }
+  function rgb(h){ return [1,3,5].map(function(i){ return parseInt(h.substr(i,2),16); }); }
+  function cmyk(h){ var c=rgb(h).map(function(v){ return v/255; }), k=1-Math.max(c[0],c[1],c[2]); if(k>=1) return [0,0,0,100]; return c.map(function(v){ return Math.round((1-v-k)/(1-k)*100); }).concat([Math.round(k*100)]); }
+  function lum(h){ var w=[0.2126,0.7152,0.0722]; return rgb(h).reduce(function(a,v,i){ v/=255; v = v<=0.04045 ? v/12.92 : Math.pow((v+0.055)/1.055,2.4); return a+v*w[i]; },0); }
+  function ratio(a,b){ var x=lum(a), y=lum(b); if(x<y){ var t=x; x=y; y=t; } return (x+0.05)/(y+0.05); }
+  function grade(r){ return r>=7?['AAA','b-aaa']:r>=4.5?['AA','b-aa']:r>=3?['Large','b-lg']:['Fail','b-no']; }
+  function byKey(k){ for (var i=0;i<state.colors.length;i++) if (state.colors[i].k===k) return state.colors[i]; return state.colors[0]; }
+  function role(r){ return byKey(state.roles[r]).hex; }
+  function onColor(bg){ var d=role('dark'), l=role('light'); return ratio(d,bg)>=ratio(l,bg)?d:l; }
+  function fmt(r){ return r.toFixed(1)+':1'; }
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  var sw = document.getElementById('swatches');
+  function renderSwatches(){
+    sw.innerHTML = '';
+    state.colors.forEach(function(c){
+      var d = document.createElement('div'); d.className = 'sw';
+      d.innerHTML = '<label class="chipc"><span class="group">'+esc(c.group)+'</span><input type="color" id="cp-'+c.k+'" aria-label="Pick '+esc(c.name)+'"></label>'+
+        '<div class="meta"><span class="nm">'+esc(c.name)+'</span><input class="hx" type="text" id="hx-'+c.k+'" aria-label="'+esc(c.name)+' hex"><div class="vals"></div></div>';
+      sw.appendChild(d);
+      var chip = d.querySelector('.chipc'), cp = d.querySelector('input[type=color]'), hx = d.querySelector('.hx'), vals = d.querySelector('.vals');
+      function refresh(){ chip.style.background = c.hex; chip.style.color = onColor(c.hex); cp.value = c.hex.toLowerCase(); hx.value = c.hex; vals.innerHTML = 'RGB '+rgb(c.hex).join(' ')+'<br>CMYK ≈ '+cmyk(c.hex).join(' '); }
+      cp.addEventListener('input', function(){ c.hex = cp.value.toUpperCase(); refresh(); update(); });
+      hx.addEventListener('change', function(){ var n = norm(hx.value); if (n) c.hex = n; refresh(); update(); });
+      d._refresh = refresh; refresh();
+    });
+  }
+  function refreshChips(){ Array.prototype.forEach.call(sw.children, function(d){ d._refresh && d._refresh(); }); }
+
+  var rolesEl = document.getElementById('roles');
+  function renderRoles(){
+    rolesEl.innerHTML = '';
+    ROLES.forEach(function(R){
+      var lab = document.createElement('label');
+      lab.innerHTML = '<span>'+R[1]+'</span><select id="role-'+R[0]+'">'+state.colors.map(function(c){ return '<option value="'+c.k+'"'+(state.roles[R[0]]===c.k?' selected':'')+'>'+esc(c.name)+'</option>'; }).join('')+'</select>';
+      rolesEl.appendChild(lab);
+      lab.querySelector('select').addEventListener('change', function(e){ state.roles[R[0]] = e.target.value; refreshChips(); update(); });
+    });
+  }
+
+  function cap(id, fg, bg, label){ var r = ratio(fg,bg); document.getElementById(id).textContent = (label||'') + fmt(r) + ' ' + grade(r)[0]; }
+  function matrix(){
+    var cs = state.colors, h = '<thead><tr><th>Text \\ Background</th>' + cs.map(function(c){ return '<th><span class="dot" style="background:'+c.hex+'"></span>'+esc(c.name)+'</th>'; }).join('') + '</tr></thead><tbody>';
+    cs.forEach(function(f){
+      h += '<tr><th><span class="dot" style="background:'+f.hex+'"></span>'+esc(f.name)+'</th>';
+      cs.forEach(function(b){
+        if (f.k === b.k) { h += '<td class="small">same</td>'; return; }
+        var r = ratio(f.hex, b.hex), g = grade(r);
+        h += '<td><span class="sample" style="background:'+b.hex+';color:'+f.hex+'">Aa</span><span class="r">'+fmt(r)+'</span><span class="badge '+g[1]+'">'+g[0]+'</span></td>';
+      });
+      h += '</tr>';
+    });
+    document.getElementById('cm').innerHTML = h + '</tbody>';
+  }
+  function proposalText(){
+    var name = document.getElementById('propName').value.trim() || '(name)';
+    var comment = document.getElementById('propComment').value.trim();
+    var lines = ['Skjoldr colour proposal from ' + name + ', ' + new Date().toISOString().slice(0,10), '', 'Colours:'];
+    state.colors.forEach(function(c){ var base = BASE.colors.filter(function(b){ return b.k===c.k; })[0]; lines.push('  ' + c.name + ': ' + c.hex + (base && base.hex !== c.hex ? '  (changed from ' + base.hex + ')' : '')); });
+    lines.push('', 'Roles:');
+    ROLES.forEach(function(R){ var changed = BASE.roles[R[0]] !== state.roles[R[0]]; lines.push('  ' + R[1] + ': ' + byKey(state.roles[R[0]]).name + (changed ? '  (changed)' : '')); });
+    lines.push('', 'Key contrast: accent on background ' + fmt(ratio(role('accent'), role('bg'))) + ', accent on light ' + fmt(ratio(role('accent'), role('light'))));
+    if (comment) lines.push('', 'Comment: ' + comment);
+    return lines.join('\n');
+  }
+  function update(){
+    var s = document.documentElement.style;
+    s.setProperty('--p-bg', role('bg')); s.setProperty('--p-accent', role('accent')); s.setProperty('--p-signal', role('signal'));
+    s.setProperty('--p-dark', role('dark')); s.setProperty('--p-light', role('light')); s.setProperty('--p-neutral', role('neutral')); s.setProperty('--p-soft', role('soft'));
+    s.setProperty('--p-on-accent', onColor(role('accent'))); s.setProperty('--slide-shield', role('slideShield'));
+    cap('cap-logo', role('accent'), role('bg')); cap('cap-logol', role('bg'), role('light'));
+    cap('cap-web', role('accent'), role('bg'), 'Accent '); cap('cap-slide', role('slideShield'), role('bg'), 'Shield ');
+    cap('cap-steel', role('accent'), role('bg'), 'Logo '); cap('cap-ui', role('accent'), role('light'), 'Link ');
+    matrix(); document.getElementById('propOut').value = proposalText(); save();
+  }
+  function loadPreset(p){ state = clone(PRESETS[p]); renderSwatches(); renderRoles(); update(); }
+  document.querySelectorAll('[data-preset]').forEach(function(b){ b.addEventListener('click', function(){ loadPreset(b.dataset.preset); }); });
+  document.getElementById('propReset').addEventListener('click', function(){ loadPreset('nov'); });
+  ['propName','propComment'].forEach(function(id){ document.getElementById(id).addEventListener('input', function(){ document.getElementById('propOut').value = proposalText(); }); });
+  document.getElementById('propCopy').addEventListener('click', function(){ copyText(proposalText(), document.getElementById('propToast'), document.getElementById('propOut')); });
+  var prev = document.getElementById('previews');
+  document.querySelectorAll('[data-sim]').forEach(function(b){
+    b.addEventListener('click', function(){
+      document.querySelectorAll('[data-sim]').forEach(function(x){ x.classList.toggle('on', x===b); });
+      if (b.dataset.sim === 'none') prev.classList.remove('sim'); else { prev.classList.add('sim'); prev.style.setProperty('--sim', 'url(#f-' + b.dataset.sim + ')'); }
+    });
+  });
+  renderSwatches(); renderRoles(); update();
+})();
+</script>
+</body>
+</html>
