@@ -27,7 +27,8 @@ Set both for **Production** and **Preview**. Mark them **Sensitive**. A change o
 | Path | Level |
 | --- | --- |
 | everything else | CLEAR |
-| `/brand/…` | GREEN |
+| `/training…`, `/module…`, `/glossary…`, `/firemap…`, `/manuals/…` | GREEN |
+| `/brand/…` | AMBER |
 | `/internal/…` | AMBER |
 | `/restricted/…` | RED |
 
@@ -35,7 +36,8 @@ Set both for **Production** and **Preview**. Mark them **Sensitive**. A change o
 | --- | --- |
 | admin, board | CLEAR, GREEN, AMBER, RED |
 | core | CLEAR, GREEN, AMBER |
-| developer, consultant, agency | CLEAR, GREEN |
+| agency | CLEAR, GREEN, AMBER |
+| developer, consultant, customer, beta | CLEAR, GREEN |
 | partner | CLEAR |
 
 Preview deployments are stricter: `sandbox/*` branches admit only admin, `dev/*` branches admit admin and developer, and every other preview branch admits only admin. Production uses the table above.
@@ -54,7 +56,7 @@ Use `scripts/add-user.mjs` (Windows). It hands everything over through the clipb
    node scripts/add-user.mjs
    ```
 
-2. Enter the email, name and role (`admin`, `developer`, `core`, `board`, `consultant`, `agency` or `partner`).
+2. Enter the email, name and role (`admin`, `developer`, `core`, `board`, `consultant`, `agency`, `partner`, `customer` or `beta`).
 3. When asked for the existing `SKJOLDR_USERS`, copy the current value from Vercel (Settings → Environment Variables → `SKJOLDR_USERS` → reveal/edit) and paste it. Input is hidden. Press Enter on an empty line if it isn't accepted after one Enter. For the very first user, just press Enter to start a new list.
 4. **Step 1:** press Enter to copy the **password** to the clipboard and paste it into your password manager. It can't be shown again.
 5. **Step 2:** press Enter to copy the complete new `SKJOLDR_USERS` value: the whole list on one line, wrapped in `[ ]`. Each copy is read back and checked character by character.

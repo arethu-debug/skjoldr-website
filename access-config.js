@@ -10,10 +10,18 @@ export const LEVELS = ['CLEAR', 'GREEN', 'AMBER', 'RED'];
 // Path prefix -> required level. The first matching prefix wins;
 // anything that matches no prefix is DEFAULT_LEVEL.
 // Prefixes are compared case-insensitively.
+// CLEAR: public face (home, about, contact). GREEN: customers, end-users and
+// Beta testers (training, operating manuals, modules, glossary, Firemap).
+// AMBER: team and partners under NDA (brand book, internal). RED: named individuals.
 export const PATH_LEVELS = [
   { prefix: '/restricted/', level: 'RED' },
   { prefix: '/internal/',   level: 'AMBER' },
-  { prefix: '/brand/',      level: 'GREEN' },
+  { prefix: '/brand/',      level: 'AMBER' },
+  { prefix: '/manuals/',    level: 'GREEN' },
+  { prefix: '/training',    level: 'GREEN' },  // training.html and any /training/ pages
+  { prefix: '/module',      level: 'GREEN' },  // modules.html and module-*.html
+  { prefix: '/glossary',    level: 'GREEN' },
+  { prefix: '/firemap',     level: 'GREEN' },
 ];
 
 export const DEFAULT_LEVEL = 'CLEAR';
@@ -25,8 +33,10 @@ export const ROLE_LEVELS = {
   core:       ['CLEAR', 'GREEN', 'AMBER'],
   developer:  ['CLEAR', 'GREEN'],
   consultant: ['CLEAR', 'GREEN'],
-  agency:     ['CLEAR', 'GREEN'],
+  agency:     ['CLEAR', 'GREEN', 'AMBER'],  // after NDA
   partner:    ['CLEAR'],
+  customer:   ['CLEAR', 'GREEN'],           // needs login Stage 1 before use
+  beta:       ['CLEAR', 'GREEN'],           // concept validation testers
 };
 
 export const ROLES = Object.keys(ROLE_LEVELS);
