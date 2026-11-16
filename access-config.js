@@ -26,6 +26,14 @@ export const PATH_LEVELS = [
 
 export const DEFAULT_LEVEL = 'CLEAR';
 
+// Paths for the admin role only (stricter than RED, which the board also has).
+export const ADMIN_ONLY_PREFIXES = ['/restricted/admin', '/api/admin'];
+
+export function isAdminOnly(pathname) {
+  const p = pathname.toLowerCase();
+  return ADMIN_ONLY_PREFIXES.some(prefix => p === prefix || p.startsWith(prefix + '/'));
+}
+
 // Role -> levels that role may open.
 export const ROLE_LEVELS = {
   admin:      ['CLEAR', 'GREEN', 'AMBER', 'RED'],
