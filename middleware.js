@@ -9,7 +9,8 @@ import {
   levelForPath, roleHasLevel, previewAdmits, isAdminOnly,
 } from './access-config.js';
 import { sessionFromRequest, clearedCookie } from './lib/session.js';
-import { loadUsersCached } from './lib/userstore.js';
+import { loadUsers, loadUsersCached } from './lib/userstore.js';
+import { allowedWhileTemp, CHANGE_PATH } from './lib/passwordpolicy.js';
 import { normaliseEmail } from './lib/users.js';
 
 export const config = { runtime: 'nodejs' };
@@ -116,8 +117,20 @@ export default async function middleware(request) {
   // they still have access and with which role. Deleted or disabled users
   // are signed out, and role changes apply, within about 30 seconds.
   const { users } = await loadUsersCached();
-  const user = users.find(u => normaliseEmail(u.email) === normaliseEmail(token.email));
+  let user = users.find(u => normaliseEmail(u.email) === normaliseEmail(token.email));
   if (!user || user.disabled) return redirectToLogin(url, { clearCookie: true });
+
+  // A temporary password must be replaced before anything else can be opened.
+  // The cached list may be up to 30 s old, so check the fresh one before redirecting.
+  if (user.mustChange && !allowedWhileTemp(path)) {
+    const fresh = (await loadUsers()).users.find(u => normaliseEmail(u.email) === normaliseEmail(token.email));
+    if (fresh && fresh.mustChange) {
+      const to = new URL(CHANGE_PATH, url);
+      to.searchParams.set('next', url.pathname + url.search);
+      return new Response(null, { status: 302, headers: { Location: to.href, 'Cache-Control': 'no-store', 'X-Robots-Tag': NO_INDEX } });
+    }
+    if (fresh) user = fresh;
+  }
   const session = { ...token, role: user.role, name: user.name || token.name };
 
   if (isAdminOnly(path) && session.role !== 'admin') {

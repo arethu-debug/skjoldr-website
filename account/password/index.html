@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Your password — Skjoldr</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .pw-rules { font-size: 13.5px; line-height: 1.5; margin: 0 0 18px; padding-left: 18px; color: inherit; opacity: .85 }
+    .pw-show { display: flex; align-items: center; gap: 8px; font-size: 14px; margin: -4px 0 16px }
+    .pw-done { text-align: center }
+    [hidden] { display: none !important }
+  </style>
+</head>
+<body class="auth-page">
+
+  <main class="auth-card">
+    <div class="nav__logo auth-card__logo">
+      <div class="nav__logo-mark">S</div>
+      <span class="nav__logo-text">Skjoldr</span>
+    </div>
+
+    <span class="label">Shared Vision</span>
+    <h1 class="auth-card__title" id="title">Change your password</h1>
+    <p class="auth-card__help" id="intro" style="margin-top:0">Type your current password, then your new one twice.</p>
+
+    <div id="err" class="callout callout--warn auth-card__error" role="alert" hidden></div>
+
+    <form id="pwForm" novalidate>
+      <div class="form-group">
+        <label for="current" id="currentLabel">Current password</label>
+        <input type="password" id="current" autocomplete="current-password" required />
+      </div>
+      <div class="form-group">
+        <label for="next">New password</label>
+        <input type="password" id="next" autocomplete="new-password" required minlength="12" />
+      </div>
+      <div class="form-group">
+        <label for="confirm">New password again</label>
+        <input type="password" id="confirm" autocomplete="new-password" required minlength="12" />
+      </div>
+      <label class="pw-show"><input type="checkbox" id="show" /> Show passwords</label>
+      <ul class="pw-rules">
+        <li>At least 12 characters. A short sentence of four or five words is easy to remember and hard to guess.</li>
+        <li>Not your email address, and not common words like "password", "skjoldr" or "123456".</li>
+        <li>Store it in a password manager if you use one.</li>
+      </ul>
+      <button type="submit" class="btn btn--primary auth-card__submit" id="save">Save my password</button>
+    </form>
+
+    <p class="auth-card__help"><a href="/api/logout">Log out</a> · Problems? Contact your Skjoldr admin.</p>
+  </main>
+
+  <script>
+  (function(){
+    var params = new URLSearchParams(location.search);
+    var first = params.get('first') === '1';
+    function safeNext(n){ return (typeof n === 'string' && n.charAt(0) === '/' && n.charAt(1) !== '/' && n.charAt(1) !== '\\' && n.indexOf('/account/password') !== 0) ? n : '/'; }
+    var next = safeNext(params.get('next') || '/');
+    if (first) {
+      document.getElementById('title').textContent = 'Choose your own password';
+      document.getElementById('intro').textContent = 'You logged in with a temporary password. Choose your own to continue; from then on only you know it.';
+      document.getElementById('currentLabel').textContent = 'Temporary password';
+    }
+    var err = document.getElementById('err');
+    function fail(text, field){ err.textContent = text; err.hidden = false; if (field && document.getElementById(field)) document.getElementById(field).focus(); }
+    document.getElementById('show').addEventListener('change', function(e){
+      ['current','next','confirm'].forEach(function(id){ document.getElementById(id).type = e.target.checked ? 'text' : 'password'; });
+    });
+    document.getElementById('pwForm').addEventListener('submit', function(e){
+      e.preventDefault(); err.hidden = true;
+      var body = { current: document.getElementById('current').value, next: document.getElementById('next').value, confirm: document.getElementById('confirm').value };
+      if (body.next.length < 12) return fail('Use at least 12 characters.', 'next');
+      if (body.next !== body.confirm) return fail('The two new passwords are not the same.', 'confirm');
+      var btn = document.getElementById('save'); btn.disabled = true; btn.textContent = 'Saving…';
+      fetch('/api/account/password', { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+        .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(d){ return { ok: r.ok, status: r.status, d: d }; }); })
+        .then(function(res){
+          if (res.ok) {
+            document.getElementById('pwForm').hidden = true;
+            document.getElementById('intro').textContent = 'Your password is saved. Taking you on…';
+            document.getElementById('title').textContent = 'Done';
+            setTimeout(function(){ location.href = next; }, 1200);
+            return;
+          }
+          if (res.status === 401) { location.href = '/login.html'; return; }
+          btn.disabled = false; btn.textContent = 'Save my password';
+          fail(res.d.error || 'Something went wrong. Please try again.', res.d.field);
+        })
+        .catch(function(){ btn.disabled = false; btn.textContent = 'Save my password'; fail('Could not reach the server. Please try again.'); });
+    });
+  })();
+  </script>
+</body>
+</html>
