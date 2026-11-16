@@ -325,7 +325,7 @@ a.zone:hover { border-color: var(--spruce) }
 .dr-grp a:hover { color: var(--orange) }
 .dr-grp a.strong { font-weight: 700; font-size: 17px; color: var(--orange) }
 .dr-soon { font-size: 13px; color: rgba(255,255,255,.5) }
-.dr-out { border: 1px solid rgba(255,255,255,.3); padding: 8px 12px; border-radius: 6px; width: max-content; font-weight: 600; font-size: 13px }
+.dr-out { color: #fff; border: 1px solid rgba(255,255,255,.3); padding: 8px 12px; border-radius: 6px; width: max-content; font-weight: 600; font-size: 13px }
 
 #products, #zone-training, [id] { scroll-margin-top: 90px }
 .pf-filter { display: flex; flex-wrap: wrap; gap: 6px }
@@ -409,9 +409,9 @@ a.zone:hover { border-color: var(--spruce) }
       <div class="dr-grp"><span class="tlpb t-clear">TLP:CLEAR</span><span class="dr-h">Public</span>
         <a href="/">Home</a><a href="#products">Products</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></div>
       <div class="dr-grp"><span class="tlpb t-green">TLP:GREEN</span><span class="dr-h">Customers and users</span>
-        <a href="/training.html">Training</a><a href="/modules.html">Modules</a><a href="/firemap.html">Firemap</a><a href="/glossary.html">Glossary</a><span class="dr-soon">Operating manuals: coming later</span></div>
+        <span class="dr-soon">Operating manuals: coming soon</span><a href="/training.html">Training</a><a href="/modules.html">Modules</a><a href="/glossary.html">Glossary</a></div>
       <div class="dr-grp"><span class="tlpb t-amber">TLP:AMBER</span><span class="dr-h">Internal and partners</span>
-        <a href="/brand/" class="strong">Brand book</a><a href="/brand/#colours">Colour lab</a><span class="dr-soon">Market plans: coming later</span></div>
+        <a href="/brand/" class="strong">Brand book</a><a href="/brand/#colours">Colour lab</a><a href="/firemap.html">STILA</a><span class="dr-soon">Market plans: coming later</span></div>
       <div class="dr-grp"><span class="tlpb t-red">TLP:RED</span><span class="dr-h">Restricted</span><span class="dr-soon">Coming later</span></div>
     </nav>
     <a class="dr-out" href="/api/logout">Log out</a>
@@ -463,8 +463,8 @@ a.zone:hover { border-color: var(--spruce) }
       </div>
       <div class="map">
         <a class="zone" id="zone-public" href="#products"><span class="tlpb t-clear">TLP:CLEAR</span><h3>Public</h3><p>The open face of Skjoldr: home, product portfolio, about and contact, plus a short list of the training modules. Anyone may see it once it is released.</p><span class="go">See the portfolio →</span></a>
-        <div class="zone" id="zone-training"><span class="tlpb t-green">TLP:GREEN</span><h3>Customers and users</h3><p>Operator training, operating manuals, product modules, glossary and Firemap tools. Behind the login, for customers, end-users and Beta testers.</p><ul><li>10 training modules</li><li>19 product modules</li><li>English, Norwegian, Ukrainian</li></ul><a class="go" href="/training.html">Open the training →</a></div>
-        <a class="zone here" href="/brand/"><span class="tlpb t-amber">TLP:AMBER</span><h3>Internal and partners</h3><p>Brand book, market plans, contact lists, the NATO, UME and ENB tracks, funding and the Military editions. Core team and partners under NDA, such as Core Agency, need-to-know.</p><ul><li>Brand book: 13 sections</li><li>Colour lab with proposals</li></ul><span class="go">Open the brand book →</span></a>
+        <div class="zone" id="zone-training"><span class="tlpb t-green">TLP:GREEN</span><h3>Customers and users</h3><p>Operator training, operating manuals, product modules and glossary. Behind the login, for customers, end-users and Beta testers.</p><ul><li>10 training modules</li><li>19 product modules</li><li>English, Norwegian, Ukrainian</li></ul><a class="go" href="/training.html">Open the training →</a></div>
+        <a class="zone here" href="/brand/"><span class="tlpb t-amber">TLP:AMBER</span><h3>Internal and partners</h3><p>Brand book, STILA situational awareness tools, market plans, contact lists, the NATO, UME and ENB tracks, funding and the Military editions. Core team and partners under NDA, such as Core Agency, need-to-know.</p><ul><li>Brand book: 13 sections</li><li>Colour lab with proposals</li></ul><span class="go">Open the brand book →</span></a>
         <div class="zone"><span class="tlpb t-red">TLP:RED</span><h3>Restricted</h3><p>Board and investor matters, legal and IP strategy. Named individuals only.</p><span class="go" style="color:var(--muted)">Coming later</span></div>
       </div>
     </section>

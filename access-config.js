@@ -11,8 +11,8 @@ export const LEVELS = ['CLEAR', 'GREEN', 'AMBER', 'RED'];
 // anything that matches no prefix is DEFAULT_LEVEL.
 // Prefixes are compared case-insensitively.
 // CLEAR: public face (home, about, contact). GREEN: customers, end-users and
-// Beta testers (training, operating manuals, modules, glossary, Firemap).
-// AMBER: team and partners under NDA (brand book, internal). RED: named individuals.
+// Beta testers (training, operating manuals, modules, glossary).
+// AMBER: team and partners under NDA (brand book, STILA tools, internal). RED: named individuals.
 export const PATH_LEVELS = [
   { prefix: '/restricted/', level: 'RED' },
   { prefix: '/internal/',   level: 'AMBER' },
@@ -21,7 +21,7 @@ export const PATH_LEVELS = [
   { prefix: '/training',    level: 'GREEN' },  // training.html and any /training/ pages
   { prefix: '/module',      level: 'GREEN' },  // modules.html and module-*.html
   { prefix: '/glossary',    level: 'GREEN' },
-  { prefix: '/firemap',     level: 'GREEN' },
+  { prefix: '/firemap',     level: 'AMBER' },  // STILA tools
 ];
 
 export const DEFAULT_LEVEL = 'CLEAR';

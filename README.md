@@ -27,8 +27,8 @@ Set both for **Production** and **Preview**. Mark them **Sensitive**. A change o
 | Path | Level |
 | --- | --- |
 | everything else | CLEAR |
-| `/training…`, `/module…`, `/glossary…`, `/firemap…`, `/manuals/…` | GREEN |
-| `/brand/…` | AMBER |
+| `/training…`, `/module…`, `/glossary…`, `/manuals/…` | GREEN |
+| `/brand/…`, `/firemap…` (STILA) | AMBER |
 | `/internal/…` | AMBER |
 | `/restricted/…` | RED |
 
