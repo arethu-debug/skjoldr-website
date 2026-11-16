@@ -11,6 +11,7 @@ import { ROLES } from '../../access-config.js';
 import { sessionFromRequest } from '../../lib/session.js';
 import { hashPassword, normaliseEmail } from '../../lib/users.js';
 import { generatePassword } from '../../lib/passwords.js';
+import { tempExpiry } from '../../lib/passwordpolicy.js';
 import { kvConfigured } from '../../lib/kv.js';
 import {
   loadUsers, readStoredUsers, writeStoredUsers, envUsers, audit, readAudit, clearUserCache,
@@ -30,6 +31,8 @@ function publicUser(u) {
     role: u.role,
     disabled: Boolean(u.disabled),
     source: u.source,
+    mustChange: Boolean(u.mustChange),
+    tempExpires: u.mustChange ? (u.tempExpires || null) : null,
     createdAt: u.createdAt || null,
     updatedAt: u.updatedAt || null,
   };
@@ -122,7 +125,10 @@ export async function POST(request) {
         if (!ROLES.includes(role)) return json({ error: 'Please choose a role.' }, 400);
         if (current) return json({ error: 'A user with this email already exists. Use "Reset password" instead.' }, 409);
         const password = generatePassword();
-        stored.push({ email, name, role, hash: await hashPassword(password), createdAt: now, updatedAt: now });
+        stored.push({
+          email, name, role, hash: await hashPassword(password),
+          mustChange: true, tempExpires: tempExpiry(), createdAt: now, updatedAt: now,
+        });
         return await save({ role }, { password });
       }
       case 'reset': {
@@ -130,6 +136,8 @@ export async function POST(request) {
         const password = generatePassword();
         const u = editable();
         u.hash = await hashPassword(password);
+        u.mustChange = true;
+        u.tempExpires = tempExpiry();
         u.updatedAt = now;
         return await save({}, { password });
       }

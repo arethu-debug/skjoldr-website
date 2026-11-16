@@ -374,6 +374,7 @@ a.zone:hover { border-color: var(--spruce) }
 .vid-cap .vc-type { background: rgba(0,0,0,.35); padding: 4px 8px; border-radius: 4px; color: rgba(255,255,255,.8) }
 .vc-btn { font: inherit; font-size: 12px; font-weight: 600; color: #fff; background: rgba(0,0,0,.45); border: 1px solid rgba(255,255,255,.35); border-radius: 4px; padding: 3px 9px; cursor: pointer }
 @media (prefers-reduced-motion: reduce) { .hero > video { display: none } .hero { background: #2b2a20 url(img/hero-poster.jpg) 65% 60% / cover } }
+.dr-pw { display: block; color: rgba(255,255,255,.8); font-size: 14px; margin: 10px 0 8px; text-decoration: underline }
 </style>
 </head>
 <body>
@@ -435,7 +436,7 @@ td { padding: 10px; border-bottom: 1px solid var(--line); vertical-align: middle
 td .nm { font-weight: 600 } td .em { color: var(--muted); font-size: 13px; word-break: break-all }
 .acts { display: flex; gap: 6px; flex-wrap: wrap }
 .tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding: 2px 7px; border-radius: 4px; background: #e8efe9; color: var(--spruce); white-space: nowrap }
-.tag.off { background: #fdecec; color: #b3261e } .tag.env { background: #eef0ff; color: #3340a3 }
+.tag.off { background: #fdecec; color: #b3261e } .tag.temp { background: #fff4e5; color: #8a4b00 } .tag.env { background: #eef0ff; color: #3340a3 }
 .log { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; font-size: 13.5px }
 .log li { display: grid; grid-template-columns: 150px minmax(0,1fr); gap: 10px } .log time { color: var(--muted); font-variant-numeric: tabular-nums }
 @media (max-width: 760px) {
@@ -467,18 +468,18 @@ td .nm { font-weight: 600 } td .em { color: var(--muted); font-size: 13px; word-
         <a href="/brand/" class="strong">Brand book</a><a href="/brand/#colours">Colour lab</a><a href="/internal/powermist/">Powermist</a><a href="/firemap.html">STILA</a><span class="dr-soon">Market plans: coming later</span></div>
       <div class="dr-grp"><span class="tlpb t-red">TLP:RED</span><span class="dr-h">Restricted</span><a href="/restricted/admin/" id="adminLink" class="strong">User admin</a><span class="dr-soon">Board and legal: coming later</span></div>
     </nav>
-    <a class="dr-out" href="/api/logout">Log out</a>
+    <a class="dr-pw" href="/account/password/">Change my password</a><a class="dr-out" href="/api/logout">Log out</a>
   </aside>
 <main class="adm">
   <div><div class="eyebrow">Shared Vision <span class="tlpb t-red" style="margin-left:8px">TLP:RED</span> <span class="tag" style="margin-left:6px">Admin only</span></div>
   <h1>User admin</h1>
-  <p class="lead">Add people, change roles, reset passwords and close access. Changes take effect within about 30 seconds, with no redeploy. New passwords are shown once: send them by SMS or Signal, separately from the email with the address.</p></div>
+  <p class="lead">Add people, change roles, reset passwords and close access. New users and resets get a temporary password that they replace with their own at first login. Changes take effect within about 30 seconds, with no redeploy. New passwords are shown once: send them by SMS or Signal, separately from the email with the address.</p></div>
 
   <div id="msg" hidden></div>
   <div id="pw" class="pw" hidden>
     <p><strong id="pwFor"></strong></p>
     <code id="pwVal"></code>
-    <p>Shown only now. Copy it to your password manager or send it straight away; it cannot be shown again.</p>
+    <p>Shown only now. This is a <strong>temporary password, valid for 7 days</strong>: send it by separate email or Signal. At their first login they must choose their own, which nobody else will know.</p>
     <div class="row"><button class="b pri" type="button" id="pwCopy">Copy password</button><button class="b" type="button" id="pwDone">Done, hide it</button></div>
   </div>
 
@@ -531,7 +532,7 @@ td .nm { font-weight: 600 } td .em { color: var(--muted); font-size: 13px; word-
   var $=function(id){return document.getElementById(id);};
   function esc(t){return String(t==null?'':t).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
   function msg(text,kind){var m=$('msg'); if(!text){m.hidden=true;return;} m.className='box '+(kind||''); m.textContent=text; m.hidden=false; m.scrollIntoView({block:'nearest'});}
-  function showPw(email,pw){$('pwFor').textContent='New password for '+email; $('pwVal').textContent=pw; $('pw').hidden=false; $('pw').scrollIntoView({block:'center'});}
+  function showPw(email,pw){$('pwFor').textContent='Temporary password for '+email; $('pwVal').textContent=pw; $('pw').hidden=false; $('pw').scrollIntoView({block:'center'});}
   $('pwDone').onclick=function(){$('pwVal').textContent=''; $('pw').hidden=true;};
   $('pwCopy').onclick=function(){var t=$('pwVal').textContent; if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){$('pwCopy').textContent='Copied';setTimeout(function(){$('pwCopy').textContent='Copy password';},1500);});}};
   function post(body){
@@ -547,6 +548,7 @@ td .nm { font-weight: 600 } td .em { color: var(--muted); font-size: 13px; word-
       load();
     }).catch(function(e){msg(e.message,'err');});
   }
+  function pwTag(u){ if(!u.mustChange) return ''; var exp=u.tempExpires?new Date(u.tempExpires):null; if(exp && exp<=new Date()) return ' <span class="tag off">Temporary password expired</span>'; return ' <span class="tag temp">Temporary password'+(exp?' until '+exp.toLocaleDateString('en-GB',{day:'numeric',month:'short'}):'')+'</span>'; }
   function when(iso){ if(!iso) return ''; var d=new Date(iso); return d.toLocaleString('en-GB',{day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit'}); }
   function render(data){
     ROLES=data.roles; var sel=$('roleSel');
@@ -559,13 +561,14 @@ td .nm { font-weight: 600 } td .em { color: var(--muted); font-size: 13px; word-
       return '<tr data-email="'+esc(u.email)+'">'+
         '<td><div class="nm">'+esc(u.name)+(self?' <span class="tag">you</span>':'')+'</div><div class="em">'+esc(u.email)+'</div></td>'+
         '<td><select data-act="role"'+(self?' disabled':'')+' aria-label="Role for '+esc(u.email)+'">'+opts+'</select></td>'+
-        '<td>'+(u.disabled?'<span class="tag off">Disabled</span>':'<span class="tag">Active</span>')+(u.source==='env'?' <span class="tag env">Vercel</span>':'')+'</td>'+
+        '<td>'+(u.disabled?'<span class="tag off">Disabled</span>':'<span class="tag">Active</span>')+pwTag(u)+(u.source==='env'?' <span class="tag env">Vercel</span>':'')+'</td>'+
         '<td><div class="acts"><button class="b" data-act="reset">Reset password</button>'+
           (self?'':(u.disabled?'<button class="b" data-act="enable">Enable</button>':'<button class="b" data-act="disable">Disable</button>')+'<button class="b dan" data-act="delete">Delete</button>')+
         '</div></td></tr>';
     }).join('');
     $('log').innerHTML=data.audit.length?data.audit.map(function(a){
       var what={add:'added',reset:'reset the password of',role:'changed the role of',disable:'disabled',enable:'enabled',delete:'deleted'}[a.action]||a.action;
+      if(a.action==='own-password') return '<li><time>'+esc(when(a.at))+'</time><span>'+esc(a.by)+' chose their own password</span></li>';
       return '<li><time>'+esc(when(a.at))+'</time><span>'+esc(a.by)+' '+what+' '+esc(a.target)+(a.role?' ('+esc(a.role)+')':'')+(a.note?' · '+esc(a.note):'')+'</span></li>';
     }).join(''):'<li>No changes yet.</li>';
   }

@@ -104,7 +104,9 @@ as `KV_REST_API_URL` / `KV_REST_API_TOKEN` (Production and Preview).
 
 - Changes take effect within about 30 seconds, without a redeploy. Disabled or deleted
   users are signed out; role changes apply on their next page view.
-- New and reset passwords are shown once in the panel and never stored in plain text.
+- New and reset passwords are **temporary** (valid 7 days) and shown once in the panel. At first login the
+  user is sent to /account/password/ and must choose their own password before opening anything else.
+  Everyone can change their password later via "Change my password" in the menu.
 - Every change is logged (key `skjoldr:audit`, last 500 entries), shown at the bottom of the panel.
 - **SKJOLDR_USERS stays as the safety net.** An email that is only in SKJOLDR_USERS can still
   log in, and if the database is unreachable the site falls back to SKJOLDR_USERS alone.

@@ -4,6 +4,7 @@
 
 import { parseUsers, userProblems, authenticate } from '../lib/users.js';
 import { loadUsers } from '../lib/userstore.js';
+import { tempExpired, CHANGE_PATH } from '../lib/passwordpolicy.js';
 import { createToken, sessionCookie, safeNext, secretProblem, SHORT_TTL, LONG_TTL } from '../lib/session.js';
 
 const FAIL_DELAY_MS = 1000;
@@ -77,11 +78,19 @@ export async function POST(request) {
     return backToLogin('1', next);
   }
 
+  if (tempExpired(user)) {
+    console.warn('[login] failed attempt: temporary password has expired');
+    return backToLogin('expired', next);
+  }
+
   const ttl = fields.remember ? LONG_TTL : SHORT_TTL;
   const token = await createToken(
     { email: user.email, name: user.name || user.email, role: user.role },
     ttl,
     process.env.SESSION_SECRET
   );
-  return redirect(next, { 'Set-Cookie': sessionCookie(token, ttl) });
+  const target = user.mustChange
+    ? `${CHANGE_PATH}?${new URLSearchParams({ first: '1', next })}`
+    : next;
+  return redirect(target, { 'Set-Cookie': sessionCookie(token, ttl) });
 }
