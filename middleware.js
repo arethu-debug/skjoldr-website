@@ -6,9 +6,11 @@
 
 import {
   PUBLIC_PATHS, BLOCKED_PATHS, BLOCKED_PREFIXES,
-  levelForPath, roleHasLevel, previewAdmits,
+  levelForPath, roleHasLevel, previewAdmits, isAdminOnly,
 } from './access-config.js';
-import { sessionFromRequest } from './lib/session.js';
+import { sessionFromRequest, clearedCookie } from './lib/session.js';
+import { loadUsersCached } from './lib/userstore.js';
+import { normaliseEmail } from './lib/users.js';
 
 export const config = { runtime: 'nodejs' };
 
@@ -82,13 +84,12 @@ function notFound() {
 
 // Absolute Location built from the request URL; a relative one gets resolved
 // against an internal address by some proxies (e.g. vercel dev).
-function redirectToLogin(url) {
+function redirectToLogin(url, { clearCookie = false } = {}) {
   const login = new URL('/login.html', url);
   login.searchParams.set('next', url.pathname + url.search);
-  return new Response(null, {
-    status: 302,
-    headers: { Location: login.href, 'Cache-Control': 'no-store', 'X-Robots-Tag': NO_INDEX },
-  });
+  const headers = { Location: login.href, 'Cache-Control': 'no-store', 'X-Robots-Tag': NO_INDEX };
+  if (clearCookie) headers['Set-Cookie'] = clearedCookie();
+  return new Response(null, { status: 302, headers });
 }
 
 export default async function middleware(request) {
@@ -108,8 +109,20 @@ export default async function middleware(request) {
 
   if (PUBLIC_PATHS.includes(lower)) return next();
 
-  const session = await sessionFromRequest(request);
-  if (!session) return redirectToLogin(url);
+  const token = await sessionFromRequest(request);
+  if (!token) return redirectToLogin(url);
+
+  // The cookie proves who logged in; the current user list decides whether
+  // they still have access and with which role. Deleted or disabled users
+  // are signed out, and role changes apply, within about 30 seconds.
+  const { users } = await loadUsersCached();
+  const user = users.find(u => normaliseEmail(u.email) === normaliseEmail(token.email));
+  if (!user || user.disabled) return redirectToLogin(url, { clearCookie: true });
+  const session = { ...token, role: user.role, name: user.name || token.name };
+
+  if (isAdminOnly(path) && session.role !== 'admin') {
+    return forbiddenPage(session);
+  }
 
   if (process.env.VERCEL_ENV === 'preview' && !previewAdmits(session.role, process.env.VERCEL_GIT_COMMIT_REF)) {
     return forbiddenPage(session);

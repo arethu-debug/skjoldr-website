@@ -3,6 +3,7 @@
 // the logs never contain passwords, hashes, emails or env values.
 
 import { parseUsers, userProblems, authenticate } from '../lib/users.js';
+import { loadUsers } from '../lib/userstore.js';
 import { createToken, sessionCookie, safeNext, secretProblem, SHORT_TTL, LONG_TTL } from '../lib/session.js';
 
 const FAIL_DELAY_MS = 1000;
@@ -33,19 +34,20 @@ function deploymentLabel() {
   return ref ? `${env}, branch ${ref}` : env;
 }
 
-// Checks the env config; logs every problem found. Returns true if login can work.
-function configOk(users, usersError) {
+// Checks the config; logs every problem found. Returns true if login can work.
+// envUsers/envError describe SKJOLDR_USERS; users is the merged list (database + SKJOLDR_USERS).
+function configOk(users, envUsers, envError) {
   const errors = [];
   const secretError = secretProblem(process.env.SESSION_SECRET);
   if (secretError) errors.push(secretError);
-  if (usersError) errors.push(usersError);
-  else if (users.length === 0) errors.push('SKJOLDR_USERS is an empty array, so nobody can log in');
+  if (envError) console.warn(`[login] ${envError} (only database users can log in)`);
+  if (users.length === 0) errors.push('there are no users in the database or in SKJOLDR_USERS, so nobody can log in');
 
   for (const e of errors) {
     console.error(`[login] CONFIG ERROR (${deploymentLabel()}): ${e}. Fix it in Vercel → Settings → Environment Variables, then redeploy.`);
   }
-  if (!usersError) {
-    for (const p of userProblems(users)) console.warn(`[login] SKJOLDR_USERS ${p}`);
+  if (!envError) {
+    for (const p of userProblems(envUsers)) console.warn(`[login] SKJOLDR_USERS ${p}`);
   }
   return errors.length === 0;
 }
@@ -63,10 +65,12 @@ export async function POST(request) {
   }
   const next = safeNext(fields.next);
 
-  const { users, error: usersError } = parseUsers(process.env.SKJOLDR_USERS);
-  if (!configOk(users, usersError)) return backToLogin('unavailable', next);
+  const { users: envList, error: envError } = parseUsers(process.env.SKJOLDR_USERS);
+  const { users } = await loadUsers();
+  if (!configOk(users, envList, envError)) return backToLogin('unavailable', next);
 
-  const { user, reason } = await authenticate(users, fields.email, fields.password);
+  const active = users.filter(u => !u.disabled);
+  const { user, reason } = await authenticate(active, fields.email, fields.password);
   if (!user) {
     console.warn(`[login] failed attempt: ${reason}`);
     await new Promise(r => setTimeout(r, FAIL_DELAY_MS));

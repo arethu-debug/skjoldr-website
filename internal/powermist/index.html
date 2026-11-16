@@ -429,7 +429,7 @@ a.zone:hover { border-color: var(--spruce) }
         <a href="/manuals/">Operating manuals</a><a href="/training.html">Training</a><a href="/modules.html">Modules</a><a href="/glossary.html">Glossary</a></div>
       <div class="dr-grp"><span class="tlpb t-amber">TLP:AMBER</span><span class="dr-h">Internal and partners</span>
         <a href="/brand/" class="strong">Brand book</a><a href="/brand/#colours">Colour lab</a><a href="/internal/powermist/" class="strong">Powermist</a><a href="/firemap.html">STILA</a><span class="dr-soon">Market plans: coming later</span></div>
-      <div class="dr-grp"><span class="tlpb t-red">TLP:RED</span><span class="dr-h">Restricted</span><span class="dr-soon">Coming later</span></div>
+      <div class="dr-grp"><span class="tlpb t-red">TLP:RED</span><span class="dr-h">Restricted</span><a href="/restricted/admin/" id="adminLink" hidden>User admin</a><span class="dr-soon">Board and legal: coming later</span></div>
     </nav>
     <a class="dr-out" href="/api/logout">Log out</a>
   </aside>
@@ -452,6 +452,7 @@ a.zone:hover { border-color: var(--spruce) }
   fetch('/api/me',{credentials:'same-origin',cache:'no-store'}).then(function(r){ return r.ok?r.json():null; }).then(function(u){
     if(!u||!u.name) return; var el=document.getElementById('whoName'); el.firstChild.textContent=u.name;
     el.querySelector('small').textContent=u.role ? u.role.charAt(0).toUpperCase()+u.role.slice(1) : '';
+    var al=document.getElementById('adminLink'); if(al && u.role==='admin') al.hidden=false;
   }).catch(function(){});
 })();
 </script>
