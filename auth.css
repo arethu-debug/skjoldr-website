@@ -1,0 +1,54 @@
+/* ============================================================
+   SKJOLDR — Login, password and no-access pages
+   Forest and Fire: Dark Spruce Green, Wildfire Orange, white.
+   Public file (see PUBLIC_PATHS) so the login page can load it.
+   ============================================================ */
+:root {
+  --spruce: #1C3A34; --spruce-deep: #132823; --orange: #FF6B1A;
+  --ink: #141a18; --muted: #55605c; --line: #dfe3e0; --paper: #ffffff;
+}
+* { box-sizing: border-box; margin: 0 }
+[hidden] { display: none !important }
+html, body { min-height: 100% }
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: radial-gradient(120% 90% at 50% 0%, #24493f 0%, var(--spruce) 45%, var(--spruce-deep) 100%) fixed;
+  min-height: 100svh; display: flex; align-items: center; justify-content: center;
+  padding: 32px 16px; -webkit-font-smoothing: antialiased;
+}
+.auth { width: min(440px, 100%); display: grid; gap: 22px }
+.auth__brand { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--orange); text-decoration: none }
+.auth__logo { width: 168px; height: auto; aspect-ratio: 910 / 262; display: block; color: var(--orange) }
+.auth__tag { font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.7) }
+.auth__card {
+  background: var(--paper); border-radius: 14px; padding: 30px 28px 26px;
+  border-top: 4px solid var(--orange); box-shadow: 0 20px 50px rgba(0,0,0,.28);
+}
+.auth__eyebrow { font-size: 11.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--orange); margin-bottom: 8px }
+.auth__title { font-size: clamp(26px, 6vw, 32px); font-weight: 800; letter-spacing: -0.02em; line-height: 1.12; color: var(--spruce); margin-bottom: 10px }
+.auth__intro { font-size: 15px; line-height: 1.5; color: #36403c; margin-bottom: 18px }
+.auth__field { display: grid; gap: 6px; margin-bottom: 16px }
+.auth__field label { font-size: 13px; font-weight: 600; color: var(--ink) }
+.auth__field input {
+  font: inherit; font-size: 16px; padding: 12px 14px; border: 1px solid #c9cfcb; border-radius: 9px;
+  background: #fff; color: var(--ink); width: 100%;
+}
+.auth__field input:focus { outline: 2px solid var(--orange); outline-offset: 1px; border-color: var(--orange) }
+.auth__check { display: flex; align-items: center; gap: 9px; font-size: 14px; color: var(--ink); margin: 2px 0 18px }
+.auth__check input { width: 17px; height: 17px; accent-color: var(--spruce) }
+.auth__btn {
+  display: block; width: 100%; font: inherit; font-size: 15px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  padding: 14px 18px; border: 0; border-radius: 9px; background: var(--orange); color: #000; cursor: pointer; text-align: center; text-decoration: none;
+}
+.auth__btn:hover { background: #ff7d36 } .auth__btn:focus-visible { outline: 3px solid var(--spruce); outline-offset: 2px }
+.auth__btn[disabled] { opacity: .6; cursor: default }
+.auth__btn--line { background: #fff; color: var(--spruce); border: 1.5px solid var(--spruce) }
+.auth__btn--line:hover { background: #f1f5f3 }
+.auth__actions { display: grid; gap: 10px }
+.auth__error { background: #fff4e5; border-left: 4px solid var(--orange); border-radius: 8px; padding: 11px 14px; font-size: 14.5px; line-height: 1.45; margin-bottom: 16px; color: var(--ink) }
+.auth__rules { font-size: 13.5px; line-height: 1.5; color: var(--muted); padding-left: 18px; margin: 0 0 18px }
+.auth__help { font-size: 13.5px; color: var(--muted); text-align: center; margin-top: 16px; line-height: 1.5 }
+.auth__help a { color: var(--spruce); font-weight: 600 }
+.auth__foot { font-size: 12px; color: rgba(255,255,255,.6); text-align: center; letter-spacing: .02em }
+@media (max-width: 420px) { .auth__card { padding: 24px 20px 22px } .auth__logo { width: 140px } }

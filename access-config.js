@@ -63,6 +63,7 @@ export const PREVIEW_DEFAULT_ROLES = ['admin'];
 export const PUBLIC_PATHS = [
   '/login.html',
   '/style.css',
+  '/auth.css',
   '/robots.txt',
   '/favicon.ico',
   '/api/login',
